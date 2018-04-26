@@ -8,11 +8,7 @@ This is a collaboration between the Roberts Lab and Kathleen Lotterhos at Northe
 
 ### [data](https://github.com/RobertsLab/project-virginica-oa/tree/master/data)
 
-- [Sample information for *Crassostrea virginica* gonad samples from Kathleen Lotterhos]()
-
 ### [images](https://github.com/RobertsLab/project-virginica-oa/tree/master/images)
-
-- [DNA Shearing](https://github.com/RobertsLab/project-oyster-oa/tree/master/images/Virginica/2018-01-18-DNA-Shearing)
 
 ### [notebooks](https://github.com/RobertsLab/project-virginica-oa/tree/master/notebooks)
 
