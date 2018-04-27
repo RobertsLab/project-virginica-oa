@@ -1,55 +1,76 @@
-[2018-04-27 15:01:45,057] multiqc                                            [DEBUG  ]  No MultiQC config found: /Users/Shared/Apps/anaconda/lib/python3.5/site-packages/multiqc-1.0.dev0-py3.5.egg/multiqc_config.yaml
-[2018-04-27 15:01:45,057] multiqc                                            [DEBUG  ]  No MultiQC config found: /Users/yaamini/.multiqc_config.yaml
-[2018-04-27 15:01:45,058] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
-[2018-04-27 15:01:45,058] multiqc                                            [DEBUG  ]  Command used: ../../../../../Shared/Apps/anaconda/bin/multiqc ../2018-04-26-Gonad-Methylation-FastQC/ ../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC
-[2018-04-27 15:01:46,172] multiqc                                            [WARNING]  MultiQC Version v1.5 now available!
-[2018-04-27 15:01:46,172] multiqc                                            [INFO   ]  This is MultiQC v1.0.dev0
-[2018-04-27 15:01:46,172] multiqc                                            [DEBUG  ]  Command     : ../../../../../Shared/Apps/anaconda/bin/multiqc ../2018-04-26-Gonad-Methylation-FastQC/ ../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC
-[2018-04-27 15:01:46,172] multiqc                                            [DEBUG  ]  Working dir : /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-26-Gonad-Methylation-FastQC
-[2018-04-27 15:01:46,172] multiqc                                            [INFO   ]  Template    : default
-[2018-04-27 15:01:46,173] multiqc                                            [INFO   ]  Searching '../2018-04-26-Gonad-Methylation-FastQC/'
-[2018-04-27 15:01:46,173] multiqc                                            [INFO   ]  Searching '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC'
-[2018-04-27 15:01:46,173] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, peddy, methylQA, qualimap, preseq, quast, rseqc, busco, goleft_indexcov, snpeff, gatk, htseq, bcftools, featureCounts, picard, prokka, samblaster, samtools, bamtools, bismark, hicup, salmon, kallisto, slamdunk, star, tophat, bowtie2, bowtie1, cutadapt, trimmomatic, skewer, fastq_screen, fastqc, clusterflow
-[2018-04-27 15:01:46,173] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /var/folders/m7/jdh7hbrn2c90384jzrhjbv0h0000gz/T/tmp6msk3x8w
-[2018-04-27 15:01:46,232] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: .DS_Store
-[2018-04-27 15:01:56,954] multiqc.modules.custom_content.custom_content      [DEBUG  ]  No custom content found
-[2018-04-27 15:01:57,009] multiqc.modules.peddy.peddy                        [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:57,020] multiqc.modules.methylQA.methylQA                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:57,037] multiqc.modules.qualimap.QM_BamQC                  [DEBUG  ]  Using default Qualimap thresholds: 1, 5, 10, 30, 50
-[2018-04-27 15:01:57,064] multiqc.modules.qualimap.qualimap                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:57,563] multiqc.modules.preseq.preseq                      [DEBUG  ]  Could not find any preseq data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:57,597] multiqc.modules.quast.quast                        [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:57,823] multiqc.modules.rseqc.rseqc                        [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:57,832] multiqc.modules.busco.busco                        [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:57,847] multiqc.modules.goleft_indexcov.goleft_indexcov    [DEBUG  ]  Did not find goleft indexcov outputs in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:57,883] multiqc.modules.snpeff.snpeff                      [DEBUG  ]  Could not find any data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:57,925] multiqc.modules.gatk.gatk                          [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:57,962] multiqc.modules.htseq.htseq                        [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:57,998] multiqc.modules.bcftools.bcftools                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:58,011] multiqc.modules.featureCounts.feature_counts       [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:58,373] multiqc.modules.picard.picard                      [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:58,409] multiqc.modules.prokka.prokka                      [DEBUG  ]  Could not find any Prokka data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:58,450] multiqc.modules.samblaster.samblaster              [DEBUG  ]  Could not find any data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:58,596] multiqc.modules.samtools.samtools                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:58,661] multiqc.modules.bamtools.bamtools                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:58,745] multiqc.modules.bismark.bismark                    [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:58,769] multiqc.modules.hicup.hicup                        [DEBUG  ]  Could not find any HiCUP data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:58,798] multiqc.modules.salmon.salmon                      [DEBUG  ]  Could not find any Salmon data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:58,834] multiqc.modules.kallisto.kallisto                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:59,038] multiqc.modules.slamdunk.slamdunk                  [DEBUG  ]  No slamdunk reports found.
-[2018-04-27 15:01:59,127] multiqc.modules.star.star                          [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:59,174] multiqc.modules.tophat.tophat                      [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:59,225] multiqc.modules.bowtie2.bowtie2                    [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:59,263] multiqc.modules.bowtie1.bowtie1                    [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:59,307] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:59,348] multiqc.modules.trimmomatic.trimmomatic            [DEBUG  ]  Could not find any Trimmomatic data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:59,387] multiqc.modules.skewer.skewer                      [DEBUG  ]  Could not find any data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:01:59,399] multiqc.modules.fastq_screen.fastq_screen          [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:02:00,583] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 20 reports
-[2018-04-27 15:02:01,150] multiqc.modules.clusterflow.clusterflow            [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/2018-04-27-MultiQC')
-[2018-04-27 15:02:01,153] multiqc                                            [INFO   ]  Report      : multiqc_report.html
-[2018-04-27 15:02:01,154] multiqc                                            [INFO   ]  Data        : multiqc_data
-[2018-04-27 15:02:01,154] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/m7/jdh7hbrn2c90384jzrhjbv0h0000gz/T/tmp6msk3x8w/multiqc_data/multiqc_fastqc.txt' to '/Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-26-Gonad-Methylation-FastQC/multiqc_data'
-[2018-04-27 15:02:01,154] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/m7/jdh7hbrn2c90384jzrhjbv0h0000gz/T/tmp6msk3x8w/multiqc_data/multiqc_general_stats.txt' to '/Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-26-Gonad-Methylation-FastQC/multiqc_data'
-[2018-04-27 15:02:01,154] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/m7/jdh7hbrn2c90384jzrhjbv0h0000gz/T/tmp6msk3x8w/multiqc_data/multiqc_sources.txt' to '/Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-26-Gonad-Methylation-FastQC/multiqc_data'
-[2018-04-27 15:02:01,406] multiqc                                            [INFO   ]  MultiQC complete
+[2018-04-27 15:09:07,229] multiqc                                            [DEBUG  ]  No MultiQC config found: /Users/Shared/Apps/anaconda/lib/python3.5/site-packages/multiqc-1.0.dev0-py3.5.egg/multiqc_config.yaml
+[2018-04-27 15:09:07,229] multiqc                                            [DEBUG  ]  No MultiQC config found: /Users/yaamini/.multiqc_config.yaml
+[2018-04-27 15:09:07,229] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2018-04-27 15:09:07,230] multiqc                                            [DEBUG  ]  Command used: ../../../../../Shared/Apps/anaconda/bin/multiqc ../2018-04-26-Gonad-Methylation-FastQC/ ../2018-04-26-Gonad-Methylation-FastQC/
+[2018-04-27 15:09:08,056] multiqc                                            [WARNING]  MultiQC Version v1.5 now available!
+[2018-04-27 15:09:08,056] multiqc                                            [INFO   ]  This is MultiQC v1.0.dev0
+[2018-04-27 15:09:08,056] multiqc                                            [DEBUG  ]  Command     : ../../../../../Shared/Apps/anaconda/bin/multiqc ../2018-04-26-Gonad-Methylation-FastQC/ ../2018-04-26-Gonad-Methylation-FastQC/
+[2018-04-27 15:09:08,056] multiqc                                            [DEBUG  ]  Working dir : /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-26-Gonad-Methylation-FastQC
+[2018-04-27 15:09:08,057] multiqc                                            [INFO   ]  Template    : default
+[2018-04-27 15:09:08,057] multiqc                                            [INFO   ]  Searching '../2018-04-26-Gonad-Methylation-FastQC/'
+[2018-04-27 15:09:08,057] multiqc                                            [INFO   ]  Searching '../2018-04-26-Gonad-Methylation-FastQC/'
+[2018-04-27 15:09:08,057] multiqc                                            [DEBUG  ]  Analysing modules: custom_content, peddy, methylQA, qualimap, preseq, quast, rseqc, busco, goleft_indexcov, snpeff, gatk, htseq, bcftools, featureCounts, picard, prokka, samblaster, samtools, bamtools, bismark, hicup, salmon, kallisto, slamdunk, star, tophat, bowtie2, bowtie1, cutadapt, trimmomatic, skewer, fastq_screen, fastqc, clusterflow
+[2018-04-27 15:09:08,058] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /var/folders/m7/jdh7hbrn2c90384jzrhjbv0h0000gz/T/tmp818m6nln
+[2018-04-27 15:09:08,072] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: .DS_Store
+[2018-04-27 15:09:08,075] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: .DS_Store
+[2018-04-27 15:09:08,627] multiqc.modules.custom_content.custom_content      [DEBUG  ]  No custom content found
+[2018-04-27 15:09:08,663] multiqc.modules.peddy.peddy                        [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:08,674] multiqc.modules.methylQA.methylQA                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:08,676] multiqc.modules.qualimap.QM_BamQC                  [DEBUG  ]  Using default Qualimap thresholds: 1, 5, 10, 30, 50
+[2018-04-27 15:09:08,727] multiqc.modules.qualimap.qualimap                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:08,791] multiqc.modules.preseq.preseq                      [DEBUG  ]  Could not find any preseq data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:08,802] multiqc.modules.quast.quast                        [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:09,112] multiqc.modules.rseqc.rseqc                        [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:09,124] multiqc.modules.busco.busco                        [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:09,142] multiqc.modules.goleft_indexcov.goleft_indexcov    [DEBUG  ]  Did not find goleft indexcov outputs in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:09,205] multiqc.modules.snpeff.snpeff                      [DEBUG  ]  Could not find any data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:09,275] multiqc.modules.gatk.gatk                          [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:09,335] multiqc.modules.htseq.htseq                        [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:09,398] multiqc.modules.bcftools.bcftools                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:09,409] multiqc.modules.featureCounts.feature_counts       [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:10,028] multiqc.modules.picard.picard                      [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:10,040] multiqc.modules.prokka.prokka                      [DEBUG  ]  Could not find any Prokka data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:10,102] multiqc.modules.samblaster.samblaster              [DEBUG  ]  Could not find any data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:10,297] multiqc.modules.samtools.samtools                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:10,362] multiqc.modules.bamtools.bamtools                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:10,410] multiqc.modules.bismark.bismark                    [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:10,422] multiqc.modules.hicup.hicup                        [DEBUG  ]  Could not find any HiCUP data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:10,441] multiqc.modules.salmon.salmon                      [DEBUG  ]  Could not find any Salmon data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:10,508] multiqc.modules.kallisto.kallisto                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:10,887] multiqc.modules.slamdunk.slamdunk                  [DEBUG  ]  No slamdunk reports found.
+[2018-04-27 15:09:10,905] multiqc.modules.star.star                          [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:10,916] multiqc.modules.tophat.tophat                      [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:10,980] multiqc.modules.bowtie2.bowtie2                    [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:11,047] multiqc.modules.bowtie1.bowtie1                    [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:11,117] multiqc.modules.cutadapt.cutadapt                  [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:11,184] multiqc.modules.trimmomatic.trimmomatic            [DEBUG  ]  Could not find any Trimmomatic data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:11,246] multiqc.modules.skewer.skewer                      [DEBUG  ]  Could not find any data in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:11,257] multiqc.modules.fastq_screen.fastq_screen          [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:12,242] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_10_s1_R1_fastqc.zip' as already parsed 'zr2096_10_s1_R1'
+[2018-04-27 15:09:12,243] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_10_s1_R2_fastqc.zip' as already parsed 'zr2096_10_s1_R2'
+[2018-04-27 15:09:12,243] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_1_s1_R1_fastqc.zip' as already parsed 'zr2096_1_s1_R1'
+[2018-04-27 15:09:12,244] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_1_s1_R2_fastqc.zip' as already parsed 'zr2096_1_s1_R2'
+[2018-04-27 15:09:12,244] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_2_s1_R1_fastqc.zip' as already parsed 'zr2096_2_s1_R1'
+[2018-04-27 15:09:12,244] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_2_s1_R2_fastqc.zip' as already parsed 'zr2096_2_s1_R2'
+[2018-04-27 15:09:12,245] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_3_s1_R1_fastqc.zip' as already parsed 'zr2096_3_s1_R1'
+[2018-04-27 15:09:12,245] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_3_s1_R2_fastqc.zip' as already parsed 'zr2096_3_s1_R2'
+[2018-04-27 15:09:12,246] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_4_s1_R1_fastqc.zip' as already parsed 'zr2096_4_s1_R1'
+[2018-04-27 15:09:12,246] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_4_s1_R2_fastqc.zip' as already parsed 'zr2096_4_s1_R2'
+[2018-04-27 15:09:12,246] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_5_s1_R1_fastqc.zip' as already parsed 'zr2096_5_s1_R1'
+[2018-04-27 15:09:12,247] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_5_s1_R2_fastqc.zip' as already parsed 'zr2096_5_s1_R2'
+[2018-04-27 15:09:12,247] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_6_s1_R1_fastqc.zip' as already parsed 'zr2096_6_s1_R1'
+[2018-04-27 15:09:12,247] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_6_s1_R2_fastqc.zip' as already parsed 'zr2096_6_s1_R2'
+[2018-04-27 15:09:12,248] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_7_s1_R1_fastqc.zip' as already parsed 'zr2096_7_s1_R1'
+[2018-04-27 15:09:12,248] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_7_s1_R2_fastqc.zip' as already parsed 'zr2096_7_s1_R2'
+[2018-04-27 15:09:12,249] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_8_s1_R1_fastqc.zip' as already parsed 'zr2096_8_s1_R1'
+[2018-04-27 15:09:12,249] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_8_s1_R2_fastqc.zip' as already parsed 'zr2096_8_s1_R2'
+[2018-04-27 15:09:12,249] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_9_s1_R1_fastqc.zip' as already parsed 'zr2096_9_s1_R1'
+[2018-04-27 15:09:12,250] multiqc.modules.fastqc.fastqc                      [DEBUG  ]  Skipping 'zr2096_9_s1_R2_fastqc.zip' as already parsed 'zr2096_9_s1_R2'
+[2018-04-27 15:09:12,250] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 20 reports
+[2018-04-27 15:09:12,688] multiqc.modules.clusterflow.clusterflow            [DEBUG  ]  Could not find any reports in ('../2018-04-26-Gonad-Methylation-FastQC/', '../2018-04-26-Gonad-Methylation-FastQC/')
+[2018-04-27 15:09:12,691] multiqc                                            [INFO   ]  Report      : multiqc_report.html
+[2018-04-27 15:09:12,691] multiqc                                            [INFO   ]  Data        : multiqc_data
+[2018-04-27 15:09:12,692] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/m7/jdh7hbrn2c90384jzrhjbv0h0000gz/T/tmp818m6nln/multiqc_data/multiqc_fastqc.txt' to '/Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-26-Gonad-Methylation-FastQC/multiqc_data'
+[2018-04-27 15:09:12,692] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/m7/jdh7hbrn2c90384jzrhjbv0h0000gz/T/tmp818m6nln/multiqc_data/multiqc_general_stats.txt' to '/Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-26-Gonad-Methylation-FastQC/multiqc_data'
+[2018-04-27 15:09:12,692] multiqc                                            [DEBUG  ]  Moving data file from '/var/folders/m7/jdh7hbrn2c90384jzrhjbv0h0000gz/T/tmp818m6nln/multiqc_data/multiqc_sources.txt' to '/Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-26-Gonad-Methylation-FastQC/multiqc_data'
+[2018-04-27 15:09:12,969] multiqc                                            [INFO   ]  MultiQC complete
