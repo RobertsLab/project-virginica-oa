@@ -8,7 +8,7 @@ This is a collaboration between the Roberts Lab and Dr. Kathleen Lotterhos's lab
 
 - [MBDSeq Labwork](https://github.com/RobertsLab/project-virginica-oa/tree/master/analyses/2018-01-23-MBDSeq-Labwork)
 
-**Gonad Methylation Analyses**: Output from bioinformatics pipelines
+**Gonad Methylation Analyses**:
 
   - [FastQC](https://github.com/RobertsLab/project-virginica-oa/tree/master/analyses/2018-04-26-Gonad-Methylation-FastQC)
   - [Bismark](https://github.com/RobertsLab/project-virginica-oa/tree/master/analyses/2018-04-27-Bismark)
