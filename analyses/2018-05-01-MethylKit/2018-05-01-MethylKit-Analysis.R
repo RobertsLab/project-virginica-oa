@@ -7,4 +7,4 @@ setwd("../") #Set working directory as analyses folder
 #### INSTALL METHYLKIT ####
 source("https://bioconductor.org/biocLite.R") #Source package from bioconductor
 biocLite("methylKit")
-install.packages("data.table")
+library(methylKit)
