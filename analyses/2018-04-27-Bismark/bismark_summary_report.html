@@ -155,7 +155,7 @@
 		    // Plot setup
 			var alignment_plot_colors = ['#01665e','#f28f43', '#0d233a', '#492970', '#2f7ed8', '#8bbc21'];
 			var meth_plot_colors = ['#0d233a', '#2f7ed8', '#8bbc21', '#1aadce', '#910000', '#492970'];
-			var num_samples = 20;
+			var num_samples = 10;
 			// Alignment Plot
 			var aln_x_index = num_samples * -1;
 			var alignment_plot_options = {
@@ -186,7 +186,7 @@
 							return aln_x_index;
 						}
 					},
-					categories: [ 'zr2096_10_s1_R1_bismark_bt2.bam','zr2096_10_s1_R2_bismark_bt2.bam','zr2096_1_s1_R1_bismark_bt2.bam','zr2096_1_s1_R2_bismark_bt2.bam','zr2096_2_s1_R1_bismark_bt2.bam','zr2096_2_s1_R2_bismark_bt2.bam','zr2096_3_s1_R1_bismark_bt2.bam','zr2096_3_s1_R2_bismark_bt2.bam','zr2096_4_s1_R1_bismark_bt2.bam','zr2096_4_s1_R2_bismark_bt2.bam','zr2096_5_s1_R1_bismark_bt2.bam','zr2096_5_s1_R2_bismark_bt2.bam','zr2096_6_s1_R1_bismark_bt2.bam','zr2096_6_s1_R2_bismark_bt2.bam','zr2096_7_s1_R1_bismark_bt2.bam','zr2096_7_s1_R2_bismark_bt2.bam','zr2096_8_s1_R1_bismark_bt2.bam','zr2096_8_s1_R2_bismark_bt2.bam','zr2096_9_s1_R1_bismark_bt2.bam','zr2096_9_s1_R2_bismark_bt2.bam' ]
+					categories: [ 'zr2096_10_s1_R1_bismark_bt2_pe.bam','zr2096_1_s1_R1_bismark_bt2_pe.bam','zr2096_2_s1_R1_bismark_bt2_pe.bam','zr2096_3_s1_R1_bismark_bt2_pe.bam','zr2096_4_s1_R1_bismark_bt2_pe.bam','zr2096_5_s1_R1_bismark_bt2_pe.bam','zr2096_6_s1_R1_bismark_bt2_pe.bam','zr2096_7_s1_R1_bismark_bt2_pe.bam','zr2096_8_s1_R1_bismark_bt2_pe.bam','zr2096_9_s1_R1_bismark_bt2_pe.bam' ]
 				},
 				credits: {
 			        text: 'Hover to identify samples and numbers',
@@ -242,27 +242,27 @@
 				series: [
 				    {
 				      name: 'Unique Alignments',
-				      data: [ 6363,6457,3083,3211,5451,5481,6272,6387,6169,6188,6164,6202,6310,6416,6352,6387,5715,5645,6115,6280 ]
+				      data: [ null,null,null,null,null,null,null,null,null,null ]
 				    },
 				    {
 				      name: 'No Genomic Sequence',
-				      data: [ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ]
+				      data: [ 0,0,0,0,0,0,0,0,0,0 ]
 				    },
 				    {
 				      name: 'Did Not Align',
-				      data: [ 1342,1202,5801,5683,2569,2531,1237,1162,1547,1494,1621,1537,1354,1253,1477,1433,2299,2318,1660,1379 ]
+				      data: [ 2805,6709,3407,2628,2681,3067,2559,3140,3690,3209 ]
 				    },
 				    {
 				      name: 'Aligned Ambiguously',
-				      data: [ 2295,2341,1116,1106,1980,1988,2491,2451,2284,2318,2215,2261,2336,2331,2171,2180,1986,2037,2225,2341 ]
+				      data: [ 1719,761,1588,1789,1787,1643,1809,1509,1505,1596 ]
 				    },
 				    {
 				      name: 'Duplicate Alignments',
-				      data: [ ,,,,,,,,,,,,,,,,,,, ]
+				      data: [ 0,1,4,1,0,0,0,0,0,0 ]
 				    },
 				    {
 				      name: 'Deduplicated Unique Alignments',
-				      data: [ ,,,,,,,,,,,,,,,,,,, ]
+				      data: [ 5476,2529,5001,5582,5532,5290,5632,5351,4805,5195 ]
 				    }
 				  ]
 			}
@@ -271,27 +271,27 @@
 			var meth_calls_data = {
 				CpG: [{
 					name: 'Unmethylated CpG',
-					data: [ 5034,4977,2109,2134,3617,3627,3734,3947,4523,4531,4421,4481,3765,3932,4133,4043,4076,3847,3948,3985 ]
+					data: [ 8427,3215,6549,6661,7999,7270,6629,6750,6649,6454 ]
 				},
 	            {
 	                name: 'Methlyated CpG',
-	                data: [ 10598,10678,4195,4485,8081,8135,12011,12185,8450,8463,8677,8868,10011,9835,9550,9312,7628,7495,11677,11862 ]
+	                data: [ 18472,7180,15102,21681,15435,15197,17859,16312,13026,19918 ]
 	            }],
 				CHG: [{
 					name: 'Unmethylated CHG',
-					data:  [ 24437,24762,10153,10794,19399,19502,24189,24833,21587,21673,21895,22166,22238,22726,23247,22916,20470,19920,23839,24536 ]
+					data:  [ 42228,16918,35758,43123,38807,37436,39618,39028,34130,40511 ]
 				},
 				{
 		            name: 'Methlyated CHG',
-		            data:  [ 834,827,390,417,711,666,784,810,690,657,799,757,703,712,804,821,699,721,923,885 ]
+		            data:  [ 1345,617,1285,1445,1155,1267,1203,1331,1109,1544 ]
 		        }],
 				CHH: [{
 					name: 'Unmethylated CHH',
-					data:  [ 66940,67370,30557,32276,52035,52164,65775,66943,61295,61782,64726,64812,62717,63452,66318,67062,58212,57473,65281,67486 ]
+					data:  [ 114243,49274,94164,117075,109267,110160,110765,112318,97234,110353 ]
 				},
 				{
 		            name: 'Methlyated CHH',
-		            data:  [ 2849,2954,2635,2492,3049,3294,2675,2682,2940,2768,2907,2856,2760,2742,2977,2823,2957,2989,3066,3081 ]
+		            data:  [ 4569,3994,5276,4620,5016,4823,4603,4642,4711,4966 ]
 		        }]
 			};
 			var meth_x_index = num_samples * -1;
@@ -323,7 +323,7 @@
 							return meth_x_index;
 						}
 					},
-					categories: [ 'zr2096_10_s1_R1_bismark_bt2.bam','zr2096_10_s1_R2_bismark_bt2.bam','zr2096_1_s1_R1_bismark_bt2.bam','zr2096_1_s1_R2_bismark_bt2.bam','zr2096_2_s1_R1_bismark_bt2.bam','zr2096_2_s1_R2_bismark_bt2.bam','zr2096_3_s1_R1_bismark_bt2.bam','zr2096_3_s1_R2_bismark_bt2.bam','zr2096_4_s1_R1_bismark_bt2.bam','zr2096_4_s1_R2_bismark_bt2.bam','zr2096_5_s1_R1_bismark_bt2.bam','zr2096_5_s1_R2_bismark_bt2.bam','zr2096_6_s1_R1_bismark_bt2.bam','zr2096_6_s1_R2_bismark_bt2.bam','zr2096_7_s1_R1_bismark_bt2.bam','zr2096_7_s1_R2_bismark_bt2.bam','zr2096_8_s1_R1_bismark_bt2.bam','zr2096_8_s1_R2_bismark_bt2.bam','zr2096_9_s1_R1_bismark_bt2.bam','zr2096_9_s1_R2_bismark_bt2.bam' ]
+					categories: [ 'zr2096_10_s1_R1_bismark_bt2_pe.bam','zr2096_1_s1_R1_bismark_bt2_pe.bam','zr2096_2_s1_R1_bismark_bt2_pe.bam','zr2096_3_s1_R1_bismark_bt2_pe.bam','zr2096_4_s1_R1_bismark_bt2_pe.bam','zr2096_5_s1_R1_bismark_bt2_pe.bam','zr2096_6_s1_R1_bismark_bt2_pe.bam','zr2096_7_s1_R1_bismark_bt2_pe.bam','zr2096_8_s1_R1_bismark_bt2_pe.bam','zr2096_9_s1_R1_bismark_bt2_pe.bam' ]
 				},
 				credits: {
 			        text: 'Hover to identify samples and numbers',
@@ -388,7 +388,7 @@
 		<h1>Bismark Project Overall Summary</h1>
 		<div class="subtitle">
 			<h3>Bismark Summary Report</h3>
-			<p>Report generated at Sun Apr 29 19:20:36 2018</p>
+			<p>Report generated at Tue May  8 17:36:19 2018</p>
 		</div>
 	</div>
 	<hr>
