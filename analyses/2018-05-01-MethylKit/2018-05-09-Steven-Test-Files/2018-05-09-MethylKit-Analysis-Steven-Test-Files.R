@@ -2,7 +2,7 @@
 
 #### SET WORKING DIRECTORY ####
 getwd()
-setwd("2018-05-08-Steven-Test-Files/") #Set working directory as test file folder
+setwd("2018-05-09-Steven-Test-Files/") #Set working directory as test file folder
 
 #### INSTALL PACKAGES ####
 install.packages("devtools") #Install the devtools package
@@ -54,5 +54,5 @@ PCASamples(methylationInformation) #Run a PCA analysis on percent methylation fo
 PCASamples(methylationInformation, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
 
 differentialMethylationStats <- calculateDiffMeth(methylationInformation) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
-diffMethStats25 <- getMethylDiff(differentialMethylationStats, difference = 25, qvalue = 0.01) #Identify loci that are at least 25% different
-diffMethStats50 <- getMethylDiff(differentialMethylationStats,difference=50,qvalue=0.01) #Identify loci that are at least 50% different
+diffMethStats25 <- getMethylDiff(differentialMethylationStats, difference = 25, qvalue = 0.01) #Identify loci that are at least 25% different. Q-value is the FDR used for p-value corrections.
+diffMethStats50 <- getMethylDiff(differentialMethylationStats, difference=50, qvalue=0.01) #Identify loci that are at least 50% different
