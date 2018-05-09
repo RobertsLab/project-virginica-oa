@@ -10,9 +10,8 @@ library(devtools) #Load devtools
 
 source("https://bioconductor.org/biocLite.R") #Source package from bioconductor
 biocLite("methylKit") #Install methylkit
-library(methylKit) #Load methylkit
-
 install_github("al2na/methylKit", build_vignettes = FALSE, repos=BiocInstaller::biocinstallRepos(), dependencies = TRUE) #Install more methylKit options
+library(methylKit) #Load methylkit
 
 #### PROCESS METHYLATION DATA ####
 
