@@ -1,8 +1,8 @@
-#In this script, I'll use MethylKit to analyze differences in methylation between C. virginica gonad samples.
+#In this script, I'll test the methylKit pipeline with 2 files Steven generated. This will allow me to figure out why I cannot unite my files. If I can unite Steven's files, then I know there is an issue with the files I generated. If I cannot unite Steven's files, then it could be a software issue.
 
 #### SET WORKING DIRECTORY ####
 getwd()
-setwd("../2018-04-27-Bismark/") #Set working directory as bismark folder
+setwd("2018-05-08-Steven-Test-Files/") #Set working directory as test file folder
 
 #### INSTALL PACKAGES ####
 install.packages("devtools") #Install the devtools package
