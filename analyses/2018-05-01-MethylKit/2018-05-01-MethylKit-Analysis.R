@@ -32,7 +32,7 @@ processedFiles <- processBismarkAln(location = analysisFiles, sample.id = sample
 
 #### ANALYZE METHYLATION DATA ####
 
-####NEED TO CHANGE WORKING DIRECTORY THEN RUN FILES. MOVE GRAPHS FROM BISMARK FOLDER ####
+setwd("../2018-05-01-MethylKit/") #Chance working directory to the MethylKit folder
 
 nFiles <- length(sample.IDs) #Count number of samples
 fileName <- data.frame("nameBase" = rep("2018-05-08-Percent-CpG-Methylation", times = nFiles),
