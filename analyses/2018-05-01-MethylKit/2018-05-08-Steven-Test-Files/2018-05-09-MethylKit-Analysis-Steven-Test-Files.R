@@ -15,18 +15,10 @@ library(methylKit) #Load methylkit
 
 #### PROCESS METHYLATION DATA ####
 
-analysisFiles <- list ("zr2096_1_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_2_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_3_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_4_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_5_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_6_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_7_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_8_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_9_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_10_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam") #Put all .bam files into a list for analysis
-sample.IDs <- list("1", "2", "3", "4", "5", "6", "7", "8", "9", "10") #Create list of sample IDs
-treatmentSpecification <- c(rep(0, times = 5), rep(1, times = 5))
+analysisFiles <- list ("zr2096_1_dedup.sorted.bam",
+                       "zr2096_10_dedup.sorted.bam") #Put all .bam files into a list for analysis
+sample.IDs <- list("1", "10") #Create list of sample IDs
+treatmentSpecification <- c(0, 1)
 processedFiles <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 1, treatment = treatmentSpecification) #Process files for CpG meetehylation. First 5 files were from ambient conditionds, and the second from high pCO2 conditions.
 
 #### ANALYZE METHYLATION DATA ####
