@@ -57,29 +57,13 @@ for(i in 1:nFiles) { #For each data file
 
 methylationInformation <- unite(processedFiles) #Combine all processed files into a single table
 
-getCorrelation(methylationInformation,plot=TRUE)
+getCorrelation(methylationInformation, plot = TRUE) #Understand correlation between methylation patterns in different samples
+clusterSamples(methylationInformation, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
+clusteringInformation <- clusterSamples(methylationInformation, dist = "correlation", method = "ward", plot = FALSE) #Save cluster information as a new object
 
-clusterSamples(meth, dist="correlation", method="ward", plot=TRUE)
+PCASamples(methylationInformation) #Run a PCA analysis on percent methylation for all samples
+PCASamples(methylationInformation, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
 
-getCorrelation(meth,plot=TRUE)
-
-
-clusterSamples(meth, dist="correlation", method="ward", plot=TRUE)
-
-
-
-hc = clusterSamples(meth, dist="correlation", method="ward", plot=FALSE)
-
-PCASamples(meth, screeplot=TRUE)
-
-PCASamples(meth)
-
-myDiff=calculateDiffMeth(meth)
-
-myDiff25p=getMethylDiff(myDiff,difference=25,qvalue=0.01)
-
-myDiff50p <- getMethylDiff(myDiff,difference=50,qvalue=0.01)
-
-write.table(myDiff50p, file = "analyses/myDiff50p.tab")
-
-View(myDiff50p)
+differentialMethylationStats <- calculateDiffMeth(methylationInformation) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
+diffMethStats25 <- getMethylDiff(differentialMethylationStats, difference = 25, qvalue = 0.01) #Identify loci that are at least 25% different
+diffMethStats50 <- getMethylDiff(differentialMethylationStats,difference=50,qvalue=0.01) #Identify loci that are at least 50% different
