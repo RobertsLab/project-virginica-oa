@@ -19,7 +19,7 @@ analysisFiles <- list ("zr2096_1_dedup.sorted.bam",
                        "zr2096_10_dedup.sorted.bam") #Put all .bam files into a list for analysis
 sample.IDs <- list("1", "10") #Create list of sample IDs
 treatmentSpecification <- c(0, 1)
-processedFiles <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 1, treatment = treatmentSpecification) #Process files for CpG meetehylation. First 5 files were from ambient conditionds, and the second from high pCO2 conditions.
+processedFiles <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 1, treatment = treatmentSpecification) #Process files for CpG meetehylation. First file is from ambient conditions, second from treatment.
 
 #### ANALYZE METHYLATION DATA ####
 
