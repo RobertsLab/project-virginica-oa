@@ -32,6 +32,7 @@ processedFiles <- processBismarkAln(location = analysisFiles, sample.id = sample
 #### ANALYZE METHYLATION DATA ####
 
 setwd("../2018-05-01-MethylKit/") #Chance working directory to the MethylKit folder
+getwd() #Confirm change
 
 nFiles <- length(sample.IDs) #Count number of samples
 fileName <- data.frame("nameBase" = rep("2018-05-08-Percent-CpG-Methylation", times = nFiles),
@@ -54,9 +55,7 @@ for(i in 1:nFiles) { #For each data file
   dev.off() #Turn off plotting device
 } #Plot and save CpG coverage information
 
-methylationInformation <- unite(processedFiles)
-
-?unite
+methylationInformation <- unite(processedFiles) #Combine all processed files into a single table
 
 getCorrelation(methylationInformation,plot=TRUE)
 
