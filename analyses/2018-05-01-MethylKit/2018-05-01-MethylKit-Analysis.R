@@ -50,7 +50,7 @@ for(i in 1:nFiles) { #For each data file
 } #Plot and save %CpG methylation information
 
 for(i in 1:nFiles) { #For each data file
-  jpeg(filename = fileName$actualFileName[i], height = 1000, width = 1000) #Save file with designated name
+  jpeg(filename = fileName$actualFileName2[i], height = 1000, width = 1000) #Save file with designated name
   getCoverageStats(processedFiles[[i]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
   dev.off() #Turn off plotting device
 } #Plot and save CpG coverage information
