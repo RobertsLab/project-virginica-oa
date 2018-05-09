@@ -56,3 +56,5 @@ PCASamples(methylationInformation, screeplot = TRUE) #Run the PCA analysis and p
 differentialMethylationStats <- calculateDiffMeth(methylationInformation) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
 diffMethStats25 <- getMethylDiff(differentialMethylationStats, difference = 25, qvalue = 0.01) #Identify loci that are at least 25% different. Q-value is the FDR used for p-value corrections.
 diffMethStats50 <- getMethylDiff(differentialMethylationStats, difference=50, qvalue=0.01) #Identify loci that are at least 50% different
+
+#I couldn't get any methylation statistics because I only had 2 files, but I was able to run all of the commands! There are two explanations for why I couldn't get my samples to run through this script. One, I didn't use any trimmed data, while Steven did. Two, my subset data used the first 10,000 reads, while Steven's used the first 1,000,000.
