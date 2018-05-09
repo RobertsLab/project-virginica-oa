@@ -31,17 +31,25 @@ processedFiles <- processBismarkAln(location = analysisFiles, sample.id = sample
 #### ANALYZE METHYLATION DATA ####
 nFiles <- length(sample.IDs) #Count number of samples
 fileName <- data.frame("nameBase" = rep("2018-05-08-Percent-CpG-Methylation", times = nFiles),
+                       "nameBase2" = rep("2018-05-08-Percent-CpG-Coverage", times = nFiles),
                        "sample.ID" = 1:10) #Create new dataframe for filenames
 head(fileName) #Confirm dataframe creation
 fileName$actualFileName <- paste(fileName$nameBase, "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename
+fileName$actualFileName2 <- paste(fileName$nameBase2, "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename
 head(fileName) #Confirm column creation
 
 for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName[i], height = 1000, width = 1000) #Save file with designated name
   getMethylationStats(processedFiles[[i]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
+  dev.off() #Turn off plotting device
 } #Plot and save %CpG methylation information
 
-getMethylationStats(processedFiles[[1]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
-getCoverageStats(processedFiles[[1]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
+for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName[i], height = 1000, width = 1000) #Save file with designated name
+  getCoverageStats(processedFiles[[i]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
+  dev.off() #Turn off plotting device
+} #Plot and save CpG coverage information
+
 methylationInformation <- unite(processedFiles)
 
 ?unite
