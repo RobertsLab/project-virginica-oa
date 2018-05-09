@@ -29,10 +29,19 @@ treatmentSpecification <- c(rep(0, times = 5), rep(1, times = 5))
 processedFiles <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 1, treatment = treatmentSpecification) #Process files for CpG meetehylation. First 5 files were from ambient conditionds, and the second from high pCO2 conditions.
 
 #### ANALYZE METHYLATION DATA ####
-getMethylationStats(processedFiles[[1]], plot=FALSE, both.strands=FALSE) #Get methylation information
-getMethylationStats(processedFiles[[1]], plot=TRUE, both.strands=FALSE) #Plot methylation information
+nFiles <- length(sample.IDs) #Count number of samples
+fileName <- data.frame("nameBase" = rep("2018-05-08-Percent-CpG-Methylation", times = nFiles),
+                       "sample.ID" = 1:10) #Create new dataframe for filenames
+head(fileName) #Confirm dataframe creation
+fileName$actualFileName <- paste(fileName$nameBase, "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename
+head(fileName) #Confirm column creation
 
-getCoverageStats(processedFiles[[4]], plot=TRUE, both.strands=FALSE) #Get coverage information
+for(i in 1:nFiles) { #For each data file
+  getMethylationStats(processedFiles[[i]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
+} #Plot and save %CpG methylation information
+
+getMethylationStats(processedFiles[[1]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
+getCoverageStats(processedFiles[[1]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
 methylationInformation <- unite(processedFiles)
 
 ?unite
