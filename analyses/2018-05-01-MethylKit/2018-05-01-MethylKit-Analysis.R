@@ -12,6 +12,8 @@ source("https://bioconductor.org/biocLite.R") #Source package from bioconductor
 biocLite("methylKit") #Install methylkit
 library(methylKit) #Load methylkit
 
+install_github("al2na/methylKit", build_vignettes = FALSE, repos=BiocInstaller::biocinstallRepos(), dependencies = TRUE) #Install more methylKit options
+
 #### PROCESS METHYLATION DATA ####
 
 analysisFiles <- list ("zr2096_1_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
@@ -29,6 +31,9 @@ treatmentSpecification <- c(rep(0, times = 5), rep(1, times = 5))
 processedFiles <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 1, treatment = treatmentSpecification) #Process files for CpG meetehylation. First 5 files were from ambient conditionds, and the second from high pCO2 conditions.
 
 #### ANALYZE METHYLATION DATA ####
+
+####NEED TO CHANGE WORKING DIRECTORY THEN RUN FILES. MOVE GRAPHS FROM BISMARK FOLDER ####
+
 nFiles <- length(sample.IDs) #Count number of samples
 fileName <- data.frame("nameBase" = rep("2018-05-08-Percent-CpG-Methylation", times = nFiles),
                        "nameBase2" = rep("2018-05-08-Percent-CpG-Coverage", times = nFiles),
