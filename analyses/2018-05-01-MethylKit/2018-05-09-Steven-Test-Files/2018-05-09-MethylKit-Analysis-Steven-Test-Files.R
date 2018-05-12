@@ -1,8 +1,8 @@
-#In this script, I'll use MethylKit to analyze differences in methylation between C. virginica gonad samples.
+#In this script, I'll test the methylKit pipeline with 2 files Steven generated. This will allow me to figure out why I cannot unite my files. If I can unite Steven's files, then I know there is an issue with the files I generated. If I cannot unite Steven's files, then it could be a software issue.
 
 #### SET WORKING DIRECTORY ####
 getwd()
-setwd("../2018-04-27-Bismark/") #Set working directory as bismark folder
+setwd("2018-05-09-Steven-Test-Files/") #Set working directory as test file folder
 
 #### INSTALL PACKAGES ####
 install.packages("devtools") #Install the devtools package
@@ -15,19 +15,11 @@ library(methylKit) #Load methylkit
 
 #### PROCESS METHYLATION DATA ####
 
-analysisFiles <- list ("zr2096_1_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_2_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_3_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_4_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_5_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_6_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_7_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_8_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_9_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_10_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam") #Put all .bam files into a list for analysis
-sample.IDs <- list("1", "2", "3", "4", "5", "6", "7", "8", "9", "10") #Create list of sample IDs
-treatmentSpecification <- c(rep(0, times = 5), rep(1, times = 5))
-processedFiles <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 1, treatment = treatmentSpecification) #Process files for CpG meetehylation. First 5 files were from ambient conditions, and the second from high pCO2 conditions.
+analysisFiles <- list ("zr2096_1_dedup.sorted.bam",
+                       "zr2096_10_dedup.sorted.bam") #Put all .bam files into a list for analysis
+sample.IDs <- list("1", "10") #Create list of sample IDs
+treatmentSpecification <- c(0, 1)
+processedFiles <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 1, treatment = treatmentSpecification) #Process files for CpG meetehylation. First file is from ambient conditions, second from treatment.
 
 #### ANALYZE METHYLATION DATA ####
 
@@ -63,4 +55,6 @@ PCASamples(methylationInformation, screeplot = TRUE) #Run the PCA analysis and p
 
 differentialMethylationStats <- calculateDiffMeth(methylationInformation) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
 diffMethStats25 <- getMethylDiff(differentialMethylationStats, difference = 25, qvalue = 0.01) #Identify loci that are at least 25% different. Q-value is the FDR used for p-value corrections.
-diffMethStats50 <- getMethylDiff(differentialMethylationStats,difference=50,qvalue=0.01) #Identify loci that are at least 50% different
+diffMethStats50 <- getMethylDiff(differentialMethylationStats, difference=50, qvalue=0.01) #Identify loci that are at least 50% different
+
+#I couldn't get any methylation statistics because I only had 2 files, but I was able to run all of the commands! There are two explanations for why I couldn't get my samples to run through this script. One, I didn't use any trimmed data, while Steven did. Two, my subset data used the first 10,000 reads, while Steven's used the first 1,000,000.

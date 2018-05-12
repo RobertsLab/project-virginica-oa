@@ -1,0 +1,26 @@
+
+ *** Bismark methylation extractor version v0.19.0 ***
+
+Setting option '--no_overlap' since this is (normally) the right thing to do for paired-end data
+
+Summarising Bismark methylation extractor parameters:
+===============================================================
+Bismark paired-end SAM format specified (default)
+Number of cores to be used: 8
+Output will be written to the current directory ('/Users/yaamini/Documents/project-virginica-oa/analyses/2018-05-04-Bismark-Full-Samples')
+
+
+Summarising bedGraph parameters:
+===============================================================
+Generating additional output in bedGraph and coverage format
+bedGraph format:	<Chromosome> <Start Position> <End Position> <Methylation Percentage>
+coverage format:	<Chromosome> <Start Position> <End Position> <Methylation Percentage> <count methylated> <count non-methylated>
+
+Using a cutoff of 1 read(s) to report cytosine positions
+Reporting and sorting cytosine methylation information in CpG context only (default)
+The bedGraph UNIX sort command will use the following memory setting:	'2G'. Temporary directory used for sorting is the output directory
+
+Checking file >>zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
+
+The IDs of Read 1 (HWI-C00124:321:CC781ANXX:2:1202:8775:19934_1:N:0:GATCAG) and Read 2 (HWI-C00124:321:CC781ANXX:2:2306:3960:72707_1:N:0:GATCAG) are not the same. This might be the result of sorting the paired-end SAM/BAM files by chromosomal position which is not compatible with correct methylation extraction. Please use an unsorted file instead or sort the file using 'samtools sort -n' (by read name). This may also occur using samtools merge as it does not guarantee the read order. To properly merge files please use 'samtools merge -n' or 'samtools cat'.
+
