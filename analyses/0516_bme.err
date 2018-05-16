@@ -53,19 +53,13 @@ Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplic
 
 Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
-
-Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-
 Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
+
+
+Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
 skipping SAM header line:	@SQ	SN:NC_035780.1	LN:65668440
 skipping SAM header line:	@SQ	SN:NC_035781.1	LN:61752955
@@ -80,7 +74,13 @@ skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
 skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_10_s1_R1_val_1.fq.gz -2 zr2096_10_s1_R2_val_2.fq.gz"
 Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 Now waiting for all child processes to complete
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 
 Merging individual splitting reports into overall report: 'zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt'
 Merging from these individual files:
@@ -213,6 +213,11 @@ Now reading in Bismark result file zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplica
 
 Warning: unable to close filehandle IN properly.
 Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
 skipping SAM header line:	@SQ	SN:NC_035780.1	LN:65668440
 skipping SAM header line:	@SQ	SN:NC_035781.1	LN:61752955
@@ -226,11 +231,6 @@ skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
 skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_1_s1_R1_val_1.fq.gz -2 zr2096_1_s1_R2_val_2.fq.gz"
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
 
@@ -355,18 +355,18 @@ Warning: unable to close filehandle IN properly.
 Now reading in Bismark result file zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
 
 Now reading in Bismark result file zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
-Finished processing child process. Exiting..
 Warning: unable to close filehandle IN properly.
 Now reading in Bismark result file zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Now reading in Bismark result file zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
 skipping SAM header line:	@SQ	SN:NC_035780.1	LN:65668440
@@ -507,15 +507,18 @@ Warning: unable to close filehandle IN properly.
 Now reading in Bismark result file zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
-
 Now reading in Bismark result file zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Now reading in Bismark result file zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
 Warning: unable to close filehandle IN properly.
 
 Now reading in Bismark result file zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
@@ -532,9 +535,6 @@ skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
 skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_3_s1_R1_val_1.fq.gz -2 zr2096_3_s1_R2_val_2.fq.gz"
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
 
@@ -668,6 +668,11 @@ Now reading in Bismark result file zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplica
 Now reading in Bismark result file zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
 skipping SAM header line:	@SQ	SN:NC_035780.1	LN:65668440
 skipping SAM header line:	@SQ	SN:NC_035781.1	LN:61752955
@@ -681,11 +686,6 @@ skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
 skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_4_s1_R1_val_1.fq.gz -2 zr2096_4_s1_R2_val_2.fq.gz"
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
@@ -811,9 +811,6 @@ Warning: unable to close filehandle IN properly.
 Now reading in Bismark result file zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
 
 Now reading in Bismark result file zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
@@ -823,6 +820,8 @@ Now reading in Bismark result file zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplica
 Now reading in Bismark result file zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
@@ -838,6 +837,7 @@ skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
 skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_5_s1_R1_val_1.fq.gz -2 zr2096_5_s1_R2_val_2.fq.gz"
+Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
@@ -963,23 +963,21 @@ Warning: unable to close filehandle IN properly.
 Now reading in Bismark result file zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-
-Now reading in Bismark result file zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Warning: unable to close filehandle IN properly.
-Finished processing child process. Exiting..
 
 Now reading in Bismark result file zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 Now reading in Bismark result file zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Now reading in Bismark result file zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Warning: unable to close filehandle IN properly.
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
 skipping SAM header line:	@SQ	SN:NC_035780.1	LN:65668440
+Finished processing child process. Exiting..
 skipping SAM header line:	@SQ	SN:NC_035781.1	LN:61752955
 skipping SAM header line:	@SQ	SN:NC_035782.1	LN:77061148
 skipping SAM header line:	@SQ	SN:NC_035783.1	LN:59691872
@@ -991,6 +989,8 @@ skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
 skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_6_s1_R1_val_1.fq.gz -2 zr2096_6_s1_R2_val_2.fq.gz"
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
 
@@ -1127,6 +1127,8 @@ Warning: unable to close filehandle IN properly.
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
 skipping SAM header line:	@SQ	SN:NC_035780.1	LN:65668440
 skipping SAM header line:	@SQ	SN:NC_035781.1	LN:61752955
@@ -1140,8 +1142,6 @@ skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
 skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_7_s1_R1_val_1.fq.gz -2 zr2096_7_s1_R2_val_2.fq.gz"
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
@@ -1276,12 +1276,6 @@ Now reading in Bismark result file zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplica
 Now reading in Bismark result file zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
 skipping SAM header line:	@SQ	SN:NC_035780.1	LN:65668440
 skipping SAM header line:	@SQ	SN:NC_035781.1	LN:61752955
@@ -1295,6 +1289,12 @@ skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
 skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_8_s1_R1_val_1.fq.gz -2 zr2096_8_s1_R2_val_2.fq.gz"
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
 
@@ -1419,6 +1419,9 @@ Warning: unable to close filehandle IN properly.
 Now reading in Bismark result file zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 
 Now reading in Bismark result file zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
@@ -1426,10 +1429,8 @@ Warning: unable to close filehandle IN properly.
 
 Now reading in Bismark result file zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
-Warning: unable to close filehandle IN properly.
 Now reading in Bismark result file zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
+Warning: unable to close filehandle IN properly.
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
@@ -1445,7 +1446,6 @@ skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
 skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_9_s1_R1_val_1.fq.gz -2 zr2096_9_s1_R2_val_2.fq.gz"
-Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete

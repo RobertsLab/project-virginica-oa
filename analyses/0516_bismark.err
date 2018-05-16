@@ -1,0 +1,1180 @@
+Path to Bowtie 2 specified as: bowtie2
+Bowtie seems to be working fine (tested command 'bowtie2 --version' [2.3.4])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/Applications/bioinfo/samtools-1.7/samtools'
+Reference genome folder provided is /Users/sr320/Dropbox/wd/18-03-15/genome/	(absolute path is '/Users/sr320/Dropbox/wd/18-03-15/genome/)'
+Processing sequences up to read no. 1000 from the input file
+
+Input files to be analysed (in current folder '/Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore'):
+zr2096_10_s1_R1_val_1.fq.gz
+zr2096_10_s1_R2_val_2.fq.gz
+Library was specified to be not strand-specific (non-directional), therefore alignments to all four possible bisulfite strands (OT, CTOT, OB and CTOB) will be reported
+Setting parallelization to single-threaded (default)
+
+Current working directory is: /Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore
+
+Now reading in and storing sequence information of the genome specified in: /Users/sr320/Dropbox/wd/18-03-15/genome/
+
+Single-core mode: setting pid to 1
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are zr2096_10_s1_R1_val_1.fq.gz and zr2096_10_s1_R2_val_2.fq.gz
+Input files are in FastQ format
+Processing reads up to sequence no. 1000 from zr2096_10_s1_R1_val_1.fq.gz
+Writing a C -> T converted version of the input file zr2096_10_s1_R1_val_1.fq.gz to zr2096_10_s1_R1_val_1.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_10_s1_R1_val_1.fq.gz to zr2096_10_s1_R1_val_1.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_10_s1_R1_val_1.fq.gz (1001 sequences in total)
+
+Processing reads up to sequence no. 1000 from zr2096_10_s1_R2_val_2.fq.gz
+Writing a C -> T converted version of the input file zr2096_10_s1_R2_val_2.fq.gz to zr2096_10_s1_R2_val_2.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_10_s1_R2_val_2.fq.gz to zr2096_10_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_10_s1_R2_val_2.fq.gz (1001 sequences in total)
+
+Input files are zr2096_10_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_10_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_10_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_10_s1_R2_val_2.fq.gz_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /Users/sr320/Dropbox/wd/18-03-15/genome/ with the specified options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from zr2096_10_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_10_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_1:N:0:GATCAG/1	77	*	0	0	*	*	0	0	ATTGTATTAATTATAAAAAATATNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNATTTATTATTAAAAATATTAAATA	FFFFFFFFFBFFFFFFFFFFFFF#################################<</<FFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_2:N:0:GATCAG/2	141	*	0	0	*	*	0	0	ATATTTTTAATAATAAATATAATTATATATTAAAATAAAATAATATATTTAATATTTTTAATAATAAATACAATTAAAT	FFFFFFFFFFFBFFFFFFFFFFFFFFFFBFFBFFFFFFFFFBFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from zr2096_10_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_10_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_1:N:0:GATCAG/1	77	*	0	0	*	*	0	0	ATCATATCAACTATAAAAAATACNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNATCTACTATCAAAAATACTAAACA	FFFFFFFFFBFFFFFFFFFFFFF#################################<</<FFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_2:N:0:GATCAG/2	141	*	0	0	*	*	0	0	GTATTTTTGATAGTAGATATGATTGTATATTAGGGTAAGGTAGTGTGTTTAGTATTTTTGATAGTAGATATGATTGAAT	FFFFFFFFFFFBFFFFFFFFFFFFFFFFBFFBFFFFFFFFFBFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from zr2096_10_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_10_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_1:N:0:GATCAG/1	77	*	0	0	*	*	0	0	ATCATATCAACTATAAAAAATACNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNATCTACTATCAAAAATACTAAACA	FFFFFFFFFBFFFFFFFFFFFFF#################################<</<FFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_2:N:0:GATCAG/2	141	*	0	0	*	*	0	0	GTATTTTTGATAGTAGATATGATTGTATATTAGGGTAAGGTAGTGTGTTTAGTATTTTTGATAGTAGATATGATTGAAT	FFFFFFFFFFFBFFFFFFFFFFFFFFFFBFFBFFFFFFFFFBFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from zr2096_10_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_10_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_1:N:0:GATCAG/1	77	*	0	0	*	*	0	0	ATTGTATTAATTATAAAAAATATNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNATTTATTATTAAAAATATTAAATA	FFFFFFFFFBFFFFFFFFFFFFF#################################<</<FFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_2:N:0:GATCAG/2	141	*	0	0	*	*	0	0	ATATTTTTAATAATAAATATAATTATATATTAAAATAAAATAATATATTTAATATTTTTAATAATAAATACAATTAAAT	FFFFFFFFFFFBFFFFFFFFFFFFFFFFBFFBFFFFFFFFFBFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+
+>>> Writing bisulfite mapping results to zr2096_10_s1_R1_val_1_bismark_bt2_pe.bam <<<
+
+
+Reading in the sequence files zr2096_10_s1_R1_val_1.fq.gz and zr2096_10_s1_R2_val_2.fq.gz
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    903 (90.30%) aligned concordantly 0 times
+    51 (5.10%) aligned concordantly exactly 1 time
+    46 (4.60%) aligned concordantly >1 times
+9.70% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    907 (90.70%) aligned concordantly 0 times
+    47 (4.70%) aligned concordantly exactly 1 time
+    46 (4.60%) aligned concordantly >1 times
+9.30% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    900 (90.00%) aligned concordantly 0 times
+    56 (5.60%) aligned concordantly exactly 1 time
+    44 (4.40%) aligned concordantly >1 times
+10.00% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    902 (90.20%) aligned concordantly 0 times
+    54 (5.40%) aligned concordantly exactly 1 time
+    44 (4.40%) aligned concordantly >1 times
+9.80% overall alignment rate
+Processed 1000 sequences in total
+
+
+Successfully deleted the temporary files zr2096_10_s1_R1_val_1.fq.gz_C_to_T.fastq, zr2096_10_s1_R1_val_1.fq.gz_G_to_A.fastq, zr2096_10_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_10_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	1000
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	5202
+
+Total methylated C's in CpG context:	510
+Total methylated C's in CHG context:	16
+Total methylated C's in CHH context:	37
+Total methylated C's in Unknown context:	0
+
+Total unmethylated C's in CpG context:	175
+Total unmethylated C's in CHG context:	1138
+Total unmethylated C's in CHH context:	3326
+Total unmethylated C's in Unknown context:	1
+
+C methylated in CpG context:	74.5%
+C methylated in CHG context:	1.4%
+C methylated in CHH context:	1.1%
+C methylated in unknown context (CN or CHN):	0.0%
+
+
+Bismark completed in 0d 0h 0m 24s
+
+====================
+Bismark run complete
+====================
+
+Path to Bowtie 2 specified as: bowtie2
+Bowtie seems to be working fine (tested command 'bowtie2 --version' [2.3.4])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/Applications/bioinfo/samtools-1.7/samtools'
+Reference genome folder provided is /Users/sr320/Dropbox/wd/18-03-15/genome/	(absolute path is '/Users/sr320/Dropbox/wd/18-03-15/genome/)'
+Processing sequences up to read no. 1000 from the input file
+
+Input files to be analysed (in current folder '/Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore'):
+zr2096_1_s1_R1_val_1.fq.gz
+zr2096_1_s1_R2_val_2.fq.gz
+Library was specified to be not strand-specific (non-directional), therefore alignments to all four possible bisulfite strands (OT, CTOT, OB and CTOB) will be reported
+Setting parallelization to single-threaded (default)
+
+Current working directory is: /Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore
+
+Now reading in and storing sequence information of the genome specified in: /Users/sr320/Dropbox/wd/18-03-15/genome/
+
+Single-core mode: setting pid to 1
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are zr2096_1_s1_R1_val_1.fq.gz and zr2096_1_s1_R2_val_2.fq.gz
+Input files are in FastQ format
+Processing reads up to sequence no. 1000 from zr2096_1_s1_R1_val_1.fq.gz
+Writing a C -> T converted version of the input file zr2096_1_s1_R1_val_1.fq.gz to zr2096_1_s1_R1_val_1.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_1_s1_R1_val_1.fq.gz to zr2096_1_s1_R1_val_1.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_1_s1_R1_val_1.fq.gz (1001 sequences in total)
+
+Processing reads up to sequence no. 1000 from zr2096_1_s1_R2_val_2.fq.gz
+Writing a C -> T converted version of the input file zr2096_1_s1_R2_val_2.fq.gz to zr2096_1_s1_R2_val_2.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_1_s1_R2_val_2.fq.gz to zr2096_1_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_1_s1_R2_val_2.fq.gz (1001 sequences in total)
+
+Input files are zr2096_1_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_1_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_1_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_1_s1_R2_val_2.fq.gz_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /Users/sr320/Dropbox/wd/18-03-15/genome/ with the specified options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from zr2096_1_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_1_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1249:2156_1:N:0:CGATGT/1	77	*	0	0	*	*	0	0	GATTATTTGTTGTTTGTTGTTTGTTTGNNNNTNNNTNNGTTTGTTTGTTTGTTTGTTTGTTTGTAAATTTTTTATATTT	FFFFFFFFFFFFFFFFFFFFFFFFFFF####<###<##<<<FFFFFFFFFFFFFFFF<FFFFFF/</FFFFFF/B/FFF	YT:Z:UP
+HWI-C00124:321:CC781ANXX:1:1101:1249:2156_2:N:0:CGATGT/2	141	*	0	0	*	*	0	0	AAAAACAAAACCCTTCATTCAAACAAACTTAAATCCCCTTCACCTAAAAATACTTTATATCAAATTTAATTAAAATTAAC	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from zr2096_1_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_1_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1249:2156_1:N:0:CGATGT/1	77	*	0	0	*	*	0	0	AATTATTTATCATTCATCATTTATTTANNNNTNNNTNNATTTATTTATTTATTTATTCATTTATAAATTTTTTATATTT	FFFFFFFFFFFFFFFFFFFFFFFFFFF####<###<##<<<FFFFFFFFFFFFFFFF<FFFFFF/</FFFFFF/B/FFF	YT:Z:UP
+HWI-C00124:321:CC781ANXX:1:1101:1249:2156_2:N:0:CGATGT/2	141	*	0	0	*	*	0	0	AAAAATGAAATTTTTTATTTAAATAAATTTAAATTTTTTTTATTTAAAAATATTTTATATTAAATTTAATTAAAATTAAT	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from zr2096_1_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_1_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1249:2156_1:N:0:CGATGT/1	77	*	0	0	*	*	0	0	AATTATTTATCATTCATCATTTATTTANNNNTNNNTNNATTTATTTATTTATTTATTCATTTATAAATTTTTTATATTT	FFFFFFFFFFFFFFFFFFFFFFFFFFF####<###<##<<<FFFFFFFFFFFFFFFF<FFFFFF/</FFFFFF/B/FFF	YT:Z:UP
+HWI-C00124:321:CC781ANXX:1:1101:1249:2156_2:N:0:CGATGT/2	141	*	0	0	*	*	0	0	AAAAATGAAATTTTTTATTTAAATAAATTTAAATTTTTTTTATTTAAAAATATTTTATATTAAATTTAATTAAAATTAAT	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from zr2096_1_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_1_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1249:2156_1:N:0:CGATGT/1	83	NC_035780.1_GA_converted	60624863	3	79M	=	60624602	-340	AAATATAAAAAATTTACAAACAAACAAACAAACAAACAAACNNANNNANNNNCAAACAAACAACAAACAACAAATAATC	FFF/B/FFFFFF/</FFFFFF<FFFFFFFFFFFFFFFF<<<##<###<####FFFFFFFFFFFFFFFFFFFFFFFFFFF	AS:i:-9	XN:i:0	XM:i:9	XO:i:0	XG:i:0	NM:i:9	MD:Z:41A0A1C0A0A1C0A0A0A27	YS:i:-12	YT:Z:CP
+HWI-C00124:321:CC781ANXX:1:1101:1249:2156_2:N:0:CGATGT/2	163	NC_035780.1_GA_converted	60624602	3	80M	=	60624863	340	AAAAACAAAACCCTTCATTCAAACAAACTTAAATCCCCTTCACCTAAAAATACTTTATATCAAATTTAATTAAAATTAAC	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	AS:i:-12	XN:i:0	XM:i:2	XO:i:0	XG:i:0	NM:i:2	MD:Z:19T39C20	YS:i:-9	YT:Z:CP
+
+>>> Writing bisulfite mapping results to zr2096_1_s1_R1_val_1_bismark_bt2_pe.bam <<<
+
+
+Reading in the sequence files zr2096_1_s1_R1_val_1.fq.gz and zr2096_1_s1_R2_val_2.fq.gz
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    956 (95.60%) aligned concordantly 0 times
+    26 (2.60%) aligned concordantly exactly 1 time
+    18 (1.80%) aligned concordantly >1 times
+4.40% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    956 (95.60%) aligned concordantly 0 times
+    27 (2.70%) aligned concordantly exactly 1 time
+    17 (1.70%) aligned concordantly >1 times
+4.40% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    951 (95.10%) aligned concordantly 0 times
+    22 (2.20%) aligned concordantly exactly 1 time
+    27 (2.70%) aligned concordantly >1 times
+4.90% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    954 (95.40%) aligned concordantly 0 times
+    23 (2.30%) aligned concordantly exactly 1 time
+    23 (2.30%) aligned concordantly >1 times
+4.60% overall alignment rate
+Processed 1000 sequences in total
+
+
+Successfully deleted the temporary files zr2096_1_s1_R1_val_1.fq.gz_C_to_T.fastq, zr2096_1_s1_R1_val_1.fq.gz_G_to_A.fastq, zr2096_1_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_1_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	1000
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	2420
+
+Total methylated C's in CpG context:	221
+Total methylated C's in CHG context:	13
+Total methylated C's in CHH context:	34
+Total methylated C's in Unknown context:	2
+
+Total unmethylated C's in CpG context:	71
+Total unmethylated C's in CHG context:	515
+Total unmethylated C's in CHH context:	1566
+Total unmethylated C's in Unknown context:	4
+
+C methylated in CpG context:	75.7%
+C methylated in CHG context:	2.5%
+C methylated in CHH context:	2.1%
+C methylated in unknown context (CN or CHN):	33.3%
+
+
+Bismark completed in 0d 0h 0m 18s
+
+====================
+Bismark run complete
+====================
+
+Path to Bowtie 2 specified as: bowtie2
+Bowtie seems to be working fine (tested command 'bowtie2 --version' [2.3.4])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/Applications/bioinfo/samtools-1.7/samtools'
+Reference genome folder provided is /Users/sr320/Dropbox/wd/18-03-15/genome/	(absolute path is '/Users/sr320/Dropbox/wd/18-03-15/genome/)'
+Processing sequences up to read no. 1000 from the input file
+
+Input files to be analysed (in current folder '/Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore'):
+zr2096_2_s1_R1_val_1.fq.gz
+zr2096_2_s1_R2_val_2.fq.gz
+Library was specified to be not strand-specific (non-directional), therefore alignments to all four possible bisulfite strands (OT, CTOT, OB and CTOB) will be reported
+Setting parallelization to single-threaded (default)
+
+Current working directory is: /Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore
+
+Now reading in and storing sequence information of the genome specified in: /Users/sr320/Dropbox/wd/18-03-15/genome/
+
+Single-core mode: setting pid to 1
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are zr2096_2_s1_R1_val_1.fq.gz and zr2096_2_s1_R2_val_2.fq.gz
+Input files are in FastQ format
+Processing reads up to sequence no. 1000 from zr2096_2_s1_R1_val_1.fq.gz
+Writing a C -> T converted version of the input file zr2096_2_s1_R1_val_1.fq.gz to zr2096_2_s1_R1_val_1.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_2_s1_R1_val_1.fq.gz to zr2096_2_s1_R1_val_1.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_2_s1_R1_val_1.fq.gz (1001 sequences in total)
+
+Processing reads up to sequence no. 1000 from zr2096_2_s1_R2_val_2.fq.gz
+Writing a C -> T converted version of the input file zr2096_2_s1_R2_val_2.fq.gz to zr2096_2_s1_R2_val_2.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_2_s1_R2_val_2.fq.gz to zr2096_2_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_2_s1_R2_val_2.fq.gz (1001 sequences in total)
+
+Input files are zr2096_2_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_2_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_2_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_2_s1_R2_val_2.fq.gz_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /Users/sr320/Dropbox/wd/18-03-15/genome/ with the specified options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from zr2096_2_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_2_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1148:2157_1:N:0:TGACCA/1	77	*	0	0	*	*	0	0	AAATTTATTATTTTAAAAATAAAAATTNNNNTNNNTTTTATTATTTTTTTTAATATTTTTTAATATAATTAAATAATAA	FFFFFFFFFFFFFFFFFFFFFFFFFFF####<###<<<FFFFFFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+HWI-C00124:321:CC781ANXX:1:1101:1148:2157_2:N:0:TGACCA/2	141	*	0	0	*	*	0	0	AAAATAATAAATAAAAAAAATTAATACAACAATATTTTTAATAATACAACAATATTTAAAAAATTATTTATTAATTTTT	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFFFFFFFFFFFFFFFFFFBFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from zr2096_2_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_2_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1148:2157_1:N:0:TGACCA/1	77	*	0	0	*	*	0	0	AAATCTACTATTCCAAAAATAAAAACTNNNNCNNNTTCCACCATTCCTTCTAACATCTCCCAATATAACTAAATAACAA	FFFFFFFFFFFFFFFFFFFFFFFFFFF####<###<<<FFFFFFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+HWI-C00124:321:CC781ANXX:1:1101:1148:2157_2:N:0:TGACCA/2	141	*	0	0	*	*	0	0	AAAATAATGGATAAAAAAGGTTGATGTGGTGATGTTTTTAGTGATGTGGTGGTGTTTGAGAAATTATTTATTAATTTTT	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFFFFFFFFFFFFFFFFFFBFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from zr2096_2_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_2_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1148:2157_1:N:0:TGACCA/1	77	*	0	0	*	*	0	0	AAATCTACTATTCCAAAAATAAAAACTNNNNCNNNTTCCACCATTCCTTCTAACATCTCCCAATATAACTAAATAACAA	FFFFFFFFFFFFFFFFFFFFFFFFFFF####<###<<<FFFFFFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+HWI-C00124:321:CC781ANXX:1:1101:1148:2157_2:N:0:TGACCA/2	141	*	0	0	*	*	0	0	AAAATAATGGATAAAAAAGGTTGATGTGGTGATGTTTTTAGTGATGTGGTGGTGTTTGAGAAATTATTTATTAATTTTT	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFFFFFFFFFFFFFFFFFFBFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from zr2096_2_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_2_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1148:2157_1:N:0:TGACCA/1	77	*	0	0	*	*	0	0	AAATTTATTATTTTAAAAATAAAAATTNNNNTNNNTTTTATTATTTTTTTTAATATTTTTTAATATAATTAAATAATAA	FFFFFFFFFFFFFFFFFFFFFFFFFFF####<###<<<FFFFFFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+HWI-C00124:321:CC781ANXX:1:1101:1148:2157_2:N:0:TGACCA/2	141	*	0	0	*	*	0	0	AAAATAATAAATAAAAAAAATTAATACAACAATATTTTTAATAATACAACAATATTTAAAAAATTATTTATTAATTTTT	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFFFFFFFFFFFFFFFFFFBFFFFF	YT:Z:UP
+
+>>> Writing bisulfite mapping results to zr2096_2_s1_R1_val_1_bismark_bt2_pe.bam <<<
+
+
+Reading in the sequence files zr2096_2_s1_R1_val_1.fq.gz and zr2096_2_s1_R2_val_2.fq.gz
+1000 reads; of these:
+  1000 (1000100.00%) were paired; of these:
+    924 (92.40%) aligned concordantly 0 times
+    39 (3.90%) aligned concordantly exactly 1 time
+    37 (3.70%) aligned concordantly >1 times
+7.60% overall alignment rate
+ reads; of these:
+  1000 (100.00%) were paired; of these:
+    879 (87.90%) aligned concordantly 0 times
+    67 (6.70%) aligned concordantly exactly 1 time
+    54 (5.40%) aligned concordantly >1 times
+12.10% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    888 (88.80%) aligned concordantly 0 times
+    54 (5.40%) aligned concordantly exactly 1 time
+    58 (5.80%) aligned concordantly >1 times
+11.20% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    908 (90.80%) aligned concordantly 0 times
+    61 (6.10%) aligned concordantly exactly 1 time
+    31 (3.10%) aligned concordantly >1 times
+9.20% overall alignment rate
+Processed 1000 sequences in total
+
+
+Successfully deleted the temporary files zr2096_2_s1_R1_val_1.fq.gz_C_to_T.fastq, zr2096_2_s1_R1_val_1.fq.gz_G_to_A.fastq, zr2096_2_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_2_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	1000
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	4461
+
+Total methylated C's in CpG context:	524
+Total methylated C's in CHG context:	18
+Total methylated C's in CHH context:	29
+Total methylated C's in Unknown context:	0
+
+Total unmethylated C's in CpG context:	121
+Total unmethylated C's in CHG context:	1098
+Total unmethylated C's in CHH context:	2671
+Total unmethylated C's in Unknown context:	5
+
+C methylated in CpG context:	81.2%
+C methylated in CHG context:	1.6%
+C methylated in CHH context:	1.1%
+C methylated in unknown context (CN or CHN):	0.0%
+
+
+Bismark completed in 0d 0h 0m 18s
+
+====================
+Bismark run complete
+====================
+
+Path to Bowtie 2 specified as: bowtie2
+Bowtie seems to be working fine (tested command 'bowtie2 --version' [2.3.4])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/Applications/bioinfo/samtools-1.7/samtools'
+Reference genome folder provided is /Users/sr320/Dropbox/wd/18-03-15/genome/	(absolute path is '/Users/sr320/Dropbox/wd/18-03-15/genome/)'
+Processing sequences up to read no. 1000 from the input file
+
+Input files to be analysed (in current folder '/Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore'):
+zr2096_3_s1_R1_val_1.fq.gz
+zr2096_3_s1_R2_val_2.fq.gz
+Library was specified to be not strand-specific (non-directional), therefore alignments to all four possible bisulfite strands (OT, CTOT, OB and CTOB) will be reported
+Setting parallelization to single-threaded (default)
+
+Current working directory is: /Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore
+
+Now reading in and storing sequence information of the genome specified in: /Users/sr320/Dropbox/wd/18-03-15/genome/
+
+Single-core mode: setting pid to 1
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are zr2096_3_s1_R1_val_1.fq.gz and zr2096_3_s1_R2_val_2.fq.gz
+Input files are in FastQ format
+Processing reads up to sequence no. 1000 from zr2096_3_s1_R1_val_1.fq.gz
+Writing a C -> T converted version of the input file zr2096_3_s1_R1_val_1.fq.gz to zr2096_3_s1_R1_val_1.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_3_s1_R1_val_1.fq.gz to zr2096_3_s1_R1_val_1.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_3_s1_R1_val_1.fq.gz (1001 sequences in total)
+
+Processing reads up to sequence no. 1000 from zr2096_3_s1_R2_val_2.fq.gz
+Writing a C -> T converted version of the input file zr2096_3_s1_R2_val_2.fq.gz to zr2096_3_s1_R2_val_2.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_3_s1_R2_val_2.fq.gz to zr2096_3_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_3_s1_R2_val_2.fq.gz (1001 sequences in total)
+
+Input files are zr2096_3_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_3_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_3_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_3_s1_R2_val_2.fq.gz_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /Users/sr320/Dropbox/wd/18-03-15/genome/ with the specified options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from zr2096_3_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_3_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1059:2153_1:N:0:ACAGTG/1	77	*	0	0	*	*	0	0	TAATTTAAATAATTTTATATAAATNNNNNNNNNNNNNNNTATTTAAATTAAAAATTTAAATAAATTTTTTTAATTATTTA	FFFFFFFFFFFFFFFFFFFFFFFF###############<<<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1059:2153_2:N:0:ACAGTG/2	141	*	0	0	*	*	0	0	ACATTAAACAATAAATAATTAAAAAAATTTATTTAAATTTTTAATTTAAATAAATTAAAAATATTAAATTTATATAAAA	FFFFFFFFFF<FFFFFF<FFFFFFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from zr2096_3_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_3_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1059:2153_1:N:0:ACAGTG/1	77	*	0	0	*	*	0	0	TAATTTAAATAATCTTATATAAATNNNNNNNNNNNNNNNCACCTAAACTAAAAACTCAAATAAACTTTTCTAATCACCTA	FFFFFFFFFFFFFFFFFFFFFFFF###############<<<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1059:2153_2:N:0:ACAGTG/2	141	*	0	0	*	*	0	0	ATGTTGGATGATAGGTGATTAGAAAAGTTTATTTGAGTTTTTAGTTTAGGTGAGTTAAAAATATTGAATTTATATAAGA	FFFFFFFFFF<FFFFFF<FFFFFFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from zr2096_3_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_3_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1059:2153_1:N:0:ACAGTG/1	77	*	0	0	*	*	0	0	TAATTTAAATAATCTTATATAAATNNNNNNNNNNNNNNNCACCTAAACTAAAAACTCAAATAAACTTTTCTAATCACCTA	FFFFFFFFFFFFFFFFFFFFFFFF###############<<<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1059:2153_2:N:0:ACAGTG/2	141	*	0	0	*	*	0	0	ATGTTGGATGATAGGTGATTAGAAAAGTTTATTTGAGTTTTTAGTTTAGGTGAGTTAAAAATATTGAATTTATATAAGA	FFFFFFFFFF<FFFFFF<FFFFFFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from zr2096_3_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_3_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1059:2153_1:N:0:ACAGTG/1	77	*	0	0	*	*	0	0	TAATTTAAATAATTTTATATAAATNNNNNNNNNNNNNNNTATTTAAATTAAAAATTTAAATAAATTTTTTTAATTATTTA	FFFFFFFFFFFFFFFFFFFFFFFF###############<<<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1059:2153_2:N:0:ACAGTG/2	141	*	0	0	*	*	0	0	ACATTAAACAATAAATAATTAAAAAAATTTATTTAAATTTTTAATTTAAATAAATTAAAAATATTAAATTTATATAAAA	FFFFFFFFFF<FFFFFF<FFFFFFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFFF	YT:Z:UP
+
+>>> Writing bisulfite mapping results to zr2096_3_s1_R1_val_1_bismark_bt2_pe.bam <<<
+
+
+Reading in the sequence files zr2096_3_s1_R1_val_1.fq.gz and zr2096_3_s1_R2_val_2.fq.gz
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    900 (90.00%) aligned concordantly 0 times
+    48 (4.80%) aligned concordantly exactly 1 time
+    52 (5.20%) aligned concordantly >1 times
+10.00% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    881 (88.10%) aligned concordantly 0 times
+    62 (6.20%) aligned concordantly exactly 1 time
+    57 (5.70%) aligned concordantly >1 times
+11.90% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    892 (89.20%) aligned concordantly 0 times
+    54 (5.40%) aligned concordantly exactly 1 time
+    54 (5.40%) aligned concordantly >1 times
+10.80% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    887 (88.70%) aligned concordantly 0 times
+    50 (5.00%) aligned concordantly exactly 1 time
+    63 (6.30%) aligned concordantly >1 times
+11.30% overall alignment rate
+Processed 1000 sequences in total
+
+
+Successfully deleted the temporary files zr2096_3_s1_R1_val_1.fq.gz_C_to_T.fastq, zr2096_3_s1_R1_val_1.fq.gz_G_to_A.fastq, zr2096_3_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_3_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	1000
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	5367
+
+Total methylated C's in CpG context:	627
+Total methylated C's in CHG context:	18
+Total methylated C's in CHH context:	40
+Total methylated C's in Unknown context:	2
+
+Total unmethylated C's in CpG context:	156
+Total unmethylated C's in CHG context:	1201
+Total unmethylated C's in CHH context:	3325
+Total unmethylated C's in Unknown context:	3
+
+C methylated in CpG context:	80.1%
+C methylated in CHG context:	1.5%
+C methylated in CHH context:	1.2%
+C methylated in unknown context (CN or CHN):	40.0%
+
+
+Bismark completed in 0d 0h 0m 19s
+
+====================
+Bismark run complete
+====================
+
+Path to Bowtie 2 specified as: bowtie2
+Bowtie seems to be working fine (tested command 'bowtie2 --version' [2.3.4])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/Applications/bioinfo/samtools-1.7/samtools'
+Reference genome folder provided is /Users/sr320/Dropbox/wd/18-03-15/genome/	(absolute path is '/Users/sr320/Dropbox/wd/18-03-15/genome/)'
+Processing sequences up to read no. 1000 from the input file
+
+Input files to be analysed (in current folder '/Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore'):
+zr2096_4_s1_R1_val_1.fq.gz
+zr2096_4_s1_R2_val_2.fq.gz
+Library was specified to be not strand-specific (non-directional), therefore alignments to all four possible bisulfite strands (OT, CTOT, OB and CTOB) will be reported
+Setting parallelization to single-threaded (default)
+
+Current working directory is: /Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore
+
+Now reading in and storing sequence information of the genome specified in: /Users/sr320/Dropbox/wd/18-03-15/genome/
+
+Single-core mode: setting pid to 1
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are zr2096_4_s1_R1_val_1.fq.gz and zr2096_4_s1_R2_val_2.fq.gz
+Input files are in FastQ format
+Processing reads up to sequence no. 1000 from zr2096_4_s1_R1_val_1.fq.gz
+Writing a C -> T converted version of the input file zr2096_4_s1_R1_val_1.fq.gz to zr2096_4_s1_R1_val_1.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_4_s1_R1_val_1.fq.gz to zr2096_4_s1_R1_val_1.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_4_s1_R1_val_1.fq.gz (1001 sequences in total)
+
+Processing reads up to sequence no. 1000 from zr2096_4_s1_R2_val_2.fq.gz
+Writing a C -> T converted version of the input file zr2096_4_s1_R2_val_2.fq.gz to zr2096_4_s1_R2_val_2.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_4_s1_R2_val_2.fq.gz to zr2096_4_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_4_s1_R2_val_2.fq.gz (1001 sequences in total)
+
+Input files are zr2096_4_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_4_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_4_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_4_s1_R2_val_2.fq.gz_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /Users/sr320/Dropbox/wd/18-03-15/genome/ with the specified options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from zr2096_4_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_4_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1343:2133_1:N:0:GCCAAT/1	77	*	0	0	*	*	0	0	ATAGTGGTTGTTATGGAAATTAGNNNNNNNNNNNNNNNNNNNNNNNNNTGNANTNTTTTTATTAGAATTGTTAAGGTTT	FFFFFFFFFFFFFFFFFFFFFFF#########################<<#<#/#<<FFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1343:2133_2:N:0:GCCAAT/2	141	*	0	0	*	*	0	0	CATTAATTTTTAAAAAAAAAAAACCATCCTTAATATCAATTTTATAAATCAAATAAACCTTAACAATTCTAATAAAAACA	FFFFFFFFFFFFFFFFFFFFFFFFFFBFFFFFFFFFFFFFFFF/BBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from zr2096_4_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_4_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1343:2133_1:N:0:GCCAAT/1	77	*	0	0	*	*	0	0	ATAATAATTATTATAAAAATTAANNNNNNNNNNNNNNNNNNNNNNNNNTANANTNTTTTTATTAAAATTATTAAAATTT	FFFFFFFFFFFFFFFFFFFFFFF#########################<<#<#/#<<FFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1343:2133_2:N:0:GCCAAT/2	141	*	0	0	*	*	0	0	TATTAATTTTTAAAAAAAAAAAATTATTTTTAATATTAATTTTATAAATTAAATAAATTTTAATAATTTTAATAAAAATA	FFFFFFFFFFFFFFFFFFFFFFFFFFBFFFFFFFFFFFFFFFF/BBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from zr2096_4_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_4_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1343:2133_1:N:0:GCCAAT/1	77	*	0	0	*	*	0	0	ATAATAATTATTATAAAAATTAANNNNNNNNNNNNNNNNNNNNNNNNNTANANTNTTTTTATTAAAATTATTAAAATTT	FFFFFFFFFFFFFFFFFFFFFFF#########################<<#<#/#<<FFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1343:2133_2:N:0:GCCAAT/2	141	*	0	0	*	*	0	0	TATTAATTTTTAAAAAAAAAAAATTATTTTTAATATTAATTTTATAAATTAAATAAATTTTAATAATTTTAATAAAAATA	FFFFFFFFFFFFFFFFFFFFFFFFFFBFFFFFFFFFFFFFFFF/BBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from zr2096_4_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_4_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1343:2133_1:N:0:GCCAAT/1	77	*	0	0	*	*	0	0	ATAGTGGTTGTTATGGAAATTAGNNNNNNNNNNNNNNNNNNNNNNNNNTGNANTNTTTTTATTAGAATTGTTAAGGTTT	FFFFFFFFFFFFFFFFFFFFFFF#########################<<#<#/#<<FFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1343:2133_2:N:0:GCCAAT/2	141	*	0	0	*	*	0	0	CATTAATTTTTAAAAAAAAAAAACCATCCTTAATATCAATTTTATAAATCAAATAAACCTTAACAATTCTAATAAAAACA	FFFFFFFFFFFFFFFFFFFFFFFFFFBFFFFFFFFFFFFFFFF/BBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+
+>>> Writing bisulfite mapping results to zr2096_4_s1_R1_val_1_bismark_bt2_pe.bam <<<
+
+
+Reading in the sequence files zr2096_4_s1_R1_val_1.fq.gz and zr2096_4_s1_R2_val_2.fq.gz
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    892 (89.20%) aligned concordantly 0 times
+    60 (6.00%) aligned concordantly exactly 1 time
+    48 (4.80%) aligned concordantly >1 times
+10.80% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    871 (87.10%) aligned concordantly 0 times
+    66 (6.60%) aligned concordantly exactly 1 time
+    63 (6.30%) aligned concordantly >1 times
+12.90% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    887 (88.70%) aligned concordantly 0 times
+    61 (6.10%) aligned concordantly exactly 1 time
+    52 (5.20%) aligned concordantly >1 times
+11.30% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    893 (89.30%) aligned concordantly 0 times
+    59 (5.90%) aligned concordantly exactly 1 time
+    48 (4.80%) aligned concordantly >1 times
+10.70% overall alignment rate
+Processed 1000 sequences in total
+
+
+Successfully deleted the temporary files zr2096_4_s1_R1_val_1.fq.gz_C_to_T.fastq, zr2096_4_s1_R1_val_1.fq.gz_G_to_A.fastq, zr2096_4_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_4_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	1000
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	5082
+
+Total methylated C's in CpG context:	512
+Total methylated C's in CHG context:	23
+Total methylated C's in CHH context:	46
+Total methylated C's in Unknown context:	0
+
+Total unmethylated C's in CpG context:	174
+Total unmethylated C's in CHG context:	1100
+Total unmethylated C's in CHH context:	3227
+Total unmethylated C's in Unknown context:	2
+
+C methylated in CpG context:	74.6%
+C methylated in CHG context:	2.0%
+C methylated in CHH context:	1.4%
+C methylated in unknown context (CN or CHN):	0.0%
+
+
+Bismark completed in 0d 0h 0m 18s
+
+====================
+Bismark run complete
+====================
+
+Path to Bowtie 2 specified as: bowtie2
+Bowtie seems to be working fine (tested command 'bowtie2 --version' [2.3.4])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/Applications/bioinfo/samtools-1.7/samtools'
+Reference genome folder provided is /Users/sr320/Dropbox/wd/18-03-15/genome/	(absolute path is '/Users/sr320/Dropbox/wd/18-03-15/genome/)'
+Processing sequences up to read no. 1000 from the input file
+
+Input files to be analysed (in current folder '/Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore'):
+zr2096_5_s1_R1_val_1.fq.gz
+zr2096_5_s1_R2_val_2.fq.gz
+Library was specified to be not strand-specific (non-directional), therefore alignments to all four possible bisulfite strands (OT, CTOT, OB and CTOB) will be reported
+Setting parallelization to single-threaded (default)
+
+Current working directory is: /Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore
+
+Now reading in and storing sequence information of the genome specified in: /Users/sr320/Dropbox/wd/18-03-15/genome/
+
+Single-core mode: setting pid to 1
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are zr2096_5_s1_R1_val_1.fq.gz and zr2096_5_s1_R2_val_2.fq.gz
+Input files are in FastQ format
+Processing reads up to sequence no. 1000 from zr2096_5_s1_R1_val_1.fq.gz
+Writing a C -> T converted version of the input file zr2096_5_s1_R1_val_1.fq.gz to zr2096_5_s1_R1_val_1.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_5_s1_R1_val_1.fq.gz to zr2096_5_s1_R1_val_1.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_5_s1_R1_val_1.fq.gz (1001 sequences in total)
+
+Processing reads up to sequence no. 1000 from zr2096_5_s1_R2_val_2.fq.gz
+Writing a C -> T converted version of the input file zr2096_5_s1_R2_val_2.fq.gz to zr2096_5_s1_R2_val_2.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_5_s1_R2_val_2.fq.gz to zr2096_5_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_5_s1_R2_val_2.fq.gz (1001 sequences in total)
+
+Input files are zr2096_5_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_5_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_5_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_5_s1_R2_val_2.fq.gz_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /Users/sr320/Dropbox/wd/18-03-15/genome/ with the specified options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from zr2096_5_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_5_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1218:2142_1:N:0:CAGATC/1	77	*	0	0	*	*	0	0	TTATTTAAATTTTATTATTTATANNNNNNNNNNNNNNNNNNATTNTTTTTATTATATATATAAAATTATTTTAAAATTAT	FFFFFFFFFFFFFFFFFFFFFFF##################<<<#<<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1218:2142_2:N:0:CAGATC/2	141	*	0	0	*	*	0	0	TATTAAAAAAAAATTATTAATAATTTTCATTAAAAAATATAATAATTTTAAAATAATTTTATATATATAATAAAAAAAA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from zr2096_5_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_5_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1218:2142_1:N:0:CAGATC/1	77	*	0	0	*	*	0	0	CCACTCAAATCTTACTATCCACANNNNNNNNNNNNNNNNNNATTNCTTCTATCATATATATAAAATCATTCCAAAATTAC	FFFFFFFFFFFFFFFFFFFFFFF##################<<<#<<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1218:2142_2:N:0:CAGATC/2	141	*	0	0	*	*	0	0	TATTGAAGAGGAATTATTGATAGTTTTTGTTGAAAAATATAGTAATTTTGGAATGATTTTATATATATGATAGAAGAAA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from zr2096_5_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_5_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1218:2142_1:N:0:CAGATC/1	77	*	0	0	*	*	0	0	CCACTCAAATCTTACTATCCACANNNNNNNNNNNNNNNNNNATTNCTTCTATCATATATATAAAATCATTCCAAAATTAC	FFFFFFFFFFFFFFFFFFFFFFF##################<<<#<<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1218:2142_2:N:0:CAGATC/2	141	*	0	0	*	*	0	0	TATTGAAGAGGAATTATTGATAGTTTTTGTTGAAAAATATAGTAATTTTGGAATGATTTTATATATATGATAGAAGAAA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from zr2096_5_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_5_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1218:2142_1:N:0:CAGATC/1	77	*	0	0	*	*	0	0	TTATTTAAATTTTATTATTTATANNNNNNNNNNNNNNNNNNATTNTTTTTATTATATATATAAAATTATTTTAAAATTAT	FFFFFFFFFFFFFFFFFFFFFFF##################<<<#<<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1218:2142_2:N:0:CAGATC/2	141	*	0	0	*	*	0	0	TATTAAAAAAAAATTATTAATAATTTTCATTAAAAAATATAATAATTTTAAAATAATTTTATATATATAATAAAAAAAA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+
+>>> Writing bisulfite mapping results to zr2096_5_s1_R1_val_1_bismark_bt2_pe.bam <<<
+
+
+Reading in the sequence files zr2096_5_s1_R1_val_1.fq.gz and zr2096_5_s1_R2_val_2.fq.gz
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    909 (90.90%) aligned concordantly 0 times
+    47 (4.70%) aligned concordantly exactly 1 time
+    44 (4.40%) aligned concordantly >1 times
+9.10% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    906 (90.60%) aligned concordantly 0 times
+    55 (5.50%) aligned concordantly exactly 1 time
+    39 (3.90%) aligned concordantly >1 times
+9.40% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    908 (90.80%) aligned concordantly 0 times
+    56 (5.60%) aligned concordantly exactly 1 time
+    36 (3.60%) aligned concordantly >1 times
+9.20% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    900 (90.00%) aligned concordantly 0 times
+    56 (5.60%) aligned concordantly exactly 1 time
+    44 (4.40%) aligned concordantly >1 times
+10.00% overall alignment rate
+Processed 1000 sequences in total
+
+
+Successfully deleted the temporary files zr2096_5_s1_R1_val_1.fq.gz_C_to_T.fastq, zr2096_5_s1_R1_val_1.fq.gz_G_to_A.fastq, zr2096_5_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_5_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	1000
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	4989
+
+Total methylated C's in CpG context:	525
+Total methylated C's in CHG context:	18
+Total methylated C's in CHH context:	35
+Total methylated C's in Unknown context:	0
+
+Total unmethylated C's in CpG context:	126
+Total unmethylated C's in CHG context:	1129
+Total unmethylated C's in CHH context:	3156
+Total unmethylated C's in Unknown context:	0
+
+C methylated in CpG context:	80.6%
+C methylated in CHG context:	1.6%
+C methylated in CHH context:	1.1%
+Can't determine percentage of methylated Cs in unknown context (CN or CHN) if value was 0
+
+
+Bismark completed in 0d 0h 0m 19s
+
+====================
+Bismark run complete
+====================
+
+Path to Bowtie 2 specified as: bowtie2
+Bowtie seems to be working fine (tested command 'bowtie2 --version' [2.3.4])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/Applications/bioinfo/samtools-1.7/samtools'
+Reference genome folder provided is /Users/sr320/Dropbox/wd/18-03-15/genome/	(absolute path is '/Users/sr320/Dropbox/wd/18-03-15/genome/)'
+Processing sequences up to read no. 1000 from the input file
+
+Input files to be analysed (in current folder '/Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore'):
+zr2096_6_s1_R1_val_1.fq.gz
+zr2096_6_s1_R2_val_2.fq.gz
+Library was specified to be not strand-specific (non-directional), therefore alignments to all four possible bisulfite strands (OT, CTOT, OB and CTOB) will be reported
+Setting parallelization to single-threaded (default)
+
+Current working directory is: /Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore
+
+Now reading in and storing sequence information of the genome specified in: /Users/sr320/Dropbox/wd/18-03-15/genome/
+
+Single-core mode: setting pid to 1
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are zr2096_6_s1_R1_val_1.fq.gz and zr2096_6_s1_R2_val_2.fq.gz
+Input files are in FastQ format
+Processing reads up to sequence no. 1000 from zr2096_6_s1_R1_val_1.fq.gz
+Writing a C -> T converted version of the input file zr2096_6_s1_R1_val_1.fq.gz to zr2096_6_s1_R1_val_1.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_6_s1_R1_val_1.fq.gz to zr2096_6_s1_R1_val_1.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_6_s1_R1_val_1.fq.gz (1001 sequences in total)
+
+Processing reads up to sequence no. 1000 from zr2096_6_s1_R2_val_2.fq.gz
+Writing a C -> T converted version of the input file zr2096_6_s1_R2_val_2.fq.gz to zr2096_6_s1_R2_val_2.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_6_s1_R2_val_2.fq.gz to zr2096_6_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_6_s1_R2_val_2.fq.gz (1001 sequences in total)
+
+Input files are zr2096_6_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_6_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_6_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_6_s1_R2_val_2.fq.gz_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /Users/sr320/Dropbox/wd/18-03-15/genome/ with the specified options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from zr2096_6_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_6_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1093:2134_1:N:0:CTTGTA/1	77	*	0	0	*	*	0	0	TTAATTTTATTATTAAATAAAAANNNNNNNNNNNNNNNNNNNNNNANNTANANAAATATTAATTAAATATTTTTAAAATA	FFFFFFFFFFFFFFFFFFFFFFF######################<##<<#<#<<FFFFFFFFBFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1093:2134_2:N:0:CTTGTA/2	141	*	0	0	*	*	0	0	ATTTTTTTAAATTTATTATTTTAAAAATATTTAATTAATATTTATTTATATTTTATAATTAACAATAATTATTTTTTTA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFFFFFFFFFFFFFFB	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from zr2096_6_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_6_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1093:2134_1:N:0:CTTGTA/1	77	*	0	0	*	*	0	0	CCAACTTTATCACCAAATAAAAANNNNNNNNNNNNNNNNNNNNNNANNCANANAAACATCAATCAAACATCTCTAAAACA	FFFFFFFFFFFFFFFFFFFFFFF######################<##<<#<#<<FFFFFFFFBFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1093:2134_2:N:0:CTTGTA/2	141	*	0	0	*	*	0	0	ATTTTTTTAAGTTTATTGTTTTAGAGATGTTTGATTGATGTTTATTTGTATTTTGTAATTAGTGGTGGTTGTTTTTTTA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFFFFFFFFFFFFFFB	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from zr2096_6_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_6_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1093:2134_1:N:0:CTTGTA/1	77	*	0	0	*	*	0	0	CCAACTTTATCACCAAATAAAAANNNNNNNNNNNNNNNNNNNNNNANNCANANAAACATCAATCAAACATCTCTAAAACA	FFFFFFFFFFFFFFFFFFFFFFF######################<##<<#<#<<FFFFFFFFBFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1093:2134_2:N:0:CTTGTA/2	141	*	0	0	*	*	0	0	ATTTTTTTAAGTTTATTGTTTTAGAGATGTTTGATTGATGTTTATTTGTATTTTGTAATTAGTGGTGGTTGTTTTTTTA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFFFFFFFFFFFFFFB	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from zr2096_6_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_6_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1093:2134_1:N:0:CTTGTA/1	77	*	0	0	*	*	0	0	TTAATTTTATTATTAAATAAAAANNNNNNNNNNNNNNNNNNNNNNANNTANANAAATATTAATTAAATATTTTTAAAATA	FFFFFFFFFFFFFFFFFFFFFFF######################<##<<#<#<<FFFFFFFFBFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:1:1101:1093:2134_2:N:0:CTTGTA/2	141	*	0	0	*	*	0	0	ATTTTTTTAAATTTATTATTTTAAAAATATTTAATTAATATTTATTTATATTTTATAATTAACAATAATTATTTTTTTA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFFFFFFFFFFFFFFB	YT:Z:UP
+
+>>> Writing bisulfite mapping results to zr2096_6_s1_R1_val_1_bismark_bt2_pe.bam <<<
+
+
+Reading in the sequence files zr2096_6_s1_R1_val_1.fq.gz and zr2096_6_s1_R2_val_2.fq.gz
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    880 (88.00%) aligned concordantly 0 times
+    60 (6.00%) aligned concordantly exactly 1 time
+    60 (6.00%) aligned concordantly >1 times
+12.00% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    887 (88.70%) aligned concordantly 0 times
+    67 (6.70%) aligned concordantly exactly 1 time
+    46 (4.60%) aligned concordantly >1 times
+11.30% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    870 (87.00%) aligned concordantly 0 times
+    66 (6.60%) aligned concordantly exactly 1 time
+    64 (6.40%) aligned concordantly >1 times
+13.00% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    907 (90.70%) aligned concordantly 0 times
+    47 (4.70%) aligned concordantly exactly 1 time
+    46 (4.60%) aligned concordantly >1 times
+9.30% overall alignment rate
+Processed 1000 sequences in total
+
+
+Successfully deleted the temporary files zr2096_6_s1_R1_val_1.fq.gz_C_to_T.fastq, zr2096_6_s1_R1_val_1.fq.gz_G_to_A.fastq, zr2096_6_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_6_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	1000
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	5677
+
+Total methylated C's in CpG context:	706
+Total methylated C's in CHG context:	8
+Total methylated C's in CHH context:	44
+Total methylated C's in Unknown context:	0
+
+Total unmethylated C's in CpG context:	141
+Total unmethylated C's in CHG context:	1315
+Total unmethylated C's in CHH context:	3463
+Total unmethylated C's in Unknown context:	2
+
+C methylated in CpG context:	83.4%
+C methylated in CHG context:	0.6%
+C methylated in CHH context:	1.3%
+C methylated in unknown context (CN or CHN):	0.0%
+
+
+Bismark completed in 0d 0h 0m 19s
+
+====================
+Bismark run complete
+====================
+
+Path to Bowtie 2 specified as: bowtie2
+Bowtie seems to be working fine (tested command 'bowtie2 --version' [2.3.4])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/Applications/bioinfo/samtools-1.7/samtools'
+Reference genome folder provided is /Users/sr320/Dropbox/wd/18-03-15/genome/	(absolute path is '/Users/sr320/Dropbox/wd/18-03-15/genome/)'
+Processing sequences up to read no. 1000 from the input file
+
+Input files to be analysed (in current folder '/Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore'):
+zr2096_7_s1_R1_val_1.fq.gz
+zr2096_7_s1_R2_val_2.fq.gz
+Library was specified to be not strand-specific (non-directional), therefore alignments to all four possible bisulfite strands (OT, CTOT, OB and CTOB) will be reported
+Setting parallelization to single-threaded (default)
+
+Current working directory is: /Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore
+
+Now reading in and storing sequence information of the genome specified in: /Users/sr320/Dropbox/wd/18-03-15/genome/
+
+Single-core mode: setting pid to 1
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are zr2096_7_s1_R1_val_1.fq.gz and zr2096_7_s1_R2_val_2.fq.gz
+Input files are in FastQ format
+Processing reads up to sequence no. 1000 from zr2096_7_s1_R1_val_1.fq.gz
+Writing a C -> T converted version of the input file zr2096_7_s1_R1_val_1.fq.gz to zr2096_7_s1_R1_val_1.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_7_s1_R1_val_1.fq.gz to zr2096_7_s1_R1_val_1.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_7_s1_R1_val_1.fq.gz (1001 sequences in total)
+
+Processing reads up to sequence no. 1000 from zr2096_7_s1_R2_val_2.fq.gz
+Writing a C -> T converted version of the input file zr2096_7_s1_R2_val_2.fq.gz to zr2096_7_s1_R2_val_2.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_7_s1_R2_val_2.fq.gz to zr2096_7_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_7_s1_R2_val_2.fq.gz (1001 sequences in total)
+
+Input files are zr2096_7_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_7_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_7_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_7_s1_R2_val_2.fq.gz_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /Users/sr320/Dropbox/wd/18-03-15/genome/ with the specified options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from zr2096_7_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_7_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1132:2189_1:N:0:ATCACG/1	77	*	0	0	*	*	0	0	TTATTATGATGAATTTAAATATTAATAATAAAATTTAAAAAAAATATAAATGTTAAATATTAAATTTTTTAAAAA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+HWI-C00124:321:CC781ANXX:1:1101:1132:2189_2:N:0:ATCACG/2	141	*	0	0	*	*	0	0	TTTTTAAAAAATTTAATATTTAACATTTATATTTTTTTTAAATTTTATTATTAATATTTAAATTCATCATAATAA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF/FFBBFFFFFFBBFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from zr2096_7_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_7_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1132:2189_1:N:0:ATCACG/1	99	NC_035781.1_GA_converted	24539756	32	75M	=	24539756	-75	CTACTACAACAAATTCAAATATTAATAACAAAATTTAAAAAAAACATAAACATTAAATATCAAATTCTTCAAAAA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	AS:i:0	XS:i:-6	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:75	YS:i:0	YT:Z:CP
+HWI-C00124:321:CC781ANXX:1:1101:1132:2189_2:N:0:ATCACG/2	147	NC_035781.1_GA_converted	24539756	32	75M	=	24539756	-75	CTACTACAACAAATTCAAATATTAATAACAAAATTTAAAAAAAACATAAACATTAAATATCAAATTCTTCAAAAA	FFFFFFFFFFFFFBBFFFFFFBBFF/FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	AS:i:0	XS:i:-6	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:75	YS:i:0	YT:Z:CP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from zr2096_7_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_7_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1132:2189_1:N:0:ATCACG/1	83	NC_035780.1_CT_converted	42548691	32	75M	=	42548691	-75	TTTTTGAAGAATTTGATATTTAATGTTTATGTTTTTTTTAAATTTTGTTATTAATATTTGAATTTGTTGTAGTAG	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	AS:i:0	XS:i:-6	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:75	YS:i:0	YT:Z:CP
+HWI-C00124:321:CC781ANXX:1:1101:1132:2189_2:N:0:ATCACG/2	163	NC_035780.1_CT_converted	42548691	32	75M	=	42548691	-75	TTTTTGAAGAATTTGATATTTAATGTTTATGTTTTTTTTAAATTTTGTTATTAATATTTGAATTTGTTGTAGTAG	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF/FFBBFFFFFFBBFFFFFFFFFFFFF	AS:i:0	XS:i:-6	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:75	YS:i:0	YT:Z:CP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from zr2096_7_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_7_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1132:2189_1:N:0:ATCACG/1	77	*	0	0	*	*	0	0	TTATTATGATGAATTTAAATATTAATAATAAAATTTAAAAAAAATATAAATGTTAAATATTAAATTTTTTAAAAA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+HWI-C00124:321:CC781ANXX:1:1101:1132:2189_2:N:0:ATCACG/2	141	*	0	0	*	*	0	0	TTTTTAAAAAATTTAATATTTAACATTTATATTTTTTTTAAATTTTATTATTAATATTTAAATTCATCATAATAA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF/FFBBFFFFFFBBFFFFFFFFFFFFF	YT:Z:UP
+
+>>> Writing bisulfite mapping results to zr2096_7_s1_R1_val_1_bismark_bt2_pe.bam <<<
+
+
+Reading in the sequence files zr2096_7_s1_R1_val_1.fq.gz and zr2096_7_s1_R2_val_2.fq.gz
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    906 (90.60%) aligned concordantly 0 times
+    47 (4.70%) aligned concordantly exactly 1 time
+    47 (4.70%) aligned concordantly >1 times
+9.40% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    882 (88.20%) aligned concordantly 0 times
+    72 (7.20%) aligned concordantly exactly 1 time
+    46 (4.60%) aligned concordantly >1 times
+11.80% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    912 (91.20%) aligned concordantly 0 times
+    43 (4.30%) aligned concordantly exactly 1 time
+    45 (4.50%) aligned concordantly >1 times
+8.80% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    886 (88.60%) aligned concordantly 0 times
+    65 (6.50%) aligned concordantly exactly 1 time
+    49 (4.90%) aligned concordantly >1 times
+11.40% overall alignment rate
+Processed 1000 sequences in total
+
+
+Successfully deleted the temporary files zr2096_7_s1_R1_val_1.fq.gz_C_to_T.fastq, zr2096_7_s1_R1_val_1.fq.gz_G_to_A.fastq, zr2096_7_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_7_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	1000
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	5558
+
+Total methylated C's in CpG context:	589
+Total methylated C's in CHG context:	18
+Total methylated C's in CHH context:	62
+Total methylated C's in Unknown context:	0
+
+Total unmethylated C's in CpG context:	152
+Total unmethylated C's in CHG context:	1158
+Total unmethylated C's in CHH context:	3579
+Total unmethylated C's in Unknown context:	7
+
+C methylated in CpG context:	79.5%
+C methylated in CHG context:	1.5%
+C methylated in CHH context:	1.7%
+C methylated in unknown context (CN or CHN):	0.0%
+
+
+Bismark completed in 0d 0h 0m 19s
+
+====================
+Bismark run complete
+====================
+
+Path to Bowtie 2 specified as: bowtie2
+Bowtie seems to be working fine (tested command 'bowtie2 --version' [2.3.4])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/Applications/bioinfo/samtools-1.7/samtools'
+Reference genome folder provided is /Users/sr320/Dropbox/wd/18-03-15/genome/	(absolute path is '/Users/sr320/Dropbox/wd/18-03-15/genome/)'
+Processing sequences up to read no. 1000 from the input file
+
+Input files to be analysed (in current folder '/Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore'):
+zr2096_8_s1_R1_val_1.fq.gz
+zr2096_8_s1_R2_val_2.fq.gz
+Library was specified to be not strand-specific (non-directional), therefore alignments to all four possible bisulfite strands (OT, CTOT, OB and CTOB) will be reported
+Setting parallelization to single-threaded (default)
+
+Current working directory is: /Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore
+
+Now reading in and storing sequence information of the genome specified in: /Users/sr320/Dropbox/wd/18-03-15/genome/
+
+Single-core mode: setting pid to 1
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are zr2096_8_s1_R1_val_1.fq.gz and zr2096_8_s1_R2_val_2.fq.gz
+Input files are in FastQ format
+Processing reads up to sequence no. 1000 from zr2096_8_s1_R1_val_1.fq.gz
+Writing a C -> T converted version of the input file zr2096_8_s1_R1_val_1.fq.gz to zr2096_8_s1_R1_val_1.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_8_s1_R1_val_1.fq.gz to zr2096_8_s1_R1_val_1.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_8_s1_R1_val_1.fq.gz (1001 sequences in total)
+
+Processing reads up to sequence no. 1000 from zr2096_8_s1_R2_val_2.fq.gz
+Writing a C -> T converted version of the input file zr2096_8_s1_R2_val_2.fq.gz to zr2096_8_s1_R2_val_2.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_8_s1_R2_val_2.fq.gz to zr2096_8_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_8_s1_R2_val_2.fq.gz (1001 sequences in total)
+
+Input files are zr2096_8_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_8_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_8_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_8_s1_R2_val_2.fq.gz_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /Users/sr320/Dropbox/wd/18-03-15/genome/ with the specified options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from zr2096_8_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_8_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1281:2170_1:N:0:TTAGGC/1	77	*	0	0	*	*	0	0	TTAAAAAATTTATTAAATTTATTATTATTTNTTATTTTTTATAAAAGAAAATAGAGAGAGAGAGAGAG	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF#<<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+HWI-C00124:321:CC781ANXX:1:1101:1281:2170_2:N:0:TTAGGC/2	141	*	0	0	*	*	0	0	CTCTCTCTCTCTCTCTATTTTCTTTTATAAAAAATAATAAATAATAATAAATTTAATAAATTTTTTA	FFFFFFFFFFFFFFFF/FFFF<FFFFBF</F</<<<<FF/<FF/<<</F//<FF</BFF/FFFFFF/	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from zr2096_8_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_8_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1281:2170_1:N:0:TTAGGC/1	77	*	0	0	*	*	0	0	TTAAAAAACTCATTAAATCTATCATCATTCNCCATTCTTCACAAAAAAAAATAAAAAAAAAAAAAAAA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF#<<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+HWI-C00124:321:CC781ANXX:1:1101:1281:2170_2:N:0:TTAGGC/2	141	*	0	0	*	*	0	0	TTTTTTTTTTTTTTTTATTTTTTTTTGTGAAGAATGGTGAATGATGATAGATTTAATGAGTTTTTTA	FFFFFFFFFFFFFFFF/FFFF<FFFFBF</F</<<<<FF/<FF/<<</F//<FF</BFF/FFFFFF/	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from zr2096_8_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_8_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1281:2170_1:N:0:TTAGGC/1	77	*	0	0	*	*	0	0	TTAAAAAACTCATTAAATCTATCATCATTCNCCATTCTTCACAAAAAAAAATAAAAAAAAAAAAAAAA	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF#<<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+HWI-C00124:321:CC781ANXX:1:1101:1281:2170_2:N:0:TTAGGC/2	141	*	0	0	*	*	0	0	TTTTTTTTTTTTTTTTATTTTTTTTTGTGAAGAATGGTGAATGATGATAGATTTAATGAGTTTTTTA	FFFFFFFFFFFFFFFF/FFFF<FFFFBF</F</<<<<FF/<FF/<<</F//<FF</BFF/FFFFFF/	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from zr2096_8_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_8_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:1:1101:1281:2170_1:N:0:TTAGGC/1	77	*	0	0	*	*	0	0	TTAAAAAATTTATTAAATTTATTATTATTTNTTATTTTTTATAAAAGAAAATAGAGAGAGAGAGAGAG	FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF#<<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+HWI-C00124:321:CC781ANXX:1:1101:1281:2170_2:N:0:TTAGGC/2	141	*	0	0	*	*	0	0	CTCTCTCTCTCTCTCTATTTTCTTTTATAAAAAATAATAAATAATAATAAATTTAATAAATTTTTTA	FFFFFFFFFFFFFFFF/FFFF<FFFFBF</F</<<<<FF/<FF/<<</F//<FF</BFF/FFFFFF/	YT:Z:UP
+
+>>> Writing bisulfite mapping results to zr2096_8_s1_R1_val_1_bismark_bt2_pe.bam <<<
+
+
+Reading in the sequence files zr2096_8_s1_R1_val_1.fq.gz and zr2096_8_s1_R2_val_2.fq.gz
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    897 (89.70%) aligned concordantly 0 times
+    57 (5.70%) aligned concordantly exactly 1 time
+    46 (4.60%) aligned concordantly >1 times
+10.30% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    906 (90.60%) aligned concordantly 0 times
+    46 (4.60%) aligned concordantly exactly 1 time
+    48 (4.80%) aligned concordantly >1 times
+9.40% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    899 (89.90%) aligned concordantly 0 times
+    59 (5.90%) aligned concordantly exactly 1 time
+    42 (4.20%) aligned concordantly >1 times
+10.10% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    898 (89.80%) aligned concordantly 0 times
+    48 (4.80%) aligned concordantly exactly 1 time
+    54 (5.40%) aligned concordantly >1 times
+10.20% overall alignment rate
+Processed 1000 sequences in total
+
+
+Successfully deleted the temporary files zr2096_8_s1_R1_val_1.fq.gz_C_to_T.fastq, zr2096_8_s1_R1_val_1.fq.gz_G_to_A.fastq, zr2096_8_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_8_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	1000
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	4674
+
+Total methylated C's in CpG context:	422
+Total methylated C's in CHG context:	19
+Total methylated C's in CHH context:	58
+Total methylated C's in Unknown context:	0
+
+Total unmethylated C's in CpG context:	191
+Total unmethylated C's in CHG context:	988
+Total unmethylated C's in CHH context:	2996
+Total unmethylated C's in Unknown context:	5
+
+C methylated in CpG context:	68.8%
+C methylated in CHG context:	1.9%
+C methylated in CHH context:	1.9%
+C methylated in unknown context (CN or CHN):	0.0%
+
+
+Bismark completed in 0d 0h 0m 17s
+
+====================
+Bismark run complete
+====================
+
+Path to Bowtie 2 specified as: bowtie2
+Bowtie seems to be working fine (tested command 'bowtie2 --version' [2.3.4])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/Applications/bioinfo/samtools-1.7/samtools'
+Reference genome folder provided is /Users/sr320/Dropbox/wd/18-03-15/genome/	(absolute path is '/Users/sr320/Dropbox/wd/18-03-15/genome/)'
+Processing sequences up to read no. 1000 from the input file
+
+Input files to be analysed (in current folder '/Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore'):
+zr2096_9_s1_R1_val_1.fq.gz
+zr2096_9_s1_R2_val_2.fq.gz
+Library was specified to be not strand-specific (non-directional), therefore alignments to all four possible bisulfite strands (OT, CTOT, OB and CTOB) will be reported
+Setting parallelization to single-threaded (default)
+
+Current working directory is: /Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore
+
+Now reading in and storing sequence information of the genome specified in: /Users/sr320/Dropbox/wd/18-03-15/genome/
+
+Single-core mode: setting pid to 1
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are zr2096_9_s1_R1_val_1.fq.gz and zr2096_9_s1_R2_val_2.fq.gz
+Input files are in FastQ format
+Processing reads up to sequence no. 1000 from zr2096_9_s1_R1_val_1.fq.gz
+Writing a C -> T converted version of the input file zr2096_9_s1_R1_val_1.fq.gz to zr2096_9_s1_R1_val_1.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_9_s1_R1_val_1.fq.gz to zr2096_9_s1_R1_val_1.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_9_s1_R1_val_1.fq.gz (1001 sequences in total)
+
+Processing reads up to sequence no. 1000 from zr2096_9_s1_R2_val_2.fq.gz
+Writing a C -> T converted version of the input file zr2096_9_s1_R2_val_2.fq.gz to zr2096_9_s1_R2_val_2.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_9_s1_R2_val_2.fq.gz to zr2096_9_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_9_s1_R2_val_2.fq.gz (1001 sequences in total)
+
+Input files are zr2096_9_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_9_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_9_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_9_s1_R2_val_2.fq.gz_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /Users/sr320/Dropbox/wd/18-03-15/genome/ with the specified options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from zr2096_9_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_9_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:2:1101:1135:2128_1:N:0:ACTTGA/1	77	*	0	0	*	*	0	0	AAAATAATAAATAATAAATTANNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN	<B<FF<BBFFBFFFF<B/FFF#################################	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:2:1101:1135:2128_2:N:0:ACTTGA/2	141	*	0	0	*	*	0	0	AAAAAATAAAAAACACATTAAAAATCTATAATTTAATTTATTATTTATTATTTTTTATTTAATTAAATCNNNNAAACATC	BFFFB/FBFBF<FFFFF/FBFF//<FFF/</<FFF//</<<B/FB//FB/<FFFFF/B/F/FFFFB///####<</FFF<	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from zr2096_9_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_9_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:2:1101:1135:2128_1:N:0:ACTTGA/1	77	*	0	0	*	*	0	0	AAAATAACAAATAATAAATCANNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN	<B<FF<BBFFBFFFF<B/FFF#################################	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:2:1101:1135:2128_2:N:0:ACTTGA/2	141	*	0	0	*	*	0	0	AGAGGATAGGAGATATGTTAGGAATTTATAATTTGATTTATTATTTGTTATTTTTTATTTGGTTAGATTNNNNGAGTGTT	BFFFB/FBFBF<FFFFF/FBFF//<FFF/</<FFF//</<<B/FB//FB/<FFFFF/B/F/FFFFB///####<</FFF<	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from zr2096_9_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_9_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:2:1101:1135:2128_1:N:0:ACTTGA/1	77	*	0	0	*	*	0	0	AAAATAACAAATAATAAATCANNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN	<B<FF<BBFFBFFFF<B/FFF#################################	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:2:1101:1135:2128_2:N:0:ACTTGA/2	141	*	0	0	*	*	0	0	AGAGGATAGGAGATATGTTAGGAATTTATAATTTGATTTATTATTTGTTATTTTTTATTTGGTTAGATTNNNNGAGTGTT	BFFFB/FBFBF<FFFFF/FBFF//<FFF/</<FFF//</<<B/FB//FB/<FFFFF/B/F/FFFFB///####<</FFF<	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from zr2096_9_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_9_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-0.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:2:1101:1135:2128_1:N:0:ACTTGA/1	77	*	0	0	*	*	0	0	AAAATAATAAATAATAAATTANNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN	<B<FF<BBFFBFFFF<B/FFF#################################	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:2:1101:1135:2128_2:N:0:ACTTGA/2	141	*	0	0	*	*	0	0	AAAAAATAAAAAACACATTAAAAATCTATAATTTAATTTATTATTTATTATTTTTTATTTAATTAAATCNNNNAAACATC	BFFFB/FBFBF<FFFFF/FBFF//<FFF/</<FFF//</<<B/FB//FB/<FFFFF/B/F/FFFFB///####<</FFF<	YT:Z:UP
+
+>>> Writing bisulfite mapping results to zr2096_9_s1_R1_val_1_bismark_bt2_pe.bam <<<
+
+
+Reading in the sequence files zr2096_9_s1_R1_val_1.fq.gz and zr2096_9_s1_R2_val_2.fq.gz
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    905 (90.50%) aligned concordantly 0 times
+    56 (5.60%) aligned concordantly exactly 1 time
+    39 (3.90%) aligned concordantly >1 times
+9.50% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    936 (93.60%) aligned concordantly 0 times
+    36 (3.60%) aligned concordantly exactly 1 time
+    28 (2.80%) aligned concordantly >1 times
+6.40% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    929 (92.90%) aligned concordantly 0 times
+    39 (3.90%) aligned concordantly exactly 1 time
+    32 (3.20%) aligned concordantly >1 times
+7.10% overall alignment rate
+1000 reads; of these:
+  1000 (100.00%) were paired; of these:
+    913 (91.30%) aligned concordantly 0 times
+    53 (5.30%) aligned concordantly exactly 1 time
+    34 (3.40%) aligned concordantly >1 times
+8.70% overall alignment rate
+Processed 1000 sequences in total
+
+
+Successfully deleted the temporary files zr2096_9_s1_R1_val_1.fq.gz_C_to_T.fastq, zr2096_9_s1_R1_val_1.fq.gz_G_to_A.fastq, zr2096_9_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_9_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	1000
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	4731
+
+Total methylated C's in CpG context:	578
+Total methylated C's in CHG context:	28
+Total methylated C's in CHH context:	37
+Total methylated C's in Unknown context:	0
+
+Total unmethylated C's in CpG context:	82
+Total unmethylated C's in CHG context:	1133
+Total unmethylated C's in CHH context:	2873
+Total unmethylated C's in Unknown context:	1
+
+C methylated in CpG context:	87.6%
+C methylated in CHG context:	2.4%
+C methylated in CHH context:	1.3%
+C methylated in unknown context (CN or CHN):	0.0%
+
+
+Bismark completed in 0d 0h 0m 19s
+
+====================
+Bismark run complete
+====================
+
