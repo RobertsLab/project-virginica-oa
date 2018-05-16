@@ -1,0 +1,156 @@
+Processing paired-end Bismark output file(s) (SAM format):
+zr2096_10_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_1_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_2_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_3_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_4_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_5_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_6_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_7_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_8_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_9_s1_R1_val_1_bismark_bt2_pe.bam
+
+
+If there are several alignments to a single position in the genome the first alignment will be chosen. Since the input files are not in any way sorted this is a near-enough random selection of reads.
+
+Checking file >>zr2096_10_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+samtools view: writing to standard output failed: Broken pipe
+samtools view: error closing standard output: -1
+
+...passed!
+Output file is: zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+
+Total number of alignments analysed in zr2096_10_s1_R1_val_1_bismark_bt2_pe.bam:	185
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 185 (100.00% of total)
+
+Checking file >>zr2096_1_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+samtools view: writing to standard output failed: Broken pipe
+samtools view: error closing standard output: -1
+
+...passed!
+Output file is: zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+
+Total number of alignments analysed in zr2096_1_s1_R1_val_1_bismark_bt2_pe.bam:	91
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 91 (100.00% of total)
+
+Checking file >>zr2096_2_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+samtools view: writing to standard output failed: Broken pipe
+samtools view: error closing standard output: -1
+
+...passed!
+Output file is: zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+
+Total number of alignments analysed in zr2096_2_s1_R1_val_1_bismark_bt2_pe.bam:	176
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 176 (100.00% of total)
+
+Checking file >>zr2096_3_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+samtools view: writing to standard output failed: Broken pipe
+samtools view: error closing standard output: -1
+
+...passed!
+Output file is: zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+
+Total number of alignments analysed in zr2096_3_s1_R1_val_1_bismark_bt2_pe.bam:	194
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 194 (100.00% of total)
+
+Checking file >>zr2096_4_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+samtools view: writing to standard output failed: Broken pipe
+samtools view: error closing standard output: -1
+
+...passed!
+Output file is: zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+
+Total number of alignments analysed in zr2096_4_s1_R1_val_1_bismark_bt2_pe.bam:	195
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 195 (100.00% of total)
+
+Checking file >>zr2096_5_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+samtools view: writing to standard output failed: Broken pipe
+samtools view: error closing standard output: -1
+
+...passed!
+Output file is: zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+
+Total number of alignments analysed in zr2096_5_s1_R1_val_1_bismark_bt2_pe.bam:	182
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 182 (100.00% of total)
+
+Checking file >>zr2096_6_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+samtools view: writing to standard output failed: Broken pipe
+samtools view: error closing standard output: -1
+
+...passed!
+Output file is: zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+
+Total number of alignments analysed in zr2096_6_s1_R1_val_1_bismark_bt2_pe.bam:	217
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 217 (100.00% of total)
+
+Checking file >>zr2096_7_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+samtools view: writing to standard output failed: Broken pipe
+samtools view: error closing standard output: -1
+
+...passed!
+Output file is: zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+
+Total number of alignments analysed in zr2096_7_s1_R1_val_1_bismark_bt2_pe.bam:	211
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 211 (100.00% of total)
+
+Checking file >>zr2096_8_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+samtools view: writing to standard output failed: Broken pipe
+samtools view: error closing standard output: -1
+
+...passed!
+Output file is: zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+
+Total number of alignments analysed in zr2096_8_s1_R1_val_1_bismark_bt2_pe.bam:	175
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 175 (100.00% of total)
+
+Checking file >>zr2096_9_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+samtools view: writing to standard output failed: Broken pipe
+samtools view: error closing standard output: -1
+
+...passed!
+Output file is: zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+
+Total number of alignments analysed in zr2096_9_s1_R1_val_1_bismark_bt2_pe.bam:	164
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 164 (100.00% of total)
+
