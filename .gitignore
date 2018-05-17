@@ -1,3 +1,13 @@
 
 analyses/.DS_Store
 /Users/sr320/Documents/GitHub/project-virginica-oa/data/dignore/*.fq.gz
+
+*.bt2
+
+*.fa
+
+*.fna
+
+analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/C_virginica-3.0_genomic.fna.gz
+
+*.bam
