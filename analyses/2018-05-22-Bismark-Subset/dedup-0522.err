@@ -1,0 +1,146 @@
+Processing paired-end Bismark output file(s) (SAM format):
+zr2096_10_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_1_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_2_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_3_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_4_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_5_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_6_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_7_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_8_s1_R1_val_1_bismark_bt2_pe.bam	zr2096_9_s1_R1_val_1_bismark_bt2_pe.bam
+
+
+If there are several alignments to a single position in the genome the first alignment will be chosen. Since the input files are not in any way sorted this is a near-enough random selection of reads.
+
+Checking file >>zr2096_10_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+
+...passed!
+Output file is: zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+[samopen] SAM header is present: 11 sequences.
+
+Total number of alignments analysed in zr2096_10_s1_R1_val_1_bismark_bt2_pe.bam:	2085
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 2085 (100.00% of total)
+
+Checking file >>zr2096_1_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+
+...passed!
+Output file is: zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+[samopen] SAM header is present: 11 sequences.
+
+Total number of alignments analysed in zr2096_1_s1_R1_val_1_bismark_bt2_pe.bam:	816
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 816 (100.00% of total)
+
+Checking file >>zr2096_2_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+
+...passed!
+Output file is: zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+[samopen] SAM header is present: 11 sequences.
+
+Total number of alignments analysed in zr2096_2_s1_R1_val_1_bismark_bt2_pe.bam:	1915
+Total number duplicated alignments removed:	1 (0.05%)
+Duplicated alignments were found at:	1 different position(s)
+
+Total count of deduplicated leftover sequences: 1914 (99.95% of total)
+
+Checking file >>zr2096_3_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+
+...passed!
+Output file is: zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+[samopen] SAM header is present: 11 sequences.
+
+Total number of alignments analysed in zr2096_3_s1_R1_val_1_bismark_bt2_pe.bam:	2144
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 2144 (100.00% of total)
+
+Checking file >>zr2096_4_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+
+...passed!
+Output file is: zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+[samopen] SAM header is present: 11 sequences.
+
+Total number of alignments analysed in zr2096_4_s1_R1_val_1_bismark_bt2_pe.bam:	2104
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 2104 (100.00% of total)
+
+Checking file >>zr2096_5_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+
+...passed!
+Output file is: zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+[samopen] SAM header is present: 11 sequences.
+
+Total number of alignments analysed in zr2096_5_s1_R1_val_1_bismark_bt2_pe.bam:	1996
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 1996 (100.00% of total)
+
+Checking file >>zr2096_6_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+
+...passed!
+Output file is: zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+[samopen] SAM header is present: 11 sequences.
+
+Total number of alignments analysed in zr2096_6_s1_R1_val_1_bismark_bt2_pe.bam:	2184
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 2184 (100.00% of total)
+
+Checking file >>zr2096_7_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+
+...passed!
+Output file is: zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+[samopen] SAM header is present: 11 sequences.
+
+Total number of alignments analysed in zr2096_7_s1_R1_val_1_bismark_bt2_pe.bam:	1930
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 1930 (100.00% of total)
+
+Checking file >>zr2096_8_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+
+...passed!
+Output file is: zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+[samopen] SAM header is present: 11 sequences.
+
+Total number of alignments analysed in zr2096_8_s1_R1_val_1_bismark_bt2_pe.bam:	1802
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 1802 (100.00% of total)
+
+Checking file >>zr2096_9_s1_R1_val_1_bismark_bt2_pe.bam<< for signs of file truncation...
+
+
+...passed!
+Output file is: zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+[samopen] SAM header is present: 11 sequences.
+
+Total number of alignments analysed in zr2096_9_s1_R1_val_1_bismark_bt2_pe.bam:	1890
+Total number duplicated alignments removed:	0 (0.00%)
+Duplicated alignments were found at:	0 different position(s)
+
+Total count of deduplicated leftover sequences: 1890 (100.00% of total)
+
