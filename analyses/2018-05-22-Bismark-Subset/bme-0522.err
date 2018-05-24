@@ -20,7 +20,7 @@ Using a cutoff of 1 read(s) to report cytosine positions
 Reporting and sorting cytosine methylation information in CpG context only (default)
 The bedGraph UNIX sort command will use the following memory setting:	'2G'. Temporary directory used for sorting is the output directory
 
-Checking file >>../../data/dignore/zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
+Checking file >>zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
 ...passed!
 Writing result file containing methylation information for C in CpG context from the original top strand to CpG_OT_zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 Writing result file containing methylation information for C in CpG context from the complementary to original top strand to CpG_CTOT_zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
@@ -38,26 +38,26 @@ Writing result file containing methylation information for C in CHH context from
 Writing result file containing methylation information for C in CHH context from the original bottom strand to CHH_OB_zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
-Now reading in Bismark result file ../../data/dignore/zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
-Now reading in Bismark result file ../../data/dignore/zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
 skipping SAM header line:	@SQ	SN:NC_035780.1	LN:65668440
@@ -71,37 +71,37 @@ skipping SAM header line:	@SQ	SN:NC_035787.1	LN:75944018
 skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
-skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_10_s1_R1_val_1.fq.gz -2 zr2096_10_s1_R2_val_2.fq.gz"
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
+skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -p 4 -u 10000 --genome /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/ -1 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_10_s1_R1_val_1.fq.gz -2 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_10_s1_R2_val_2.fq.gz"
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 
 Merging individual splitting reports into overall report: 'zr2096_10_s1_R1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt'
 Merging from these individual files:
 
-Processed 185 lines in total
-Total number of methylation call strings processed: 370
+Processed 2085 lines in total
+Total number of methylation call strings processed: 4170
 
 Final Cytosine Methylation Report
 =================================
-Total number of C's analysed:	3300
+Total number of C's analysed:	37255
 
-Total methylated C's in CpG context:	336
-Total methylated C's in CHG context:	11
-Total methylated C's in CHH context:	23
+Total methylated C's in CpG context:	4153
+Total methylated C's in CHG context:	138
+Total methylated C's in CHH context:	390
 
-Total C to T conversions in CpG context:	109
-Total C to T conversions in CHG context:	714
-Total C to T conversions in CHH context:	2107
+Total C to T conversions in CpG context:	1243
+Total C to T conversions in CHG context:	8570
+Total C to T conversions in CHH context:	22761
 
-C methylated in CpG context:	75.5%
-C methylated in CHG context:	1.5%
-C methylated in CHH context:	1.1%
+C methylated in CpG context:	77.0%
+C methylated in CHG context:	1.6%
+C methylated in CHH context:	1.7%
 
 
 
@@ -164,7 +164,7 @@ sort: stray character in field spec: invalid field specification `3,3V'
 Died at /Users/Shared/Apps/Bismark_v0.19.0/bismark2bedGraph line 486.
 Finished BedGraph conversion ...
 
-Checking file >>../../data/dignore/zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
+Checking file >>zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
 ...passed!
 Writing result file containing methylation information for C in CpG context from the original top strand to CpG_OT_zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 Writing result file containing methylation information for C in CpG context from the complementary to original top strand to CpG_CTOT_zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
@@ -182,32 +182,32 @@ Writing result file containing methylation information for C in CHH context from
 Writing result file containing methylation information for C in CHH context from the original bottom strand to CHH_OB_zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+
+Now reading in Bismark result file zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Warning: unable to close filehandle IN properly.
+Warning: unable to close filehandle IN properly.
+
+Now reading in Bismark result file zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
+Now reading in Bismark result file zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Warning: unable to close filehandle IN properly.
-
-Now reading in Bismark result file ../../data/dignore/zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Warning: unable to close filehandle IN properly.
-Now reading in Bismark result file ../../data/dignore/zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Now reading in Bismark result file ../../data/dignore/zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
@@ -222,49 +222,49 @@ skipping SAM header line:	@SQ	SN:NC_035787.1	LN:75944018
 skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
-skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_1_s1_R1_val_1.fq.gz -2 zr2096_1_s1_R2_val_2.fq.gz"
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
+skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -p 4 -u 10000 --genome /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/ -1 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_1_s1_R1_val_1.fq.gz -2 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_1_s1_R2_val_2.fq.gz"
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 
 Merging individual splitting reports into overall report: 'zr2096_1_s1_R1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt'
 Merging from these individual files:
 
-Processed 91 lines in total
-Total number of methylation call strings processed: 182
+Processed 816 lines in total
+Total number of methylation call strings processed: 1632
 
 Final Cytosine Methylation Report
 =================================
-Total number of C's analysed:	1506
+Total number of C's analysed:	14383
 
-Total methylated C's in CpG context:	149
-Total methylated C's in CHG context:	7
-Total methylated C's in CHH context:	19
+Total methylated C's in CpG context:	1546
+Total methylated C's in CHG context:	38
+Total methylated C's in CHH context:	125
 
-Total C to T conversions in CpG context:	40
-Total C to T conversions in CHG context:	324
-Total C to T conversions in CHH context:	967
+Total C to T conversions in CpG context:	411
+Total C to T conversions in CHG context:	3270
+Total C to T conversions in CHH context:	8993
 
-C methylated in CpG context:	78.8%
-C methylated in CHG context:	2.1%
-C methylated in CHH context:	1.9%
+C methylated in CpG context:	79.0%
+C methylated in CHG context:	1.1%
+C methylated in CHH context:	1.4%
 
 
 
 Merging individual M-bias reports into overall M-bias statistics from these 8 individual files:
 Determining maximum read lengths for M-Bias plots
 Maximum read length of Read 1: 80
-Maximum read length of Read 2: 79
+Maximum read length of Read 2: 80
 
 Perl module GD::Graph::lines is not installed, skipping drawing M-bias plots (only writing out M-bias plot table)
 Determining maximum read lengths for M-Bias plots
 Maximum read length of Read 1: 80
-Maximum read length of Read 2: 79
+Maximum read length of Read 2: 80
 
 Perl module GD::Graph::lines is not installed, skipping drawing M-bias plots (only writing out M-bias plot table)
 Deleting unused files ...
@@ -315,7 +315,7 @@ sort: stray character in field spec: invalid field specification `3,3V'
 Died at /Users/Shared/Apps/Bismark_v0.19.0/bismark2bedGraph line 486.
 Finished BedGraph conversion ...
 
-Checking file >>../../data/dignore/zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
+Checking file >>zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
 ...passed!
 Writing result file containing methylation information for C in CpG context from the original top strand to CpG_OT_zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 Writing result file containing methylation information for C in CpG context from the complementary to original top strand to CpG_CTOT_zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
@@ -333,32 +333,32 @@ Writing result file containing methylation information for C in CHH context from
 Writing result file containing methylation information for C in CHH context from the original bottom strand to CHH_OB_zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Warning: unable to close filehandle IN properly.
-Warning: unable to close filehandle IN properly.
-
-Now reading in Bismark result file ../../data/dignore/zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
+Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
-Now reading in Bismark result file ../../data/dignore/zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
-Now reading in Bismark result file ../../data/dignore/zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Warning: unable to close filehandle IN properly.
+Now reading in Bismark result file zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Now reading in Bismark result file zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
@@ -373,49 +373,49 @@ skipping SAM header line:	@SQ	SN:NC_035787.1	LN:75944018
 skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
-skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_2_s1_R1_val_1.fq.gz -2 zr2096_2_s1_R2_val_2.fq.gz"
+skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -p 4 -u 10000 --genome /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/ -1 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_2_s1_R1_val_1.fq.gz -2 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_2_s1_R2_val_2.fq.gz"
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
 Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
 
 Merging individual splitting reports into overall report: 'zr2096_2_s1_R1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt'
 Merging from these individual files:
 
-Processed 176 lines in total
-Total number of methylation call strings processed: 352
+Processed 1914 lines in total
+Total number of methylation call strings processed: 3828
 
 Final Cytosine Methylation Report
 =================================
-Total number of C's analysed:	2659
+Total number of C's analysed:	28880
 
-Total methylated C's in CpG context:	309
-Total methylated C's in CHG context:	10
-Total methylated C's in CHH context:	19
+Total methylated C's in CpG context:	3219
+Total methylated C's in CHG context:	108
+Total methylated C's in CHH context:	343
 
-Total C to T conversions in CpG context:	73
-Total C to T conversions in CHG context:	640
-Total C to T conversions in CHH context:	1608
+Total C to T conversions in CpG context:	919
+Total C to T conversions in CHG context:	6740
+Total C to T conversions in CHH context:	17551
 
-C methylated in CpG context:	80.9%
-C methylated in CHG context:	1.5%
-C methylated in CHH context:	1.2%
+C methylated in CpG context:	77.8%
+C methylated in CHG context:	1.6%
+C methylated in CHH context:	1.9%
 
 
 
 Merging individual M-bias reports into overall M-bias statistics from these 8 individual files:
 Determining maximum read lengths for M-Bias plots
 Maximum read length of Read 1: 80
-Maximum read length of Read 2: 79
+Maximum read length of Read 2: 80
 
 Perl module GD::Graph::lines is not installed, skipping drawing M-bias plots (only writing out M-bias plot table)
 Determining maximum read lengths for M-Bias plots
 Maximum read length of Read 1: 80
-Maximum read length of Read 2: 79
+Maximum read length of Read 2: 80
 
 Perl module GD::Graph::lines is not installed, skipping drawing M-bias plots (only writing out M-bias plot table)
 Deleting unused files ...
@@ -466,7 +466,7 @@ sort: stray character in field spec: invalid field specification `3,3V'
 Died at /Users/Shared/Apps/Bismark_v0.19.0/bismark2bedGraph line 486.
 Finished BedGraph conversion ...
 
-Checking file >>../../data/dignore/zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
+Checking file >>zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
 ...passed!
 Writing result file containing methylation information for C in CpG context from the original top strand to CpG_OT_zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 Writing result file containing methylation information for C in CpG context from the complementary to original top strand to CpG_CTOT_zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
@@ -484,32 +484,32 @@ Writing result file containing methylation information for C in CHH context from
 Writing result file containing methylation information for C in CHH context from the original bottom strand to CHH_OB_zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
-Now reading in Bismark result file ../../data/dignore/zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 Warning: unable to close filehandle IN properly.
+Now reading in Bismark result file zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
-Now reading in Bismark result file ../../data/dignore/zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
@@ -524,12 +524,12 @@ skipping SAM header line:	@SQ	SN:NC_035787.1	LN:75944018
 skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
-skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_3_s1_R1_val_1.fq.gz -2 zr2096_3_s1_R2_val_2.fq.gz"
+skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -p 4 -u 10000 --genome /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/ -1 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_3_s1_R1_val_1.fq.gz -2 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_3_s1_R2_val_2.fq.gz"
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 Now waiting for all child processes to complete
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
@@ -537,24 +537,24 @@ Finished processing child process. Exiting..
 Merging individual splitting reports into overall report: 'zr2096_3_s1_R1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt'
 Merging from these individual files:
 
-Processed 194 lines in total
-Total number of methylation call strings processed: 388
+Processed 2144 lines in total
+Total number of methylation call strings processed: 4288
 
 Final Cytosine Methylation Report
 =================================
-Total number of C's analysed:	3338
+Total number of C's analysed:	36853
 
-Total methylated C's in CpG context:	393
-Total methylated C's in CHG context:	11
-Total methylated C's in CHH context:	23
+Total methylated C's in CpG context:	4674
+Total methylated C's in CHG context:	108
+Total methylated C's in CHH context:	333
 
-Total C to T conversions in CpG context:	90
-Total C to T conversions in CHG context:	733
-Total C to T conversions in CHH context:	2088
+Total C to T conversions in CpG context:	888
+Total C to T conversions in CHG context:	8450
+Total C to T conversions in CHH context:	22400
 
-C methylated in CpG context:	81.4%
-C methylated in CHG context:	1.5%
-C methylated in CHH context:	1.1%
+C methylated in CpG context:	84.0%
+C methylated in CHG context:	1.3%
+C methylated in CHH context:	1.5%
 
 
 
@@ -617,7 +617,7 @@ sort: stray character in field spec: invalid field specification `3,3V'
 Died at /Users/Shared/Apps/Bismark_v0.19.0/bismark2bedGraph line 486.
 Finished BedGraph conversion ...
 
-Checking file >>../../data/dignore/zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
+Checking file >>zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
 ...passed!
 Writing result file containing methylation information for C in CpG context from the original top strand to CpG_OT_zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 Writing result file containing methylation information for C in CpG context from the complementary to original top strand to CpG_CTOT_zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
@@ -635,32 +635,32 @@ Writing result file containing methylation information for C in CHH context from
 Writing result file containing methylation information for C in CHH context from the original bottom strand to CHH_OB_zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-
-Now reading in Bismark result file ../../data/dignore/zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Warning: unable to close filehandle IN properly.
-Warning: unable to close filehandle IN properly.
-
-Now reading in Bismark result file ../../data/dignore/zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
-Now reading in Bismark result file ../../data/dignore/zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
-Now reading in Bismark result file ../../data/dignore/zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Warning: unable to close filehandle IN properly.
+
+Now reading in Bismark result file zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Now reading in Bismark result file zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Warning: unable to close filehandle IN properly.
+
+Now reading in Bismark result file zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
@@ -675,49 +675,49 @@ skipping SAM header line:	@SQ	SN:NC_035787.1	LN:75944018
 skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
-skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_4_s1_R1_val_1.fq.gz -2 zr2096_4_s1_R2_val_2.fq.gz"
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
+skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -p 4 -u 10000 --genome /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/ -1 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_4_s1_R1_val_1.fq.gz -2 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_4_s1_R2_val_2.fq.gz"
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 
 Merging individual splitting reports into overall report: 'zr2096_4_s1_R1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt'
 Merging from these individual files:
 
-Processed 195 lines in total
-Total number of methylation call strings processed: 390
+Processed 2104 lines in total
+Total number of methylation call strings processed: 4208
 
 Final Cytosine Methylation Report
 =================================
-Total number of C's analysed:	3054
+Total number of C's analysed:	33141
 
-Total methylated C's in CpG context:	307
-Total methylated C's in CHG context:	14
-Total methylated C's in CHH context:	27
+Total methylated C's in CpG context:	3371
+Total methylated C's in CHG context:	94
+Total methylated C's in CHH context:	341
 
-Total C to T conversions in CpG context:	108
-Total C to T conversions in CHG context:	650
-Total C to T conversions in CHH context:	1948
+Total C to T conversions in CpG context:	1132
+Total C to T conversions in CHG context:	7504
+Total C to T conversions in CHH context:	20699
 
-C methylated in CpG context:	74.0%
-C methylated in CHG context:	2.1%
-C methylated in CHH context:	1.4%
+C methylated in CpG context:	74.9%
+C methylated in CHG context:	1.2%
+C methylated in CHH context:	1.6%
 
 
 
 Merging individual M-bias reports into overall M-bias statistics from these 8 individual files:
 Determining maximum read lengths for M-Bias plots
 Maximum read length of Read 1: 80
-Maximum read length of Read 2: 79
+Maximum read length of Read 2: 80
 
 Perl module GD::Graph::lines is not installed, skipping drawing M-bias plots (only writing out M-bias plot table)
 Determining maximum read lengths for M-Bias plots
 Maximum read length of Read 1: 80
-Maximum read length of Read 2: 79
+Maximum read length of Read 2: 80
 
 Perl module GD::Graph::lines is not installed, skipping drawing M-bias plots (only writing out M-bias plot table)
 Deleting unused files ...
@@ -768,7 +768,7 @@ sort: stray character in field spec: invalid field specification `3,3V'
 Died at /Users/Shared/Apps/Bismark_v0.19.0/bismark2bedGraph line 486.
 Finished BedGraph conversion ...
 
-Checking file >>../../data/dignore/zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
+Checking file >>zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
 ...passed!
 Writing result file containing methylation information for C in CpG context from the original top strand to CpG_OT_zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 Writing result file containing methylation information for C in CpG context from the complementary to original top strand to CpG_CTOT_zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
@@ -786,32 +786,32 @@ Writing result file containing methylation information for C in CHH context from
 Writing result file containing methylation information for C in CHH context from the original bottom strand to CHH_OB_zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-
-Now reading in Bismark result file ../../data/dignore/zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Warning: unable to close filehandle IN properly.
-Warning: unable to close filehandle IN properly.
-
-Now reading in Bismark result file ../../data/dignore/zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
-Now reading in Bismark result file ../../data/dignore/zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Warning: unable to close filehandle IN properly.
+
+Now reading in Bismark result file zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Warning: unable to close filehandle IN properly.
+Now reading in Bismark result file zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Now reading in Bismark result file zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
@@ -826,37 +826,37 @@ skipping SAM header line:	@SQ	SN:NC_035787.1	LN:75944018
 skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
-skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_5_s1_R1_val_1.fq.gz -2 zr2096_5_s1_R2_val_2.fq.gz"
+skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -p 4 -u 10000 --genome /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/ -1 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_5_s1_R1_val_1.fq.gz -2 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_5_s1_R2_val_2.fq.gz"
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
 
 Merging individual splitting reports into overall report: 'zr2096_5_s1_R1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt'
 Merging from these individual files:
 
-Processed 182 lines in total
-Total number of methylation call strings processed: 364
+Processed 1996 lines in total
+Total number of methylation call strings processed: 3992
 
 Final Cytosine Methylation Report
 =================================
-Total number of C's analysed:	3055
+Total number of C's analysed:	33583
 
-Total methylated C's in CpG context:	312
-Total methylated C's in CHG context:	13
-Total methylated C's in CHH context:	22
+Total methylated C's in CpG context:	3363
+Total methylated C's in CHG context:	126
+Total methylated C's in CHH context:	332
 
-Total C to T conversions in CpG context:	77
-Total C to T conversions in CHG context:	677
-Total C to T conversions in CHH context:	1954
+Total C to T conversions in CpG context:	1092
+Total C to T conversions in CHG context:	7361
+Total C to T conversions in CHH context:	21309
 
-C methylated in CpG context:	80.2%
-C methylated in CHG context:	1.9%
-C methylated in CHH context:	1.1%
+C methylated in CpG context:	75.5%
+C methylated in CHG context:	1.7%
+C methylated in CHH context:	1.5%
 
 
 
@@ -919,7 +919,7 @@ sort: stray character in field spec: invalid field specification `3,3V'
 Died at /Users/Shared/Apps/Bismark_v0.19.0/bismark2bedGraph line 486.
 Finished BedGraph conversion ...
 
-Checking file >>../../data/dignore/zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
+Checking file >>zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
 ...passed!
 Writing result file containing methylation information for C in CpG context from the original top strand to CpG_OT_zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 Writing result file containing methylation information for C in CpG context from the complementary to original top strand to CpG_CTOT_zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
@@ -937,32 +937,32 @@ Writing result file containing methylation information for C in CHH context from
 Writing result file containing methylation information for C in CHH context from the original bottom strand to CHH_OB_zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Warning: unable to close filehandle IN properly.
-
-Now reading in Bismark result file ../../data/dignore/zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
-Now reading in Bismark result file ../../data/dignore/zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
-Now reading in Bismark result file ../../data/dignore/zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Now reading in Bismark result file zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Warning: unable to close filehandle IN properly.
+
+Now reading in Bismark result file zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
@@ -977,37 +977,37 @@ skipping SAM header line:	@SQ	SN:NC_035787.1	LN:75944018
 skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
-skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_6_s1_R1_val_1.fq.gz -2 zr2096_6_s1_R2_val_2.fq.gz"
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
+skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -p 4 -u 10000 --genome /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/ -1 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_6_s1_R1_val_1.fq.gz -2 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_6_s1_R2_val_2.fq.gz"
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 
 Merging individual splitting reports into overall report: 'zr2096_6_s1_R1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt'
 Merging from these individual files:
 
-Processed 217 lines in total
-Total number of methylation call strings processed: 434
+Processed 2184 lines in total
+Total number of methylation call strings processed: 4368
 
 Final Cytosine Methylation Report
 =================================
-Total number of C's analysed:	3484
+Total number of C's analysed:	34036
 
-Total methylated C's in CpG context:	423
-Total methylated C's in CHG context:	5
-Total methylated C's in CHH context:	27
+Total methylated C's in CpG context:	3957
+Total methylated C's in CHG context:	91
+Total methylated C's in CHH context:	325
 
-Total C to T conversions in CpG context:	83
-Total C to T conversions in CHG context:	794
-Total C to T conversions in CHH context:	2152
+Total C to T conversions in CpG context:	831
+Total C to T conversions in CHG context:	7779
+Total C to T conversions in CHH context:	21053
 
-C methylated in CpG context:	83.6%
-C methylated in CHG context:	0.6%
-C methylated in CHH context:	1.2%
+C methylated in CpG context:	82.6%
+C methylated in CHG context:	1.2%
+C methylated in CHH context:	1.5%
 
 
 
@@ -1070,7 +1070,7 @@ sort: stray character in field spec: invalid field specification `3,3V'
 Died at /Users/Shared/Apps/Bismark_v0.19.0/bismark2bedGraph line 486.
 Finished BedGraph conversion ...
 
-Checking file >>../../data/dignore/zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
+Checking file >>zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
 ...passed!
 Writing result file containing methylation information for C in CpG context from the original top strand to CpG_OT_zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 Writing result file containing methylation information for C in CpG context from the complementary to original top strand to CpG_CTOT_zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
@@ -1088,32 +1088,32 @@ Writing result file containing methylation information for C in CHH context from
 Writing result file containing methylation information for C in CHH context from the original bottom strand to CHH_OB_zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+
+Now reading in Bismark result file zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Warning: unable to close filehandle IN properly.
+Warning: unable to close filehandle IN properly.
+
+Now reading in Bismark result file zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
+Now reading in Bismark result file zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Warning: unable to close filehandle IN properly.
-
-Now reading in Bismark result file ../../data/dignore/zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Warning: unable to close filehandle IN properly.
-Now reading in Bismark result file ../../data/dignore/zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Now reading in Bismark result file ../../data/dignore/zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
@@ -1128,7 +1128,7 @@ skipping SAM header line:	@SQ	SN:NC_035787.1	LN:75944018
 skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
-skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_7_s1_R1_val_1.fq.gz -2 zr2096_7_s1_R2_val_2.fq.gz"
+skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -p 4 -u 10000 --genome /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/ -1 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_7_s1_R1_val_1.fq.gz -2 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_7_s1_R2_val_2.fq.gz"
 Now waiting for all child processes to complete
 Finished processing child process. Exiting..
 Finished processing child process. Exiting..
@@ -1141,24 +1141,24 @@ Finished processing child process. Exiting..
 Merging individual splitting reports into overall report: 'zr2096_7_s1_R1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt'
 Merging from these individual files:
 
-Processed 211 lines in total
-Total number of methylation call strings processed: 422
+Processed 1930 lines in total
+Total number of methylation call strings processed: 3860
 
 Final Cytosine Methylation Report
 =================================
-Total number of C's analysed:	3528
+Total number of C's analysed:	32700
 
-Total methylated C's in CpG context:	369
-Total methylated C's in CHG context:	14
-Total methylated C's in CHH context:	40
+Total methylated C's in CpG context:	3415
+Total methylated C's in CHG context:	123
+Total methylated C's in CHH context:	329
 
-Total C to T conversions in CpG context:	98
-Total C to T conversions in CHG context:	723
-Total C to T conversions in CHH context:	2284
+Total C to T conversions in CpG context:	836
+Total C to T conversions in CHG context:	7277
+Total C to T conversions in CHH context:	20720
 
-C methylated in CpG context:	79.0%
-C methylated in CHG context:	1.9%
-C methylated in CHH context:	1.7%
+C methylated in CpG context:	80.3%
+C methylated in CHG context:	1.7%
+C methylated in CHH context:	1.6%
 
 
 
@@ -1221,7 +1221,7 @@ sort: stray character in field spec: invalid field specification `3,3V'
 Died at /Users/Shared/Apps/Bismark_v0.19.0/bismark2bedGraph line 486.
 Finished BedGraph conversion ...
 
-Checking file >>../../data/dignore/zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
+Checking file >>zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
 ...passed!
 Writing result file containing methylation information for C in CpG context from the original top strand to CpG_OT_zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 Writing result file containing methylation information for C in CpG context from the complementary to original top strand to CpG_CTOT_zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
@@ -1239,32 +1239,32 @@ Writing result file containing methylation information for C in CHH context from
 Writing result file containing methylation information for C in CHH context from the original bottom strand to CHH_OB_zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Warning: unable to close filehandle IN properly.
+
+Now reading in Bismark result file zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
+Now reading in Bismark result file zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
-Now reading in Bismark result file ../../data/dignore/zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Warning: unable to close filehandle IN properly.
-Now reading in Bismark result file ../../data/dignore/zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Now reading in Bismark result file ../../data/dignore/zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
@@ -1279,49 +1279,49 @@ skipping SAM header line:	@SQ	SN:NC_035787.1	LN:75944018
 skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
-skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_8_s1_R1_val_1.fq.gz -2 zr2096_8_s1_R2_val_2.fq.gz"
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
+skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -p 4 -u 10000 --genome /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/ -1 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_8_s1_R1_val_1.fq.gz -2 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_8_s1_R2_val_2.fq.gz"
 Now waiting for all child processes to complete
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 Finished processing child process. Exiting..
 
 Merging individual splitting reports into overall report: 'zr2096_8_s1_R1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt'
 Merging from these individual files:
 
-Processed 175 lines in total
-Total number of methylation call strings processed: 350
+Processed 1802 lines in total
+Total number of methylation call strings processed: 3604
 
 Final Cytosine Methylation Report
 =================================
-Total number of C's analysed:	2922
+Total number of C's analysed:	29661
 
-Total methylated C's in CpG context:	257
-Total methylated C's in CHG context:	11
-Total methylated C's in CHH context:	34
+Total methylated C's in CpG context:	2847
+Total methylated C's in CHG context:	94
+Total methylated C's in CHH context:	391
 
-Total C to T conversions in CpG context:	118
-Total C to T conversions in CHG context:	614
-Total C to T conversions in CHH context:	1888
+Total C to T conversions in CpG context:	962
+Total C to T conversions in CHG context:	6761
+Total C to T conversions in CHH context:	18606
 
-C methylated in CpG context:	68.5%
-C methylated in CHG context:	1.8%
-C methylated in CHH context:	1.8%
+C methylated in CpG context:	74.7%
+C methylated in CHG context:	1.4%
+C methylated in CHH context:	2.1%
 
 
 
 Merging individual M-bias reports into overall M-bias statistics from these 8 individual files:
 Determining maximum read lengths for M-Bias plots
 Maximum read length of Read 1: 80
-Maximum read length of Read 2: 79
+Maximum read length of Read 2: 80
 
 Perl module GD::Graph::lines is not installed, skipping drawing M-bias plots (only writing out M-bias plot table)
 Determining maximum read lengths for M-Bias plots
 Maximum read length of Read 1: 80
-Maximum read length of Read 2: 79
+Maximum read length of Read 2: 80
 
 Perl module GD::Graph::lines is not installed, skipping drawing M-bias plots (only writing out M-bias plot table)
 Deleting unused files ...
@@ -1372,7 +1372,7 @@ sort: stray character in field spec: invalid field specification `3,3V'
 Died at /Users/Shared/Apps/Bismark_v0.19.0/bismark2bedGraph line 486.
 Finished BedGraph conversion ...
 
-Checking file >>../../data/dignore/zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
+Checking file >>zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam<< for signs of file truncation...
 ...passed!
 Writing result file containing methylation information for C in CpG context from the original top strand to CpG_OT_zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 Writing result file containing methylation information for C in CpG context from the complementary to original top strand to CpG_CTOT_zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
@@ -1390,32 +1390,32 @@ Writing result file containing methylation information for C in CHH context from
 Writing result file containing methylation information for C in CHH context from the original bottom strand to CHH_OB_zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.txt
 
 
-Now reading in Bismark result file ../../data/dignore/zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+
+Now reading in Bismark result file zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+
+Warning: unable to close filehandle IN properly.
+Warning: unable to close filehandle IN properly.
+
+Now reading in Bismark result file zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
+Now reading in Bismark result file zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 Warning: unable to close filehandle IN properly.
 
-Now reading in Bismark result file ../../data/dignore/zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Warning: unable to close filehandle IN properly.
-
-Now reading in Bismark result file ../../data/dignore/zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-
-Now reading in Bismark result file ../../data/dignore/zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
-Warning: unable to close filehandle IN properly.
-
-Now reading in Bismark result file ../../data/dignore/zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
+Now reading in Bismark result file zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated.bam
 
 Warning: unable to close filehandle IN properly.
 skipping SAM header line:	@HD	VN:1.0	SO:unsorted
@@ -1430,37 +1430,37 @@ skipping SAM header line:	@SQ	SN:NC_035787.1	LN:75944018
 skipping SAM header line:	@SQ	SN:NC_035788.1	LN:104168038
 skipping SAM header line:	@SQ	SN:NC_035789.1	LN:32650045
 skipping SAM header line:	@SQ	SN:NC_007175.2	LN:17244
-skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -u 1000 -p 4 --genome /Users/sr320/Dropbox/wd/18-03-15/genome -1 zr2096_9_s1_R1_val_1.fq.gz -2 zr2096_9_s1_R2_val_2.fq.gz"
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
-Finished processing child process. Exiting..
+skipping SAM header line:	@PG	ID:Bismark	VN:v0.19.0	CL:"bismark --non_directional -p 4 -u 10000 --genome /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/ -1 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_9_s1_R1_val_1.fq.gz -2 /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_9_s1_R2_val_2.fq.gz"
 Finished processing child process. Exiting..
 Now waiting for all child processes to complete
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
+Finished processing child process. Exiting..
 
 Merging individual splitting reports into overall report: 'zr2096_9_s1_R1_val_1_bismark_bt2_pe.deduplicated_splitting_report.txt'
 Merging from these individual files:
 
-Processed 164 lines in total
-Total number of methylation call strings processed: 328
+Processed 1890 lines in total
+Total number of methylation call strings processed: 3780
 
 Final Cytosine Methylation Report
 =================================
-Total number of C's analysed:	2907
+Total number of C's analysed:	32674
 
-Total methylated C's in CpG context:	346
-Total methylated C's in CHG context:	16
-Total methylated C's in CHH context:	23
+Total methylated C's in CpG context:	4036
+Total methylated C's in CHG context:	157
+Total methylated C's in CHH context:	332
 
-Total C to T conversions in CpG context:	53
-Total C to T conversions in CHG context:	697
-Total C to T conversions in CHH context:	1772
+Total C to T conversions in CpG context:	792
+Total C to T conversions in CHG context:	7478
+Total C to T conversions in CHH context:	19879
 
-C methylated in CpG context:	86.7%
-C methylated in CHG context:	2.2%
-C methylated in CHH context:	1.3%
+C methylated in CpG context:	83.6%
+C methylated in CHG context:	2.1%
+C methylated in CHH context:	1.6%
 
 
 

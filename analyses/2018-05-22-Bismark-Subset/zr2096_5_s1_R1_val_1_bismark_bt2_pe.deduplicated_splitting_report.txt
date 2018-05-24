@@ -7,23 +7,23 @@ Output specified: strand-specific (default)
 No overlapping methylation calls specified
 
 
-Processed 182 lines in total
-Total number of methylation call strings processed: 364
+Processed 1996 lines in total
+Total number of methylation call strings processed: 3992
 
 Final Cytosine Methylation Report
 =================================
-Total number of C's analysed:	3055
+Total number of C's analysed:	33583
 
-Total methylated C's in CpG context:	312
-Total methylated C's in CHG context:	13
-Total methylated C's in CHH context:	22
+Total methylated C's in CpG context:	3363
+Total methylated C's in CHG context:	126
+Total methylated C's in CHH context:	332
 
-Total C to T conversions in CpG context:	77
-Total C to T conversions in CHG context:	677
-Total C to T conversions in CHH context:	1954
+Total C to T conversions in CpG context:	1092
+Total C to T conversions in CHG context:	7361
+Total C to T conversions in CHH context:	21309
 
-C methylated in CpG context:	80.2%
-C methylated in CHG context:	1.9%
-C methylated in CHH context:	1.1%
+C methylated in CpG context:	75.5%
+C methylated in CHG context:	1.7%
+C methylated in CHH context:	1.5%
 
 
