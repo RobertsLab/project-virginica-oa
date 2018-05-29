@@ -12,3 +12,4 @@ analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/C_virginica-3.0_genomic.fn
 
 *.bam
 *.merged
+*deduplicated.txt
