@@ -60,9 +60,14 @@ getCorrelation(methylationInformation, plot = TRUE) #Understand correlation betw
 clusterSamples(methylationInformation, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
 clusteringInformation <- clusterSamples(methylationInformation, dist = "correlation", method = "ward", plot = FALSE) #Save cluster information as a new object
 
+#jpeg(filename = "2018-05-30-Full-Sample-Methylation-PCA.jpeg", height = 1000, width = 1000) #Save file with designated name
 PCASamples(methylationInformation) #Run a PCA analysis on percent methylation for all samples
+#dev.off() #Turn off plotting device
+
+#jpeg(filename = "2018-05-30-Full-Sample-Methylation-Screeplot.jpeg", height = 1000, width = 1000) #Save file with designated name
 PCASamples(methylationInformation, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
+#dev.off()
 
 differentialMethylationStats <- calculateDiffMeth(methylationInformation) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
 diffMethStats25 <- getMethylDiff(differentialMethylationStats, difference = 25, qvalue = 0.01) #Identify loci that are at least 25% different. Q-value is the FDR used for p-value corrections.
-diffMethStats50 <- getMethylDiff(differentialMethylationStats,difference=50,qvalue=0.01) #Identify loci that are at least 50% different
+diffMethStats50 <- getMethylDiff(differentialMethylationStats, difference = 50, qvalue = 0.01) #Identify loci that are at least 50% different
