@@ -2,7 +2,7 @@
 
 #### SET WORKING DIRECTORY ####
 getwd()
-setwd("../2018-04-27-Bismark/") #Set working directory as bismark folder
+setwd("../2018-05-22-Bismark-Full-Samples//") #Set working directory as bismark folder
 
 #### INSTALL PACKAGES ####
 install.packages("devtools") #Install the devtools package
@@ -15,16 +15,16 @@ library(methylKit) #Load methylkit
 
 #### PROCESS METHYLATION DATA ####
 
-analysisFiles <- list ("zr2096_1_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_2_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_3_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_4_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_5_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_6_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_7_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_8_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_9_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_10_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam") #Put all .bam files into a list for analysis
+analysisFiles <- list ("zr2096_1_dedup.sorted.bam",
+                       "zr2096_2_dedup.sorted.bam",
+                       "zr2096_3_dedup.sorted.bam",
+                       "zr2096_4_dedup.sorted.bam",
+                       "zr2096_5_dedup.sorted.bam",
+                       "zr2096_6_dedup.sorted.bam",
+                       "zr2096_7_dedup.sorted.bam",
+                       "zr2096_8_dedup.sorted.bam",
+                       "zr2096_9_dedup.sorted.bam",
+                       "zr2096_10_dedup.sorted.bam") #Put all .bam files into a list for analysis
 sample.IDs <- list("1", "2", "3", "4", "5", "6", "7", "8", "9", "10") #Create list of sample IDs
 treatmentSpecification <- c(rep(0, times = 5), rep(1, times = 5))
 processedFiles <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 1, treatment = treatmentSpecification) #Process files for CpG meetehylation. First 5 files were from ambient conditions, and the second from high pCO2 conditions.
@@ -32,13 +32,15 @@ processedFiles <- processBismarkAln(location = analysisFiles, sample.id = sample
 #### ANALYZE METHYLATION DATA ####
 
 nFiles <- length(sample.IDs) #Count number of samples
-fileName <- data.frame("nameBase" = rep("2018-05-08-Percent-CpG-Methylation", times = nFiles),
-                       "nameBase2" = rep("2018-05-08-Percent-CpG-Coverage", times = nFiles),
+fileName <- data.frame("nameBase" = rep("2018-05-30-Percent-CpG-Methylation", times = nFiles),
+                       "nameBase2" = rep("2018-05-30-Percent-CpG-Coverage", times = nFiles),
                        "sample.ID" = 1:10) #Create new dataframe for filenames
 head(fileName) #Confirm dataframe creation
 fileName$actualFileName <- paste(fileName$nameBase, "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename
 fileName$actualFileName2 <- paste(fileName$nameBase2, "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename
 head(fileName) #Confirm column creation
+
+setwd("../2018-05-29-MethylKit-Full-Samples/") #Change working direcotry to the MethylKit folder
 
 for(i in 1:nFiles) { #For each data file
   jpeg(filename = fileName$actualFileName[i], height = 1000, width = 1000) #Save file with designated name
