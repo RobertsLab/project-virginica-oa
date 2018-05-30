@@ -1,8 +1,8 @@
 #In this script, I'll use MethylKit to analyze differences in methylation between C. virginica gonad samples.
 
 #### SET WORKING DIRECTORY ####
-getwd()
-setwd("../2018-05-22-Bismark-Full-Samples//") #Set working directory as bismark folder
+#getwd()
+#setwd("../2018-05-22-Bismark-Full-Samples//") #Set working directory as bismark folder
 
 #### INSTALL PACKAGES ####
 install.packages("devtools") #Install the devtools package
@@ -31,6 +31,8 @@ processedFiles <- processBismarkAln(location = analysisFiles, sample.id = sample
 
 #### ANALYZE METHYLATION DATA ####
 
+setwd("../2018-05-29-MethylKit-Full-Samples/") #Change working direcotry to the MethylKit folder
+
 nFiles <- length(sample.IDs) #Count number of samples
 fileName <- data.frame("nameBase" = rep("2018-05-30-Percent-CpG-Methylation", times = nFiles),
                        "nameBase2" = rep("2018-05-30-Percent-CpG-Coverage", times = nFiles),
@@ -39,8 +41,6 @@ head(fileName) #Confirm dataframe creation
 fileName$actualFileName <- paste(fileName$nameBase, "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename
 fileName$actualFileName2 <- paste(fileName$nameBase2, "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename
 head(fileName) #Confirm column creation
-
-setwd("../2018-05-29-MethylKit-Full-Samples/") #Change working direcotry to the MethylKit folder
 
 for(i in 1:nFiles) { #For each data file
   jpeg(filename = fileName$actualFileName[i], height = 1000, width = 1000) #Save file with designated name
@@ -56,8 +56,14 @@ for(i in 1:nFiles) { #For each data file
 
 methylationInformation <- unite(processedFiles) #Combine all processed files into a single table
 
+#jpeg(filename = "2018-05-30-Full-Sample-Pearson-Correlation-Plot.jpeg", height = 1000, width = 1000) #Save file with designated name
 getCorrelation(methylationInformation, plot = TRUE) #Understand correlation between methylation patterns in different samples
+#dev.off()
+
+#jpeg(filename = "2018-05-30-Full-Sample-CpG-Methylation-Clustering.jpeg", height = 1000, width = 1000) #Save file with designated name
 clusterSamples(methylationInformation, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
+#dev.off()
+
 clusteringInformation <- clusterSamples(methylationInformation, dist = "correlation", method = "ward", plot = FALSE) #Save cluster information as a new object
 
 #jpeg(filename = "2018-05-30-Full-Sample-Methylation-PCA.jpeg", height = 1000, width = 1000) #Save file with designated name
@@ -72,4 +78,17 @@ differentialMethylationStats <- calculateDiffMeth(methylationInformation) #Calcu
 diffMethStats25 <- getMethylDiff(differentialMethylationStats, difference = 25, qvalue = 0.01) #Identify loci that are at least 25% different. Q-value is the FDR used for p-value corrections.
 diffMethStats50 <- getMethylDiff(differentialMethylationStats, difference = 50, qvalue = 0.01) #Identify loci that are at least 50% different
 head(diffMethStats50) #Confirm creation
-write.csv(diffMethStats50, "2018-05-30-Differentially-Methylated-Loci-50.csv") #Save table as .csv
+#write.csv(diffMethStats50, "2018-05-30-Differentially-Methylated-Loci-50.csv") #Save table as .csv
+
+#### SAVE DMLs AS A BED FILE ####
+
+library(readr) #Load package
+library(tidyverse) #Load package
+
+diffMethStats50 <- read.csv("../2018-05-29-MethylKit-Full-Samples/2018-05-30-Differentially-Methylated-Loci-50.csv") #Import data
+head(diffMethStats50) #Confirm import
+
+DMLPlus05302018 <- filter(diffMethStats50, strand == "+") %>% mutate(start = start -1, end = end + 1) %>% select(chr, start, end, strand, meth.diff) #Save + strand of DMLs as a new object
+DMLMinus05302018 <- filter(diffMethStats50, strand == "-") %>% mutate(start = start -2) %>% select(chr, start, end, strand, meth.diff) #Save - strand of DMLs as a new object
+DML05302018 <- bind_rows(DMLPlus05302018, DMLMinus05302018) %>% arrange(chr, start) %>% mutate_if(is.numeric, as.integer) #Join + and - strand information to be saved as a BED file, and avoid writing information in scientific notation
+write_delim(DML05302018, "2018-05-30-DML-Locations.bed",  delim = '\t', col_names = FALSE) #Save data as a BED file
