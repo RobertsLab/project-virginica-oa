@@ -71,3 +71,5 @@ PCASamples(methylationInformation, screeplot = TRUE) #Run the PCA analysis and p
 differentialMethylationStats <- calculateDiffMeth(methylationInformation) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
 diffMethStats25 <- getMethylDiff(differentialMethylationStats, difference = 25, qvalue = 0.01) #Identify loci that are at least 25% different. Q-value is the FDR used for p-value corrections.
 diffMethStats50 <- getMethylDiff(differentialMethylationStats, difference = 50, qvalue = 0.01) #Identify loci that are at least 50% different
+head(diffMethStats50) #Confirm creation
+write.csv(diffMethStats50, "2018-05-30-Differentially-Methylated-Loci-50.csv") #Save table as .csv
