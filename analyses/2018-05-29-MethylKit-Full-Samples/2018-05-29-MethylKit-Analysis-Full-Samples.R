@@ -83,6 +83,8 @@ head(diffMethStats50) #Confirm creation
 #### SAVE DMLs AS A BED FILE ####
 
 library(readr) #Load package
+
+install.packages("tidyverse") #Install tidyverse
 library(tidyverse) #Load package
 
 diffMethStats50 <- read.csv("../2018-05-29-MethylKit-Full-Samples/2018-05-30-Differentially-Methylated-Loci-50.csv") #Import data
