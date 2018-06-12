@@ -21,3 +21,11 @@ analyses/2018-06-11-DML-Analysis/C_virginica-3.0_Gnomon_exon.bed
 analyses/2018-06-11-DML-Analysis/C_virginica-3.0_Gnomon_mRNA.gff3
 
 analyses/2018-06-11-DML-Analysis/C_virginica-3.0_intron.bed
+
+analyses/2018-06-11-DML-Analysis/2018-06-11-DML-mRNA.txt
+
+analyses/2018-06-11-DML-Analysis/2018-06-11-Exon-CGmotif.txt
+
+analyses/2018-06-11-DML-Analysis/2018-06-11-Intron-CGmotif.txt
+
+analyses/2018-06-11-DML-Analysis/2018-06-11-mRNA-CGmotif.txt
