@@ -13,3 +13,11 @@ analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/C_virginica-3.0_genomic.fn
 *.bam
 *.merged
 *deduplicated.txt
+
+analyses/2018-06-11-DML-Analysis/C_virginica-3.0_CG-motif.bed
+
+analyses/2018-06-11-DML-Analysis/C_virginica-3.0_Gnomon_exon.bed
+
+analyses/2018-06-11-DML-Analysis/C_virginica-3.0_Gnomon_mRNA.gff3
+
+analyses/2018-06-11-DML-Analysis/C_virginica-3.0_intron.bed
