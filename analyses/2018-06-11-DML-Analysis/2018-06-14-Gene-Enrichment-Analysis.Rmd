@@ -9,6 +9,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 In this script, I'll use `topGo` to identify enriched genes for mRNA regions, exons, and introns that overlap with DMLs. I'm following instructions from [this manual](https://bioconductor.riken.jp/packages/3.3/bioc/vignettes/topGO/inst/doc/topGO.pdf) and [this blog entry](http://avrilomics.blogspot.com/2015/07/using-topgo-to-test-for-go-term.html).
 
+## Session information
+
+```{r}
+sessionInfo()
+```
+
 ## Install packages
 
 ```{r, echo = FALSE}
@@ -41,3 +47,4 @@ head(genesAndGOTerms) #Confirm dataframe creation
 ```
 
 Notice how there are some geneNames called "unclassified transcription discrepancy." I'm not sure what this means, but there is an associated geneID. I should be able to proceed with the analysis.
+
