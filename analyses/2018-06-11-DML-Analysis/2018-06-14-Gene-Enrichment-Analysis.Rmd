@@ -34,3 +34,8 @@ head(mRNAandDMLoverlaps) #Confirm import
 
 For `topGO`, the file of gene-to-GO mappings needs to be a tab-delimited file with the first column as the gene name, and the second column as a list of GO terms separated by a comma and space. I need to modify the overlap file to fit this requirement.
 
+```{r}
+mRNAandDMLOverlapGenes <- mRNAandDMLoverlaps$V14 #Isolate the column with gene information
+strsplit(mRNAandDMLOverlapGenes, split = ";")
+```
+
