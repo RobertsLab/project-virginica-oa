@@ -1,0 +1,36 @@
+---
+title: "Gene Enrichment Analysis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In this script, I'll use `topGo` to identify enriched genes for mRNA regions, exons, and introns that overlap with DMLs.
+
+## Install packages
+
+```{r, echo = FALSE}
+source("http://bioconductor.org/biocLite.R") #Install source package
+
+biocLite("GO.db") #Install GO.db
+biocLite("topGO") #Install topGO
+biocLite("GOstats") #Install GOstats
+
+library("GO.db")
+library("topGO")
+library("GOstats")
+```
+
+## mRNA overlaps
+
+### Load data
+
+```{r}
+mRNAandDMLoverlaps <- read.delim(file = "2018-06-11-DML-mRNA.txt", header = FALSE) #Read in data
+head(mRNAandDMLoverlaps) #Confirm import
+```
+
+For `topGO`, the file of gene-to-GO mappings needs to be a tab-delimited file with the first column as the gene name, and the second column as a list of GO terms separated by a comma and space. I need to modify the overlap file to fit this requirement.
+
