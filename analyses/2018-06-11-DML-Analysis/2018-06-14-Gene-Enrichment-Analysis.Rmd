@@ -7,7 +7,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-In this script, I'll use `topGo` to identify enriched genes for mRNA regions, exons, and introns that overlap with DMLs.
+In this script, I'll use `topGo` to identify enriched genes for mRNA regions, exons, and introns that overlap with DMLs. I'm following instructions from [this manual](https://bioconductor.riken.jp/packages/3.3/bioc/vignettes/topGO/inst/doc/topGO.pdf) and [this blog entry](http://avrilomics.blogspot.com/2015/07/using-topgo-to-test-for-go-term.html).
 
 ## Install packages
 
@@ -25,17 +25,19 @@ library("GOstats")
 
 ## mRNA overlaps
 
-### Load data
+### Load and reformat data
 
 ```{r}
-mRNAandDMLoverlaps <- read.delim(file = "2018-06-11-DML-mRNA.txt", header = FALSE) #Read in data
+mRNAandDMLoverlaps <- read.delim(file = "2018-06-14-DML-mRNA-unfolded.txt", header = FALSE) #Read in data
 head(mRNAandDMLoverlaps) #Confirm import
 ```
 
-For `topGO`, the file of gene-to-GO mappings needs to be a tab-delimited file with the first column as the gene name, and the second column as a list of GO terms separated by a comma and space. I need to modify the overlap file to fit this requirement.
+For `topGO`, the file of gene-to-GO mappings needs to be a tab-delimited file with the first column as the gene name, and the second column as a list of GO terms separated by a comma and space. I need to remove any extraneous information and add GOterm information.
 
 ```{r}
-mRNAandDMLOverlapGenes <- mRNAandDMLoverlaps$V14 #Isolate the column with gene information
-strsplit(mRNAandDMLOverlapGenes, split = ";")
+genesAndGOTerms <- data.frame("geneID" = mRNAandDMLoverlaps$V17,
+                              "geneName" = mRNAandDMLoverlaps$V20) #Create new dataframe for genes and GOterms
+head(genesAndGOTerms) #Confirm dataframe creation
 ```
 
+Notice how there are some geneNames called "unclassified transcription discrepancy." I'm not sure what this means, but there is an associated geneID. I should be able to proceed with the analysis.
