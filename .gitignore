@@ -30,3 +30,5 @@ analyses/2018-06-11-DML-Analysis/2018-06-11-Intron-CGmotif.txt
 
 analyses/2018-06-11-DML-Analysis/2018-06-11-mRNA-CGmotif.txt
 .Rproj.user
+
+analyses/2018-06-11-DML-Analysis/uniprot-filtered-reviewed.fasta

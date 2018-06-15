@@ -23,10 +23,13 @@ source("http://bioconductor.org/biocLite.R") #Install source package
 biocLite("GO.db") #Install GO.db
 biocLite("topGO") #Install topGO
 biocLite("GOstats") #Install GOstats
+biocLite("org.Hs.eg.db") #Install org.Hs.eg.db
 
+#Load all installed packages
 library("GO.db")
 library("topGO")
 library("GOstats")
+library("org.Hs.eg.db")
 ```
 
 ## mRNA overlaps
@@ -42,9 +45,37 @@ For `topGO`, the file of gene-to-GO mappings needs to be a tab-delimited file wi
 
 ```{r}
 genesAndGOTerms <- data.frame("geneID" = mRNAandDMLoverlaps$V17,
-                              "geneName" = mRNAandDMLoverlaps$V20) #Create new dataframe for genes and GOterms
+                              "geneName" = mRNAandDMLoverlaps$V20) #Create new dataframe for genes and GOterms. Gene IDs are **NOT** Entrez gene IDs from NCBI.
 head(genesAndGOTerms) #Confirm dataframe creation
 ```
 
 Notice how there are some geneNames called "unclassified transcription discrepancy." I'm not sure what this means, but there is an associated geneID. I should be able to proceed with the analysis.
+
+## Obtain GOterms
+
+To get the Entrez Gene IDs and GOterms, I need to use `blastp`. Once I get these, I can use both DAVID and R packages for gene enrichment.
+
+### Make a Uniprot Database
+
+The Uniprot database was downloaded from this link as a .fasta file: http://www.uniprot.org/uniprot/?query=&fil=reviewed%3Ayes&columns=id%2Centry%20name%2Creviewed%2Cprotein%20names%2Cgenes%2Corganism%2Clength%2Cgo(biological%20process)%2Cgo-id%2Ccomment(PATHWAY)%2Cdatabase(UniPathway)%2Cdatabase(CDD)%2Cdatabase(Pfam.
+
+```{bash}
+head uniprot-filtered-reviewed.fasta
+```
+
+```{bash}
+/Users/Shared/Apps/ncbi-blast-2.2.29+/bin/makeblastdb -help #Get the help menu
+```
+
+The first step involves taking the uniprot fasta file and making a new database. To do this, I will use the following code:
+
+1. Path to `makeblastdb` to create the database needed
+2. `in` to select the input file for the database
+3. `dbtype` specifies the type of file which in our case, is a protein file
+
+```{bash}
+/Users/Shared/Apps/ncbi-blast-2.2.29+/bin/makeblastdb \
+-in uniprot-filtered-reviewed.fasta
+-dbtype 'prot'
+```
 
