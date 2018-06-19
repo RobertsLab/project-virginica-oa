@@ -71,12 +71,9 @@ Now I can perform a `blastx` to compare my query, the *C. virginica* genome, to 
 3.`-db` specifies database created in the previous step
 4. `-outfmt` specifies the type of output file. I will use 6, a tabular file
 
-```{bash}
-/Users/Shared/Apps/ncbi-blast-2.2.29+/bin/blastx \
--query ../2018-04-27-Bismark/2018-04-27-Bismark-Inputs/C_virginica-3.0_genomic.fa \
--db uniprot-filtered-reviewed.fasta \
--outfmt 6
-```
+I ran this section in the Terminal using the following code:
+
+![code](https://raw.githubusercontent.com/RobertsLab/project-virginica-oa/master/images/Lab-Notebook/2018-06-19-blastx-Code-in-Terminal.png)
 
 ## mRNA overlaps
 
