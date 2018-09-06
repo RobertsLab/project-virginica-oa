@@ -7,7 +7,8 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-In this script, I'll use `topGo` to identify enriched genes for mRNA regions, exons, and introns that overlap with DMLs. I'm following instructions from [this manual](https://bioconductor.riken.jp/packages/3.3/bioc/vignettes/topGO/inst/doc/topGO.pdf) and [this blog entry](http://avrilomics.blogspot.com/2015/07/using-topgo-to-test-for-go-term.html).
+In this script, I'll identify enriched genes for mRNA regions, exons, and introns that overlap with DMLs. To do this, I'll use Uniprot accession codes with a [custom-built Gene Enrichment tool](https://meta.yeastrc.org/compgo_yaamini_oyster/pages/goAnalysisForm.jsp).
+
 
 ## Session information
 
@@ -58,26 +59,24 @@ I ran this section in the Terminal using the following code:
 
 ![code](https://raw.githubusercontent.com/RobertsLab/project-virginica-oa/master/images/Lab-Notebook/2018-06-19-blastx-Code-in-Terminal.png)
 
+Once my `blastx` completed, I had the genome matched with Uniprot codes. It can be [found on OWL](http://owl.fish.washington.edu/spartina/Virginica-MBD/2018-07-25-Gene-Enrichment/uniprot-filtered-reviewed.fasta).
+
 ## mRNA overlaps
 
-### Load and reformat data
+### Merge Uniprot codes with overlaps
 
-### DAVID
 
-### `topGO`
+
+### `compGO`
 
 ## Exon overlaps
 
-### Load and reformat data
+### Merge Uniprot codes with overlaps
 
-### DAVID
-
-### `topGO`
+### `compGO`
 
 ## Intron overlaps
 
-### Load and reformat data
+### Merge Uniprot codes with overlaps
 
-### DAVID
-
-### `topGO`
+### `compGO`
