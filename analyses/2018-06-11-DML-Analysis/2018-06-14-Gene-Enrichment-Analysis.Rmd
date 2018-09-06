@@ -65,6 +65,19 @@ Once my `blastx` completed, I had the genome matched with Uniprot codes. It can 
 
 ### Merge Uniprot codes with overlaps
 
+The first thing I need to do is merge the txt file of DML-mRNA overlaps with the *C. virginica* genome-Uniprot codes. I should probably do this in bash, as opposed to R.
+
+```{bash}
+pwd
+```
+
+```{bash}
+ls
+```
+
+```{bash}
+head 2018-06-11-DML-mRNA.txt
+```
 
 
 ### `compGO`
