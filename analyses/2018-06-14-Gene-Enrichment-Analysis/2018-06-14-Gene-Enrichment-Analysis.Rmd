@@ -48,18 +48,30 @@ The first step involves taking the uniprot fasta file and making a new database.
 /Users/Shared/Apps/ncbi-blast-2.2.29+/bin/blastx -help
 ```
 
-Now I can perform a `blastx` to compare my query, the *C. virginica* genome, to our protein database.
+Now I can perform a `blastx` to compare my query, the *C. virginica* transcripts, to our protein database.
 
 1. Path to `blastx`
 2. `-query` provides the file we want to blast
 3.`-db` specifies database created in the previous step
 4. `-outfmt` specifies the type of output file. I will use 6, a tabular file
+5. `-out <filename>` will allow me to save the output as a new file
+6. `-num_threads 4` uses 4 CPUs in the BLAST search
+7. `-max_target_seqs 1` keeps only one aligned sequence (i.e. the best match)
 
-I ran this section in the Terminal using the following code:
+```{bash}
+pwd
+```
 
-![code](https://raw.githubusercontent.com/RobertsLab/project-virginica-oa/master/images/Lab-Notebook/2018-06-19-blastx-Code-in-Terminal.png)
+```{bash}
+/Users/Shared/Apps/ncbi-blast-2.2.29+/bin/blastx \
+-query 2018-09-06-Virginica-transcripts.fna \
+-db uniprot-filtered-reviewed.fasta \
+-outfmt 6 \
+-out 2018-09-06-Transcript-Uniprot-blastx.txt \
+-num_threads 4 \
+-max_target_seqs 1
+```
 
-Once my `blastx` completed, I had the genome matched with Uniprot codes. It can be [found on OWL](http://owl.fish.washington.edu/spartina/Virginica-MBD/2018-07-25-Gene-Enrichment/uniprot-filtered-reviewed.fasta).
 
 ## mRNA overlaps
 
