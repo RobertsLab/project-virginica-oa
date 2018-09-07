@@ -40,3 +40,11 @@ analyses/2018-06-11-DML-Analysis/uniprot-filtered-reviewed.fasta.pin
 analyses/2018-06-11-DML-Analysis/uniprot-filtered-reviewed.fasta.psq
 
 analyses/2018-06-11-DML-Analysis/2018-06-19-mRNA-100bp-Flanks-CGmotif.txt
+
+*.fasta
+
+*.phr
+
+analyses/2018-06-14-Gene-Enrichment-Analysis/uniprot-filtered-reviewed.fasta.pin
+
+analyses/2018-06-14-Gene-Enrichment-Analysis/uniprot-filtered-reviewed.fasta.psq
