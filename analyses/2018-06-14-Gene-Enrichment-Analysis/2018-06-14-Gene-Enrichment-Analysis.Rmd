@@ -131,6 +131,33 @@ head 2018-09-11-mRNA-DML-Uniprot-codeIsolated.csv #Confirm gene list isolation (
 head 2018-09-11-Transcript-Uniprot-blastx-codeIsolated.txt #Confirm background isolation (Q9JJZ5 is the code that was isolated)
 ```
 
+I saved the gene list and background in a new file:
+
+```{bash}
+head 2018-09-11-DML-mRNA-Background-GeneList.csv #Confirm file creation
+```
+
+I can now use this information in DAVID. First, I copied the Uniprot accession codes for the gene list and pasted them into DAVID.
+
+![1-copy-gene-list](../../images/2018-09-11-DAVID/1.png)
+
+![2-copy-gene-list](../../images/2018-09-11-DAVID/2.png)
+
+Then I added the codes for the background.
+
+![3-copy-background](../../images/2018-09-11-DAVID/3.png)
+
+![4-copy-background](../../images/2018-09-11-DAVID/4.png)
+
+I received the following message in DAVID.
+
+![5-error-message](../../images/2018-09-11-DAVID/5.png)
+
+I obtained results. I downloaded all functional annotations, and individual GOterm lists.
+
+![6-results](../../images/2018-09-11-DAVID/6.png)
+
+![7-results](../../images/2018-09-11-DAVID/7.png)
 
 ### `compGO`
 
