@@ -121,8 +121,15 @@ The next step is to isolate the Uniprot acession codes and input them into eithe
 
 ### DAVID
 
-For DAVID, I need to isolate the Uniprot accession codes from the transcript-blast results, and from my overlaps.
+For DAVID, I need to isolate the Uniprot accession codes from the transcript-blast results, and from my overlaps. This involves unfolding columns, which I can easily do in Excel.
 
+```{bash}
+head 2018-09-11-mRNA-DML-Uniprot-codeIsolated.csv #Confirm gene list isolation (P21783 is the code that was isolated)
+```
+
+```{bash}
+head 2018-09-11-Transcript-Uniprot-blastx-codeIsolated.txt #Confirm background isolation (Q9JJZ5 is the code that was isolated)
+```
 
 
 ### `compGO`
