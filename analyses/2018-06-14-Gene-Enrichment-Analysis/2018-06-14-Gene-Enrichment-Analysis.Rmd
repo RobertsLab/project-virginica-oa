@@ -133,12 +133,25 @@ The next step is to isolate the Uniprot acession codes and input them into eithe
 
 ## Exon overlaps
 
+I can now do the same thing with my exon and intron overlaps!
+
+```{bash}
+head ../2018-06-11-DML-Analysis/2018-06-11-DML-Exon.txt
+```
+
+Alright...we have a problem. The exon overlaps only have chromosome and position information, not any gene information. I'd have to merge the exons with the mRNA file, then with the blast results.
+
+
 ### Merge Uniprot codes with overlaps
+
+### DAVID
 
 ### `compGO`
 
 ## Intron overlaps
 
 ### Merge Uniprot codes with overlaps
+
+### DAVID
 
 ### `compGO`
