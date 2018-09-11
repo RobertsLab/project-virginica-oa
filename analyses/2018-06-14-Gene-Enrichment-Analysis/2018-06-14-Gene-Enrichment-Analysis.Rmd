@@ -87,8 +87,15 @@ ls
 ```
 
 ```{bash}
-head 2018-06-11-DML-mRNA.txt
+head 2018-09-06-Transcript-Uniprot-blastx.txt
 ```
+
+```{bash}
+head ../2018-06-11-DML-Analysis/2018-06-11-DML-mRNA.txt
+```
+
+The IDs in the blast result match up with the Genbank IDs in the overlap file. I need to isolate the Genbank IDs before I can merge the files. I'm not sure how to do this file manipulation in bash or R, so I'll do this in Excel.
+
 
 
 ### `compGO`
