@@ -25,7 +25,7 @@ Before I do any sort of gene enrichment analysis, I need to get Uniprot codes fo
 The Uniprot database was downloaded from this link as a .fasta file: http://www.uniprot.org/uniprot/?query=&fil=reviewed%3Ayes&columns=id%2Centry%20name%2Creviewed%2Cprotein%20names%2Cgenes%2Corganism%2Clength%2Cgo(biological%20process)%2Cgo-id%2Ccomment(PATHWAY)%2Cdatabase(UniPathway)%2Cdatabase(CDD)%2Cdatabase(Pfam.
 
 ```{bash}
-head uniprot-filtered-reviewed.fasta
+head uniprot-filtered-reviewed.fasta #Check database creation
 ```
 
 ```{bash}
@@ -59,7 +59,7 @@ Now I can perform a `blastx` to compare my query, the *C. virginica* transcripts
 7. `-max_target_seqs 1` keeps only one aligned sequence (i.e. the best match)
 
 ```{bash}
-pwd
+pwd #Obtain present working directory
 ```
 
 ```{bash}
@@ -79,19 +79,11 @@ pwd
 The first thing I need to do is merge the txt file of DML-mRNA overlaps with the *C. virginica* genome-Uniprot codes.
 
 ```{bash}
-pwd
+head 2018-09-06-Transcript-Uniprot-blastx.txt #Check file format
 ```
 
 ```{bash}
-ls
-```
-
-```{bash}
-head 2018-09-06-Transcript-Uniprot-blastx.txt
-```
-
-```{bash}
-head ../2018-06-11-DML-Analysis/2018-06-11-DML-mRNA.txt
+head ../2018-06-11-DML-Analysis/2018-06-11-DML-mRNA.txt #Check file format
 ```
 
 The IDs in the blast result match up with the Genbank IDs in the overlap file. I need to isolate the Genbank IDs before I can merge the files. I'm not sure how to do this file manipulation in bash or R, so I'll do this in Excel.
@@ -129,20 +121,23 @@ The next step is to isolate the Uniprot acession codes and input them into eithe
 
 ### DAVID
 
+For DAVID, I need to isolate the Uniprot accession codes from the transcript-blast results, and from my overlaps.
+
+
+
 ### `compGO`
 
 ## Exon overlaps
 
+### Merge Uniprot codes with overlaps
+
 I can now do the same thing with my exon and intron overlaps!
 
 ```{bash}
-head ../2018-06-11-DML-Analysis/2018-06-11-DML-Exon.txt
+head ../2018-06-11-DML-Analysis/2018-06-11-DML-Exon.txt #Check file format
 ```
 
 Alright...we have a problem. The exon overlaps only have chromosome and position information, not any gene information. I'd have to merge the exons with the mRNA file, then with the blast results.
-
-
-### Merge Uniprot codes with overlaps
 
 ### DAVID
 
@@ -155,3 +150,7 @@ Alright...we have a problem. The exon overlaps only have chromosome and position
 ### DAVID
 
 ### `compGO`
+
+## Flanking overlaps
+
+## Everything
