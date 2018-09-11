@@ -76,7 +76,7 @@ pwd
 
 ### Merge Uniprot codes with overlaps
 
-The first thing I need to do is merge the txt file of DML-mRNA overlaps with the *C. virginica* genome-Uniprot codes. I should probably do this in bash, as opposed to R.
+The first thing I need to do is merge the txt file of DML-mRNA overlaps with the *C. virginica* genome-Uniprot codes.
 
 ```{bash}
 pwd
@@ -95,6 +95,39 @@ head ../2018-06-11-DML-Analysis/2018-06-11-DML-mRNA.txt
 ```
 
 The IDs in the blast result match up with the Genbank IDs in the overlap file. I need to isolate the Genbank IDs before I can merge the files. I'm not sure how to do this file manipulation in bash or R, so I'll do this in Excel.
+
+```{bash}
+head 2018-09-11-DML-mRNA-unfolded.txt
+```
+
+Now I'll merge the two documents.
+
+```{r}
+blastResults <- read.delim("2018-09-06-Transcript-Uniprot-blastx.txt", header = FALSE, sep = "\t", dec = ".") #Import blast results
+head(blastResults) #Confirm import
+colnames(blastResults) <- c("Genbank", "Uniprot", "pident", "length", "mismatch", "gapopen", "qstart", "qend", "sstart", "send", "evalue", "bitscore")
+head(blastResults) #Confirm column headers
+```
+
+```{r}
+DMLmRNA <- read.delim("2018-09-11-DML-mRNA-unfolded.txt", header = FALSE) #Import DML-mRNA overlaps
+head(DMLmRNA) #Confirm import
+colnames(DMLmRNA) <- c("DMLchromosome", "DMLstart", "DMLend", "DMLstrand", "V5", "mRNAchromosome", "Gnomon", "mRNA", "mRNAstart", "mRNAend", "V11", "mRNAstrand", "V13", "ID", "Parent", "Dbxref=GeneID", "V17", "Genbank", "Name", "V20", "V21", "V22", "V23", "V24", "V25", "V26", "V27", "V28", "V29") #Rename columns
+head(DMLmRNA) #Confirm column naming
+```
+
+```{r}
+mRNADMLblast <- merge(x = blastResults, y = DMLmRNA, by = "Genbank") #Merge the two files by the Genbank ID column
+head(mRNADMLblast) #Confirm merge
+```
+
+```{r}
+write.csv(mRNADMLblast, "2018-09-11-mRNA-DML-Uniprot.csv") #Write out file
+```
+
+The next step is to isolate the Uniprot acession codes and input them into either DAVID or compGO. The reason why I want to use both DAVID and compGO is to compare the efficacy of the compGO tool.
+
+### DAVID
 
 ### `compGO`
 
