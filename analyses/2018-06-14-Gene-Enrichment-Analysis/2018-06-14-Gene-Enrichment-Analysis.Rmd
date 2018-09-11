@@ -159,6 +159,8 @@ I obtained results. I downloaded all functional annotations, and individual GOte
 
 ![7-results](../../images/2018-09-11-DAVID/7.png)
 
+I opened the GOterm files for biological processes, cellular components, and molecular functions. I pasted significant GOterms and p-values into [ReViGO](http://revigo.irb.hr) to generate the following figures.
+
 ### `compGO`
 
 ## Exon overlaps
