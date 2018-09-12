@@ -159,7 +159,31 @@ I obtained results. I downloaded all functional annotations, and individual GOte
 
 ![7-results](../../images/2018-09-11-DAVID/7.png)
 
-I opened the GOterm files for biological processes, cellular components, and molecular functions. I pasted significant GOterms and p-values into [ReViGO](http://revigo.irb.hr) to generate the following figures.
+I opened the GOterm files for biological processes, cellular components, and molecular functions. I pasted significant GOterms and p-values into [ReViGO](http://revigo.irb.hr) to generate the following figures. For each category, I created a plot with medium term similarity, and either sizes based on logSize or log10p-value.
+
+*Biological processes*:
+
+Processes include cytoskeleton and microtubule movement, cell cycle, and protein activity. The most interesting results were those related to DNA and reproduction. DNA replication, mRNA processing, positive regulation of transcription from RNA polymerase II promoters, and response to DNA damage were all enriched. Additionally, positive regulation of histone H3-K9 acetylation, methylation-dependent chromatin silencing, DNA methylation involved in gamete generation, and fertilization point to mechanisms for epigenetic inheritance.
+
+![BP-size](2018-09-12-ReVIGO-Plots/2018-09-12-DML-mRNA-BP-LogSize-Medium.png)
+
+![BP-pvalue](2018-09-12-ReVIGO-Plots/2018-09-12-DML-mRNA-BP-LogPValue-Medium.png)
+
+*Cellular components*:
+
+Cellular components involved in enriched processes included protein complexes, transcription factor complexes, chromosomes, centromeres, microtubules, and cilia.
+
+![CC-size](2018-09-12-ReVIGO-Plots/2018-09-12-DML-mRNA-CC-LogSize-Medium.png)
+
+![CC-pvalue](2018-09-12-ReVIGO-Plots/2018-09-12-DML-mRNA-CC-LogPValue-Medium.png)
+
+*Molecular function*:
+
+Molecular functions of enriched processes include GTPase and ATPase activity, helicase activity, microtuble motor activity, protein kinase binding and activity, transcription regulatory region DNA binding, general DNA binding, and ion binding.
+
+![MF-size](2018-09-12-ReVIGO-Plots/2018-09-12-DML-mRNA-MF-LogSize-Medium.png)
+
+![MF-pvalue](2018-09-12-ReVIGO-Plots/2018-09-12-DML-mRNA-CC-LogPValue-Medium.png)
 
 ### `compGO`
 
