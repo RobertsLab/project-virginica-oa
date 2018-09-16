@@ -266,7 +266,7 @@ head(exonDMLBlast) #Confirm merge
 ```
 
 ```{r}
-write.csv(exonDMLBlast, "2018-09-16-mRNA-Exon-Uniprot.csv") #Write out file
+write.csv(exonDMLBlast, "2018-09-16-Exon-DML-Uniprot.csv") #Write out file
 ```
 
 ### `compGO`
@@ -275,7 +275,41 @@ write.csv(exonDMLBlast, "2018-09-16-mRNA-Exon-Uniprot.csv") #Write out file
 
 ### `intersect` overlaps with gene information
 
+```{bash}
+/Users/Shared/bioinformatics/bedtools2/bin/intersectBed \
+-wao \
+-a ../2018-06-11-DML-Analysis/2018-06-11-DML-Intron.txt \
+-b ../2018-06-11-DML-Analysis/C_virginica-3.0_Gnomon_mRNA.gff3 \
+> 2018-09-16-DML-Intron-mRNA-Overlaps.txt
+```
+
+```{bash}
+head 2018-09-16-DML-Intron-mRNA-Overlaps.txt
+```
+
 ### Merge Uniprot codes with overlaps
+
+I unfolded the Genbank IDs:
+
+```{bash}
+head 2018-09-16-DML-Intron-mRNA-Overlaps.txt
+```
+
+```{r}
+DMLIntron <- read.delim("2018-09-16-DML-Intron-mRNA-Overlaps.txt", header = FALSE) #Import DML-intron-mRNA overlaps
+head(DMLIntron) #Confirm import
+colnames(DMLIntron) <- c("DMLchromosome", "DMLstart", "DMLend", "DMLstrand", "methDiff", "intronChromosome", "intronStart", "intronEnd", "mRNAchromosome", "Gnomon", "mRNA", "mRNAstart", "mRNAend", "V14", "mRNAstrand", "V15", "V16", "V17", "ID", "Parent", "Dbxref=GeneID", "V22", "Genbank", "Name", "V25", "V26", "V27", "V28", "V29", "V30", "V31", "V32", "V33", "V34") #Rename columns
+head(DMLIntron) #Confirm column naming
+```
+
+```{r}
+intronDMLBlast <- merge(x = blastResults, y = DMLIntron, by = "Genbank") #Merge the two files by the Genbank ID column
+head(intronDMLBlast) #Confirm merge
+```
+
+```{r}
+write.csv(intronDMLBlast, "2018-09-16-Intron-DML-Uniprot.csv") #Write out file
+```
 
 ### `compGO`
 
