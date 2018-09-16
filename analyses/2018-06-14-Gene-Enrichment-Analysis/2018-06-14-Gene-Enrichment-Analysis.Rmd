@@ -199,11 +199,13 @@ My input list of significant GOterms is pretty long because I'm using p-values, 
 
 I would like to compare the DAVID output with `compGO`, since `compGO` is essentially a specialized version of DAVID with a background that Mike Riffle custom built from my `blastx` results. The tool can be accessed [here](https://meta.yeastrc.org/compgo_yaamini_oyster/pages/goAnalysisForm.jsp).
 
-![compGO-BP-result]()
+`compGO` provides both reports (found [here](2018-09-16-compGO-Output/)) and visualizations, using a p-value cutoff of 1e-2. Both output formats provide umbrella GOterms, that are then mapped to other GOterms. It's much easy to understand how enriched processes are represented in this way. Overrepresented biological processes include cytoskeletal growth and reorganization, transcription and translation regulation, and metabolic processes.
 
-![compGO-CC-result]()
+![compGO-BP-result](2018-09-16-compGO-Output/compGO-DML-mRNA-BP-p1E-2.png)
 
-![compGO-MF-result]()
+![compGO-CC-result](2018-09-16-compGO-Output/compGO-DML-mRNA-CC-p1E-2.png)
+
+![compGO-MF-result](2018-09-16-compGO-Output/compGO-DML-mRNA-MF-p1E-2.png)
 
 ## Exon overlaps
 
