@@ -199,7 +199,7 @@ My input list of significant GOterms is pretty long because I'm using p-values, 
 
 I would like to compare the DAVID output with `compGO`, since `compGO` is essentially a specialized version of DAVID with a background that Mike Riffle custom built from my `blastx` results. The tool can be accessed [here](https://meta.yeastrc.org/compgo_yaamini_oyster/pages/goAnalysisForm.jsp).
 
-`compGO` provides both reports (found [here](2018-09-16-compGO-Output/)) and visualizations, using a p-value cutoff of 1e-2. Both output formats provide umbrella GOterms, that are then mapped to other GOterms. It's much easy to understand how enriched processes are represented in this way. Overrepresented biological processes include cytoskeletal growth and reorganization, transcription and translation regulation, and metabolic processes.
+`compGO` provides both reports (found [here](2018-09-16-compGO-Output/)) and visualizations, using a p-value cutoff of 1e-2. One thing that `compGO` does better than DAVID is filter down results. Even with the DAVID output, I had to filter p-values or fold enrichment values to get meaningful visualizations. `compGO` makes this easier by generating visuals that link similar GOterms with umbrella terms. Overrepresented biological processes include cytoskeletal growth and reorganization, transcription and translation regulation, and metabolic processes.
 
 ![compGO-BP-result](2018-09-16-compGO-Output/compGO-DML-mRNA-BP-p1E-2.png)
 
@@ -209,7 +209,7 @@ I would like to compare the DAVID output with `compGO`, since `compGO` is essent
 
 ## Exon overlaps
 
-### Merge Uniprot codes with overlaps
+### `intersect` overlaps with gene information
 
 I can now do the same thing with my exon and intron overlaps!
 
@@ -217,17 +217,65 @@ I can now do the same thing with my exon and intron overlaps!
 head ../2018-06-11-DML-Analysis/2018-06-11-DML-Exon.txt #Check file format
 ```
 
-Alright...we have a problem. The exon overlaps only have chromosome and position information, not any gene information. I'd have to merge the exons with the mRNA file, then with the blast results.
+The exon overlaps only have chromosome and position information, not gene information. I have to first `intersect` these overlaps using bedTools, then proceed with gene enrichment.
 
-### DAVID
+```{bash}
+/Users/Shared/bioinformatics/bedtools2/bin/intersectBed -h #Load help menu
+```
+
+I need:
+
+1. The path to `intersectBed`
+2. `-wao`: Write the original A and B entries plus the number of base pairs of overlap between the two features. However, A features w/o overlap are also reported with a NULL B feature and overlap = 0
+3. Path to the DML-exon overlaps
+4. Path to the mRNA gff
+5. Path for output
+
+```{bash}
+/Users/Shared/bioinformatics/bedtools2/bin/intersectBed \
+-wao \
+-a ../2018-06-11-DML-Analysis/2018-06-11-DML-Exon.txt \
+-b ../2018-06-11-DML-Analysis/C_virginica-3.0_Gnomon_mRNA.gff3 \
+> 2018-09-16-DML-Exon-mRNA-Overlaps.txt
+```
+
+```{bash}
+head 2018-09-16-DML-Exon-mRNA-Overlaps.txt
+```
+
+Yay it worked!
+
+### Merge Uniprot codes with overlaps
+
+First, I need to unfold the gene IDs from the file I just generated.
+
+```{bash}
+head 2018-09-16-DML-Exon-mRNA-Overlaps.txt
+```
+
+```{r}
+DMLExon <- read.delim("2018-09-16-DML-Exon-mRNA-Overlaps.txt", header = FALSE) #Import DML-exon-mRNA overlaps
+head(DMLExon) #Confirm import
+colnames(DMLExon) <- c("DMLchromosome", "DMLstart", "DMLend", "DMLstrand", "methDiff", "exonChromosome", "exonStart", "exonEnd", "mRNAchromosome", "Gnomon", "mRNA", "mRNAstart", "mRNAend", "V14", "mRNAstrand", "V15", "V16", "V17", "ID", "Parent", "Dbxref=GeneID", "V22", "Genbank", "Name", "V25", "V26", "V27", "V28", "V29", "V30", "V31", "V32", "V33", "V34") #Rename columns
+head(DMLExon) #Confirm column naming
+```
+
+```{r}
+exonDMLBlast <- merge(x = blastResults, y = DMLExon, by = "Genbank") #Merge the two files by the Genbank ID column
+head(exonDMLBlast) #Confirm merge
+```
+
+```{r}
+write.csv(exonDMLBlast, "2018-09-16-mRNA-Exon-Uniprot.csv") #Write out file
+```
 
 ### `compGO`
 
 ## Intron overlaps
 
-### Merge Uniprot codes with overlaps
+### `intersect` overlaps with gene information
 
-### DAVID
+### Merge Uniprot codes with overlaps
 
 ### `compGO`
 
