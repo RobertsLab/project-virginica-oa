@@ -159,6 +159,8 @@ I obtained results. I downloaded all functional annotations, and individual GOte
 
 ![7-results](../../images/2018-09-11-DAVID/7.png)
 
+#### ReVIGO
+
 I opened the GOterm files for biological processes, cellular components, and molecular functions. I pasted significant GOterms and p-values into [ReViGO](http://revigo.irb.hr) to generate the following figures. For each category, I created a plot with medium term similarity, and either sizes based on logSize or log10p-value.
 
 *Biological processes*:
@@ -185,7 +187,23 @@ Molecular functions of enriched processes include GTPase and ATPase activity, he
 
 ![MF-pvalue](2018-09-12-ReVIGO-Plots/2018-09-12-DML-mRNA-CC-LogPValue-Medium.png)
 
+My input list of significant GOterms is pretty long because I'm using p-values, and not corrected p-values. With my [biological processes](2018-09-11-DAVID-Output/2018-09-11-DML-mRNA-BPGO.txt), using a corrected list of p-values would only give me one enriched term, and that's not interesting. Instead, I'm going to set a fold enrichment cut-off of 10. Any term with a fold enrichment higher than 10 will be used in ReVIGO.
+
+#### Fold Enrichment ReVIGO
+
+*Biological processes*:
+
+![BP-foldEnrichment]()
+
 ### `compGO`
+
+I would like to compare the DAVID output with `compGO`, since `compGO` is essentially a specialized version of DAVID with a background that Mike Riffle custom built from my `blastx` results. The tool can be accessed [here](https://meta.yeastrc.org/compgo_yaamini_oyster/pages/goAnalysisForm.jsp).
+
+![compGO-BP-result]()
+
+![compGO-CC-result]()
+
+![compGO-MF-result]()
 
 ## Exon overlaps
 
