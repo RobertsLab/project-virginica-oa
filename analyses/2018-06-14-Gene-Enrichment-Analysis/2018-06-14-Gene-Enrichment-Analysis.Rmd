@@ -267,12 +267,6 @@ write.csv(exonDMLBlast, "2018-09-16-Exon-DML-Uniprot.csv") #Write out file
 
 ### `compGO`
 
-![compGO-BP-result](2018-09-16-compGO-Output/compGO-DML-Exon-BP-p1E-2.png)
-
-![compGO-CC-result](2018-09-16-compGO-Output/compGO-DML-Exon-CC-p1E-2.png)
-
-![compGO-MF-result](2018-09-16-compGO-Output/compGO-DML-Exon-MF-p1E-2.png)
-
 ## Intron overlaps
 
 ### `intersect` overlaps with gene information
@@ -329,12 +323,8 @@ write.csv(intronDMLBlast, "2018-09-16-Intron-DML-Uniprot.csv") #Write out file
 
 ### mRNA-Exon comparison
 
-![mRNA-exon-BP]()
-
 ### mRNA-Intron comparison
 
 ![mRNA-intron-BP](2018-09-16-compGO-Output/compGO-mRNA-Intron-Differences-BP-p1E-2.png)
 
 ### Exon-Intron comparison
-
-![exon-intron-BP]()
