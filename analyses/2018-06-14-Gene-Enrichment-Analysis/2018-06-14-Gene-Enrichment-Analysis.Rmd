@@ -191,10 +191,6 @@ My input list of significant GOterms is pretty long because I'm using p-values, 
 
 #### Fold Enrichment ReVIGO
 
-*Biological processes*:
-
-![BP-foldEnrichment]()
-
 ### `compGO`
 
 I would like to compare the DAVID output with `compGO`, since `compGO` is essentially a specialized version of DAVID with a background that Mike Riffle custom built from my `blastx` results. The tool can be accessed [here](https://meta.yeastrc.org/compgo_yaamini_oyster/pages/goAnalysisForm.jsp).
@@ -271,6 +267,12 @@ write.csv(exonDMLBlast, "2018-09-16-Exon-DML-Uniprot.csv") #Write out file
 
 ### `compGO`
 
+![compGO-BP-result](2018-09-16-compGO-Output/compGO-DML-Exon-BP-p1E-2.png)
+
+![compGO-CC-result](2018-09-16-compGO-Output/compGO-DML-Exon-CC-p1E-2.png)
+
+![compGO-MF-result](2018-09-16-compGO-Output/compGO-DML-Exon-MF-p1E-2.png)
+
 ## Intron overlaps
 
 ### `intersect` overlaps with gene information
@@ -313,6 +315,26 @@ write.csv(intronDMLBlast, "2018-09-16-Intron-DML-Uniprot.csv") #Write out file
 
 ### `compGO`
 
+![compGO-BP-result](2018-09-16-compGO-Output/compGO-DML-Intron-BP-p1E-2.png)
+
+![compGO-CC-result](2018-09-16-compGO-Output/compGO-DML-Intron-CC-p1E-2.png)
+
+![compGO-MF-result](2018-09-16-compGO-Output/compGO-DML-Intron-MF-p1E-2.png)
+
 ## Flanking overlaps
 
 ## All elements
+
+## Comparisons
+
+### mRNA-Exon comparison
+
+![mRNA-exon-BP]()
+
+### mRNA-Intron comparison
+
+![mRNA-intron-BP](2018-09-16-compGO-Output/compGO-mRNA-Intron-Differences-BP-p1E-2.png)
+
+### Exon-Intron comparison
+
+![exon-intron-BP]()
