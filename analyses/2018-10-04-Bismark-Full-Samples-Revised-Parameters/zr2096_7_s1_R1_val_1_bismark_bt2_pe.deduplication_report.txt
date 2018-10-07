@@ -1,0 +1,7 @@
+
+Total number of alignments analysed in zr2096_7_s1_R1_val_1_bismark_bt2_pe.bam:	15123226
+Total number duplicated alignments removed:	505812 (3.34%)
+Duplicated alignments were found at:	440344 different position(s)
+
+Total count of deduplicated leftover sequences: 14617414 (96.66% of total)
+
