@@ -91,6 +91,8 @@ fileName$actualFileName4 <- paste(fileName$nameBase2, "-3xCoverage", "-Sample", 
 head(fileName) #Confirm column creation
 ```
 
+### 1x Coverage
+
 ```{r}
 for(i in 1:nFiles) { #For each data file
   jpeg(filename = fileName$actualFileName[i], height = 1000, width = 1000) #Save file with designated name
@@ -99,7 +101,6 @@ for(i in 1:nFiles) { #For each data file
 } #Plot and save %CpG methylation information
 ```
 
-
 ```{r}
 for(i in 1:nFiles) { #For each data file
   jpeg(filename = fileName$actualFileName2[i], height = 1000, width = 1000) #Save file with designated name
@@ -107,6 +108,8 @@ for(i in 1:nFiles) { #For each data file
   dev.off() #Turn off plotting device
 } #Plot and save CpG coverage information
 ```
+
+### 3x Coverage
 
 ```{r}
 for(i in 1:nFiles) { #For each data file
@@ -123,5 +126,3 @@ for(i in 1:nFiles) { #For each data file
   dev.off() #Turn off plotting device
 } #Plot and save CpG coverage information
 ```
-
-## Obtain correlation plots
