@@ -29,18 +29,99 @@ library(methylKit) #Load methylkit
 
 # Process methylation data
 
-I need to access the files on [gannett](http://gannet.fish.washington.edu/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-03-Bismark-Parameter-Testing/2018-10-03-L012-Output/). The files could be downloaded using `curl`, but since gannet is mounted on the machine I'm using, I'll use an absolute path and access the files directly from gannet. This way, I don't have to write anything to my machine.
+I need to access the files on [gannett](http://gannet.fish.washington.edu/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-03-Bismark-Parameter-Testing/2018-10-03-L012-Output/). I previously downloaded these files using `wget` and checked file quality with `shasum` in [this notebook](https://github.com/RobertsLab/project-virginica-oa/blob/master/notebooks/2018-10-03-Bismark-Parameter-Testing.ipynb).
 
 ```{r}
-analysisFiles <- list ("zr2096_1_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_2_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_3_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_4_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_5_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_6_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_7_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_8_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_9_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam",
-                       "zr2096_10_s1_R1_bismark_bt2_pe.deduplicated.sorted.bam") #Put all .bam files into a list for analysis
+getwd()
 ```
 
+```{r}
+analysisFiles <- list("../2018-10-03-Bismark-Parameter-Testing/2018-10-03-L012-Output/zr2096_1_dedup.sorted.bam",
+                      "../2018-10-03-Bismark-Parameter-Testing/2018-10-03-L012-Output/zr2096_2_dedup.sorted.bam",
+                      "../2018-10-03-Bismark-Parameter-Testing/2018-10-03-L012-Output/zr2096_3_dedup.sorted.bam",
+                      "../2018-10-03-Bismark-Parameter-Testing/2018-10-03-L012-Output/zr2096_4_dedup.sorted.bam",
+                      "../2018-10-03-Bismark-Parameter-Testing/2018-10-03-L012-Output/zr2096_5_dedup.sorted.bam",
+                      "../2018-10-03-Bismark-Parameter-Testing/2018-10-03-L012-Output/zr2096_6_dedup.sorted.bam",
+                      "../2018-10-03-Bismark-Parameter-Testing/2018-10-03-L012-Output/zr2096_7_dedup.sorted.bam",
+                      "../2018-10-03-Bismark-Parameter-Testing/2018-10-03-L012-Output/zr2096_8_dedup.sorted.bam",
+                      "../2018-10-03-Bismark-Parameter-Testing/2018-10-03-L012-Output/zr2096_9_dedup.sorted.bam",
+                      "../2018-10-03-Bismark-Parameter-Testing/2018-10-03-L012-Output/zr2096_10_dedup.sorted.bam") #Put all .bam files into a list for analysis.
+```
+
+```{r}
+sample.IDs <- list("1", "2", "3", "4", "5", "6", "7", "8", "9", "10") #Create list of sample IDs
+treatmentSpecification <- c(rep(0, times = 5), rep(1, times = 5)) #Specify which treatment the samples were from. 1 is the treatment (high pCO2) and 0 is the control (ambient pCO2)
+```
+
+# Try different coverage metrics
+
+I will use `processBismarkAln` to set different coverage metrics in the `mincov` argument. I'll text 1x, 3x, and 5x, coverage.
+
+```{r}
+processedFilesCov1 <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 1, treatment = treatmentSpecification) #Process files for CpG meetehylation using 1x coverage. First 5 files were from ambient conditions, and the second from high pCO2 conditions.
+```
+
+```{r}
+processedFilesCov3 <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 3, treatment = treatmentSpecification) #Process files for CpG meetehylation using 3x coverage. First 5 files were from ambient conditions, and the second from high pCO2 conditions.
+```
+
+```{r}
+processedFilesCov5 <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 5, treatment = treatmentSpecification) #Process files for CpG meetehylation using 1x coverage. First 5 files were from ambient conditions, and the second from high pCO2 conditions.
+```
+
+Working through 5x coverage with a subset just didn't give me enough alignments, so I'll continue to cmopare 1x and 3x coverage.
+
+# Analyze methylation data
+
+## Obtain methylation and coverage plots
+
+```{r}
+nFiles <- length(sample.IDs) #Count number of samples
+fileName <- data.frame("nameBase" = rep("2018-10-11-Percent-CpG-Methylation", times = nFiles),
+                       "nameBase2" = rep("2018-10-11-Percent-CpG-Coverage", times = nFiles),
+                       "sample.ID" = 1:10) #Create new dataframe for filenames
+head(fileName) #Confirm dataframe creation
+```
+
+```{r}
+fileName$actualFileName <- paste(fileName$nameBase, "-1xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 1x coverage + specific sample's percent CpG methylation plot
+fileName$actualFileName2 <- paste(fileName$nameBase2, "-1xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 1x coverage + specific sample's percent CpG coverage plot
+fileName$actualFileName3 <- paste(fileName$nameBase, "-3xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 3x coverage + specific sample's percent CpG methylation plot
+fileName$actualFileName4 <- paste(fileName$nameBase2, "-3xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 3x coverage + specific sample's percent CpG coverage plot
+head(fileName) #Confirm column creation
+```
+
+```{r}
+for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName[i], height = 1000, width = 1000) #Save file with designated name
+  getMethylationStats(processedFilesCov1[[i]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
+  dev.off() #Turn off plotting device
+} #Plot and save %CpG methylation information
+```
+
+
+```{r}
+for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName2[i], height = 1000, width = 1000) #Save file with designated name
+  getCoverageStats(processedFilesCov1[[i]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
+  dev.off() #Turn off plotting device
+} #Plot and save CpG coverage information
+```
+
+```{r}
+for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName3[i], height = 1000, width = 1000) #Save file with designated name
+  getMethylationStats(processedFilesCov3[[i]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
+  dev.off() #Turn off plotting device
+} #Plot and save %CpG methylation information
+```
+
+```{r}
+for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName4[i], height = 1000, width = 1000) #Save file with designated name
+  getCoverageStats(processedFilesCov3[[i]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
+  dev.off() #Turn off plotting device
+} #Plot and save CpG coverage information
+```
+
+## Obtain correlation plots
