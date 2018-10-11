@@ -72,3 +72,6 @@ analyses/2018-06-11-DML-Analysis/2018-09-16-IGV-Comparisons/sample7.bedGraph
 analyses/2018-06-11-DML-Analysis/2018-09-16-IGV-Comparisons/sample8.bedGraph
 
 analyses/2018-06-11-DML-Analysis/2018-09-16-IGV-Comparisons/sample9.bedGraph
+*.bai
+*.bedGraph
+*.gz
