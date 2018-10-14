@@ -1,0 +1,59 @@
+Path to Bowtie 2 specified as: bowtie2
+Bowtie seems to be working fine (tested command 'bowtie2 --version' [2.3.0])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/usr/local/bin/samtools'
+Reference genome folder provided is /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/	(absolute path is '/Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/)'
+
+Input files to be analysed (in current folder '/Users/yaamini/Documents/project-virginica-oa/analyses/2018-10-04-Bismark-Full-Samples-Revised-Parameters'):
+/Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_10_s1_R1_val_1.fq.gz
+/Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_10_s1_R2_val_2.fq.gz
+Library was specified to be not strand-specific (non-directional), therefore alignments to all four possible bisulfite strands (OT, CTOT, OB and CTOB) will be reported
+Setting parallelization to single-threaded (default)
+
+Current working directory is: /Users/yaamini/Documents/project-virginica-oa/analyses/2018-10-04-Bismark-Full-Samples-Revised-Parameters
+
+Now reading in and storing sequence information of the genome specified in: /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/
+
+Single-core mode: setting pid to 1
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_10_s1_R1_val_1.fq.gz and /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_10_s1_R2_val_2.fq.gz
+Input files are in FastQ format
+Writing a C -> T converted version of the input file zr2096_10_s1_R1_val_1.fq.gz to zr2096_10_s1_R1_val_1.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_10_s1_R1_val_1.fq.gz to zr2096_10_s1_R1_val_1.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_10_s1_R1_val_1.fq.gz (17448883 sequences in total)
+
+Writing a C -> T converted version of the input file zr2096_10_s1_R2_val_2.fq.gz to zr2096_10_s1_R2_val_2.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file zr2096_10_s1_R2_val_2.fq.gz to zr2096_10_s1_R2_val_2.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file zr2096_10_s1_R2_val_2.fq.gz (17448883 sequences in total)
+
+Input files are zr2096_10_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_10_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_10_s1_R2_val_2.fq.gz_C_to_T.fastq and zr2096_10_s1_R2_val_2.fq.gz_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /Users/yaamini/Documents/project-virginica-oa/analyses/2018-04-27-Bismark/2018-04-27-Bismark-Inputs/ with the specified options: -q --score-min L,0,-1.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from zr2096_10_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_10_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-1.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_1:N:0:GATCAG/1	77	*	0	0	*	*	0	0	ATTGTATTAATTATAAAAAATATNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNATTTATTATTAAAAATATTAAATA	FFFFFFFFFBFFFFFFFFFFFFF#################################<</<FFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_2:N:0:GATCAG/2	141	*	0	0	*	*	0	0	ATATTTTTAATAATAAATATAATTATATATTAAAATAAAATAATATATTTAATATTTTTAATAATAAATACAATTAAAT	FFFFFFFFFFFBFFFFFFFFFFFFFFFFBFFBFFFFFFFFFBFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from zr2096_10_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_10_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-1.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_1:N:0:GATCAG/1	77	*	0	0	*	*	0	0	ATCATATCAACTATAAAAAATACNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNATCTACTATCAAAAATACTAAACA	FFFFFFFFFBFFFFFFFFFFFFF#################################<</<FFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_2:N:0:GATCAG/2	141	*	0	0	*	*	0	0	GTATTTTTGATAGTAGATATGATTGTATATTAGGGTAAGGTAGTGTGTTTAGTATTTTTGATAGTAGATATGATTGAAT	FFFFFFFFFFFBFFFFFFFFFFFFFFFFBFFBFFFFFFFFFBFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from zr2096_10_s1_R1_val_1.fq.gz_G_to_A.fastq and zr2096_10_s1_R2_val_2.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-1.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_1:N:0:GATCAG/1	77	*	0	0	*	*	0	0	ATCATATCAACTATAAAAAATACNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNATCTACTATCAAAAATACTAAACA	FFFFFFFFFBFFFFFFFFFFFFF#################################<</<FFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_2:N:0:GATCAG/2	141	*	0	0	*	*	0	0	GTATTTTTGATAGTAGATATGATTGTATATTAGGGTAAGGTAGTGTGTTTAGTATTTTTGATAGTAGATATGATTGAAT	FFFFFFFFFFFBFFFFFFFFFFFFFFFFBFFBFFFFFFFFFBFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from zr2096_10_s1_R1_val_1.fq.gz_C_to_T.fastq and zr2096_10_s1_R2_val_2.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-1.2 -p 4 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_1:N:0:GATCAG/1	77	*	0	0	*	*	0	0	ATTGTATTAATTATAAAAAATATNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNATTTATTATTAAAAATATTAAATA	FFFFFFFFFBFFFFFFFFFFFFF#################################<</<FFFFFFFFFFFFFFFFFFFF	YT:Z:UP	YF:Z:NS
+HWI-C00124:321:CC781ANXX:2:1101:1232:2155_2:N:0:GATCAG/2	141	*	0	0	*	*	0	0	ATATTTTTAATAATAAATATAATTATATATTAAAATAAAATAATATATTTAATATTTTTAATAATAAATACAATTAAAT	FFFFFFFFFFFBFFFFFFFFFFFFFFFFBFFBFFFFFFFFFBFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+
+>>> Writing bisulfite mapping results to zr2096_10_s1_R1_val_1_bismark_bt2_pe.bam <<<
+
+
+Reading in the sequence files /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_10_s1_R1_val_1.fq.gz and /Volumes/web/Athaliana/20180411_trimgalore_10bp_Cvirginica_MBD/zr2096_10_s1_R2_val_2.fq.gz
+Processed 1000000 sequence pairs so far
+Processed 2000000 sequence pairs so far
