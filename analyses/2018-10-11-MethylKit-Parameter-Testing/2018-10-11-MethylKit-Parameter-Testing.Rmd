@@ -58,7 +58,7 @@ treatmentSpecification <- c(rep(0, times = 5), rep(1, times = 5)) #Specify which
 I will use `processBismarkAln` to set different coverage metrics in the `mincov` argument. I'll text 1x, 3x, and 5x, coverage.
 
 ```{r}
-processedFilesCov1 <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 1, treatment = treatmentSpecification) #Process files for CpG meetehylation using 1x coverage. First 5 files were from ambient conditions, and the second from high pCO2 conditions.
+processedFilesCov3 <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 1, treatment = treatmentSpecification) #Process files for CpG meetehylation using 1x coverage. First 5 files were from ambient conditions, and the second from high pCO2 conditions.
 ```
 
 ```{r}
@@ -68,8 +68,6 @@ processedFilesCov3 <- processBismarkAln(location = analysisFiles, sample.id = sa
 ```{r}
 processedFilesCov5 <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 5, treatment = treatmentSpecification) #Process files for CpG meetehylation using 1x coverage. First 5 files were from ambient conditions, and the second from high pCO2 conditions.
 ```
-
-Working through 5x coverage with a subset just didn't give me enough alignments, so I'll continue to cmopare 1x and 3x coverage.
 
 # Analyze methylation data
 
@@ -88,6 +86,8 @@ fileName$actualFileName <- paste(fileName$nameBase, "-1xCoverage", "-Sample", fi
 fileName$actualFileName2 <- paste(fileName$nameBase2, "-1xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 1x coverage + specific sample's percent CpG coverage plot
 fileName$actualFileName3 <- paste(fileName$nameBase, "-3xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 3x coverage + specific sample's percent CpG methylation plot
 fileName$actualFileName4 <- paste(fileName$nameBase2, "-3xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 3x coverage + specific sample's percent CpG coverage plot
+fileName$actualFileName5 <- paste(fileName$nameBase, "-5xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 3x coverage + specific sample's percent CpG methylation plot
+fileName$actualFileName6 <- paste(fileName$nameBase2, "-5xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 3x coverage + specific sample's percent CpG coverage plot
 head(fileName) #Confirm column creation
 ```
 
@@ -96,7 +96,7 @@ head(fileName) #Confirm column creation
 ```{r}
 for(i in 1:nFiles) { #For each data file
   jpeg(filename = fileName$actualFileName[i], height = 1000, width = 1000) #Save file with designated name
-  getMethylationStats(processedFilesCov1[[i]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
+  getMethylationStats(processedFilesCov3[[i]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
   dev.off() #Turn off plotting device
 } #Plot and save %CpG methylation information
 ```
@@ -104,7 +104,7 @@ for(i in 1:nFiles) { #For each data file
 ```{r}
 for(i in 1:nFiles) { #For each data file
   jpeg(filename = fileName$actualFileName2[i], height = 1000, width = 1000) #Save file with designated name
-  getCoverageStats(processedFilesCov1[[i]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
+  getCoverageStats(processedFilesCov3[[i]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
   dev.off() #Turn off plotting device
 } #Plot and save CpG coverage information
 ```
@@ -125,4 +125,146 @@ for(i in 1:nFiles) { #For each data file
   getCoverageStats(processedFilesCov3[[i]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
   dev.off() #Turn off plotting device
 } #Plot and save CpG coverage information
+```
+
+### 5x Coverage
+
+```{r}
+for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName5[i], height = 1000, width = 1000) #Save file with designated name
+  getMethylationStats(processedFilesCov5[[i]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
+  dev.off() #Turn off plotting device
+} #Plot and save %CpG methylation information
+```
+
+```{r}
+for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName6[i], height = 1000, width = 1000) #Save file with designated name
+  getCoverageStats(processedFilesCov5[[i]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
+  dev.off() #Turn off plotting device
+} #Plot and save CpG coverage information
+```
+
+## Obtain clustering information
+
+### 1x Coverage
+
+```{r}
+methylationInformationCov1 <- unite(processedFilesCov1) #Combine all processed files into a single table
+clusteringInformationCov1 <- clusterSamples(methylationInformationCov1, dist = "correlation", method = "ward", plot = FALSE) #Save cluster information as a new object
+```
+
+```{r}
+#jpeg(filename = "2018-10-11-Full-Sample-Pearson-Correlation-Plot-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+getCorrelation(methylationInformationCov1, plot = TRUE) #Understand correlation between methylation patterns in different samples
+#dev.off()
+```
+
+```{r}
+#jpeg(filename = "2018-10-11-Full-Sample-CpG-Methylation-Clustering-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+clusterSamples(methylationInformationCov1, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
+#dev.off()
+```
+
+```{r}
+#jpeg(filename = "2018-10-11-Full-Sample-Methylation-PCA-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationCov1) #Run a PCA analysis on percent methylation for all samples
+#dev.off() #Turn off plotting device
+```
+
+```{r}
+#jpeg(filename = "2018-10-11-Full-Sample-Methylation-Screeplot-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationCov1, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
+#dev.off()
+```
+
+### 3x Coverage
+
+```{r}
+methylationInformationCov3 <- unite(processedFilesCov3) #Combine all processed files into a single table
+clusteringInformationCov3 <- clusterSamples(methylationInformationCov3, dist = "correlation", method = "ward", plot = FALSE) #Save cluster information as a new object
+```
+
+```{r}
+#jpeg(filename = "2018-10-11-Full-Sample-Pearson-Correlation-Plot-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+getCorrelation(methylationInformationCov3, plot = TRUE) #Understand correlation between methylation patterns in different samples
+#dev.off()
+```
+
+```{r}
+#jpeg(filename = "2018-10-11-Full-Sample-CpG-Methylation-Clustering-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+clusterSamples(methylationInformationCov3, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
+#dev.off()
+```
+
+```{r}
+#jpeg(filename = "2018-10-11-Full-Sample-Methylation-PCA-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationCov3) #Run a PCA analysis on percent methylation for all samples
+#dev.off() #Turn off plotting device
+```
+
+```{r}
+#jpeg(filename = "2018-10-11-Full-Sample-Methylation-Screeplot-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationCov3, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
+#dev.off()
+```
+
+### 5x Coverage
+
+```{r}
+methylationInformationCov5 <- unite(processedFilesCov5) #Combine all processed files into a single table
+clusteringInformationCov5 <- clusterSamples(methylationInformationCov1, dist = "correlation", method = "ward", plot = FALSE) #Save cluster information as a new object
+```
+
+```{r}
+#jpeg(filename = "2018-10-11-Full-Sample-Pearson-Correlation-Plot-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
+getCorrelation(methylationInformationCov5, plot = TRUE) #Understand correlation between methylation patterns in different samples
+#dev.off()
+```
+
+```{r}
+#jpeg(filename = "2018-10-11-Full-Sample-CpG-Methylation-Clustering-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
+clusterSamples(methylationInformationCov5, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
+#dev.off()
+```
+
+```{r}
+#jpeg(filename = "2018-10-11-Full-Sample-Methylation-PCA-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationCov5) #Run a PCA analysis on percent methylation for all samples
+#dev.off() #Turn off plotting device
+```
+
+```{r}
+#jpeg(filename = "2018-10-11-Full-Sample-Methylation-Screeplot-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationCov5, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
+#dev.off()
+```
+
+## Obtain differentially methylated loci
+
+### 1x Coverage
+
+```{r}
+differentialMethylationStatsCov1 <- calculateDiffMeth(methylationInformationCov1) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
+diffMethStats50Cov1 <- getMethylDiff(differentialMethylationStatsCov1, difference = 50, qvalue = 0.01) #Identify loci that are at least 50% different
+head(diffMethStats50Cov1) #Confirm creation
+#write.csv(diffMethStats50Cov1, "2018-10-11-Differentially-Methylated-Loci-50-Cov1.csv") #Save table as .csv
+```
+
+### 3x Coverage
+
+```{r}
+differentialMethylationStatsCov3 <- calculateDiffMeth(methylationInformationCov3) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
+diffMethStats50Cov3 <- getMethylDiff(differentialMethylationStatsCov3, difference = 50, qvalue = 0.01) #Identify loci that are at least 50% different
+head(diffMethStats50Cov3) #Confirm creation
+#write.csv(diffMethStats50Cov3, "2018-10-11-Differentially-Methylated-Loci-50-Cov3.csv") #Save table as .csv
+```
+
+### 5x Coverage
+
+```{r}
+differentialMethylationStatsCov5 <- calculateDiffMeth(methylationInformationCov5) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
+diffMethStats50Cov5 <- getMethylDiff(differentialMethylationStatsCov5, difference = 50, qvalue = 0.01) #Identify loci that are at least 50% different
+head(diffMethStats50Cov5) #Confirm creation
+#write.csv(diffMethStats50Cov5, "2018-10-11-Differentially-Methylated-Loci-50-Cov5.csv") #Save table as .csv
 ```
