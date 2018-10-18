@@ -252,7 +252,6 @@ head(diffMethStats50Cov1) #Confirm creation
 write.csv(diffMethStats50Cov1, "2018-10-11-Steven-Samples-Differentially-Methylated-Loci-50-Cov1.csv") #Save table as .csv
 ```
 
-
 ### 3x Coverage
 
 ```{r}
@@ -277,4 +276,3 @@ head(diffMethStats50Cov5) #Confirm creation
 ```{r}
 write.csv(diffMethStats50Cov5, "2018-10-11--Steven-Samples-Differentially-Methylated-Loci-50-Cov5.csv") #Save table as .csv
 ```
-
