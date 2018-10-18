@@ -249,7 +249,7 @@ head(diffMethStats50Cov1) #Confirm creation
 ```
 
 ```{r}
-write.csv(diffMethStats50Cov1, "2018-10-11-Steven-Samples-Differentially-Methylated-Loci-50-Cov1.csv") #Save table as .csv
+write.csv(diffMethStats50Cov1, "2018-10-14-Steven-Samples/2018-10-11-Steven-Samples-Differentially-Methylated-Loci-50-Cov1.csv") #Save table as .csv
 ```
 
 ### 3x Coverage
@@ -261,7 +261,7 @@ head(diffMethStats50Cov3) #Confirm creation
 ```
 
 ```{r}
-write.csv(diffMethStats50Cov3, "2018-10-11-Steven-Samples-Differentially-Methylated-Loci-50-Cov3.csv") #Save table as .csv
+write.csv(diffMethStats50Cov3, "2018-10-14-Steven-Samples/2018-10-11-Steven-Samples-Differentially-Methylated-Loci-50-Cov3.csv") #Save table as .csv
 ```
 
 
@@ -274,5 +274,5 @@ head(diffMethStats50Cov5) #Confirm creation
 ```
 
 ```{r}
-write.csv(diffMethStats50Cov5, "2018-10-11--Steven-Samples-Differentially-Methylated-Loci-50-Cov5.csv") #Save table as .csv
+write.csv(diffMethStats50Cov5, "2018-10-14-Steven-Samples/2018-10-11-Steven-Samples-Differentially-Methylated-Loci-50-Cov5.csv") #Save table as .csv
 ```
