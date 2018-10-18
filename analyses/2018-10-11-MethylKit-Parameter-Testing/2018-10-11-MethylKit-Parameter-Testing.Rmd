@@ -107,16 +107,6 @@ for(i in 1:nFiles) { #For each data file
 } #Plot and save CpG coverage information
 ```
 
-#### Create multipanel plots
-
-```{r}
-par(mfrow = c(2, 5)) #Reset par. Create a 2 row x 5 column grid, and fill in panels by rows.
-for(i in 1:length(fileName$sample.ID)) { #For each sample
-  
-}
-```
-
-
 ### 3x Coverage
 
 ```{r}
