@@ -94,7 +94,7 @@ head(fileName) #Confirm column creation
 ```{r}
 for(i in 1:nFiles) { #For each data file
   jpeg(filename = fileName$actualFileName[i], height = 1000, width = 1000) #Save file with designated name
-  getMethylationStats(processedFilesCov3[[i]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
+  getMethylationStats(processedFilesCov1[[i]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
   dev.off() #Turn off plotting device
 } #Plot and save %CpG methylation information
 ```
@@ -102,10 +102,20 @@ for(i in 1:nFiles) { #For each data file
 ```{r}
 for(i in 1:nFiles) { #For each data file
   jpeg(filename = fileName$actualFileName2[i], height = 1000, width = 1000) #Save file with designated name
-  getCoverageStats(processedFilesCov3[[i]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
+  getCoverageStats(processedFilesCov1[[i]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
   dev.off() #Turn off plotting device
 } #Plot and save CpG coverage information
 ```
+
+#### Create multipanel plots
+
+```{r}
+par(mfrow = c(2, 5)) #Reset par. Create a 2 row x 5 column grid, and fill in panels by rows.
+for(i in 1:length(fileName$sample.ID)) { #For each sample
+  
+}
+```
+
 
 ### 3x Coverage
 
