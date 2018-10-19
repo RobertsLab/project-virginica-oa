@@ -196,7 +196,7 @@ dev.off()
 ```
 
 ```{r}
-jpeg(filename = "2018-10-14-Steven-Samples/2018-10-11-Full-Sample-Methylation-PCA-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Methylation-PCA-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
 PCASamples(methylationInformationCov3) #Run a PCA analysis on percent methylation for all samples
 dev.off() #Turn off plotting device
 ```
@@ -274,5 +274,5 @@ head(diffMethStats50Cov5) #Confirm creation
 ```
 
 ```{r}
-write.csv(diffMethStats50Cov5, "2018-10-18-Genefish-Samples/2018-10-18-Steven-Samples-Differentially-Methylated-Loci-50-Cov5.csv") #Save table as .csv
+write.csv(diffMethStats50Cov5, "2018-10-18-Genefish-Samples/2018-10-18-Genefish-Samples-Differentially-Methylated-Loci-50-Cov5.csv") #Save table as .csv
 ```
