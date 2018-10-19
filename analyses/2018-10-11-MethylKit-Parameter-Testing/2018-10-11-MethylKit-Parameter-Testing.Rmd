@@ -5,7 +5,7 @@ date: "10/11/2018"
 output: html_document
 ---
 
-In this file, I'll try 1x, 3x, and 5x coverage with subset data from with [new `-score_min` parameter](https://yaaminiv.github.io/DML-Analysis-Part10/) to see how it affects clustering.
+In this file, I'll try 1x, 3x, and 5x coverage with data from with [new `-score_min` parameter](https://yaaminiv.github.io/DML-Analysis-Part10/) to see how it affects clustering.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -34,16 +34,16 @@ getwd()
 ```
 
 ```{r}
-analysisFiles <- list("2018-10-14-Steven-Samples/zr2096_1_dedup.sorted.bam",
-                      "2018-10-14-Steven-Samples/zr2096_2_dedup.sorted.bam",
-                      "2018-10-14-Steven-Samples/zr2096_3_dedup.sorted.bam",
-                      "2018-10-14-Steven-Samples/zr2096_4_dedup.sorted.bam",
-                      "2018-10-14-Steven-Samples/zr2096_5_dedup.sorted.bam",
-                      "2018-10-14-Steven-Samples/zr2096_6_dedup.sorted.bam",
-                      "2018-10-14-Steven-Samples/zr2096_7_dedup.sorted.bam",
-                      "2018-10-14-Steven-Samples/zr2096_8_dedup.sorted.bam",
-                      "2018-10-14-Steven-Samples/zr2096_9_dedup.sorted.bam",
-                      "2018-10-14-Steven-Samples/zr2096_10_dedup.sorted.bam") #Put all .bam files into a list for analysis.
+analysisFiles <- list("/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_1_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_2_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_3_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_4_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_5_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_6_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_7_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_8_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_9_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_10_dedup.sorted.bam") #Put all .bam files into a list for analysis. File paths are sourced from locally-mounted gannet server.
 ```
 
 ```{r}
@@ -73,8 +73,8 @@ processedFilesCov5 <- processBismarkAln(location = analysisFiles, sample.id = sa
 
 ```{r}
 nFiles <- length(sample.IDs) #Count number of samples
-fileName <- data.frame("nameBase" = rep("2018-10-11-Percent-CpG-Methylation", times = nFiles),
-                       "nameBase2" = rep("2018-10-11-Percent-CpG-Coverage", times = nFiles),
+fileName <- data.frame("nameBase" = rep("2018-10-18-Genefish-Samples/2018-10-18-Percent-CpG-Methylation", times = nFiles),
+                       "nameBase2" = rep("2018-10-18-Genefish-Samples/2018-10-18-Percent-CpG-Coverage", times = nFiles),
                        "sample.ID" = 1:10) #Create new dataframe for filenames
 head(fileName) #Confirm dataframe creation
 ```
@@ -153,25 +153,25 @@ clusteringInformationCov1 <- clusterSamples(methylationInformationCov1, dist = "
 ```
 
 ```{r}
-jpeg(filename = "2018-10-14-Steven-Samples/2018-10-11-Full-Sample-Pearson-Correlation-Plot-Cov1.jpeg", height = 1000, width = 1000) #Save file with designated name
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Pearson-Correlation-Plot-Cov1.jpeg", height = 1000, width = 1000) #Save file with designated name
 getCorrelation(methylationInformationCov1, plot = TRUE) #Understand correlation between methylation patterns in different samples
 dev.off()
 ```
 
 ```{r}
-jpeg(filename = "2018-10-14-Steven-Samples/2018-10-11-Full-Sample-CpG-Methylation-Clustering-Cov1.jpeg", height = 1000, width = 1000) #Save file with designated name
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-CpG-Methylation-Clustering-Cov1.jpeg", height = 1000, width = 1000) #Save file with designated name
 clusterSamples(methylationInformationCov1, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
 dev.off()
 ```
 
 ```{r}
-jpeg(filename = "2018-10-14-Steven-Samples/2018-10-11-Full-Sample-Methylation-PCA-Cov1.jpeg", height = 1000, width = 1000) #Save file with designated name
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Methylation-PCA-Cov1.jpeg", height = 1000, width = 1000) #Save file with designated name
 PCASamples(methylationInformationCov1) #Run a PCA analysis on percent methylation for all samples
 dev.off() #Turn off plotting device
 ```
 
 ```{r}
-jpeg(filename = "2018-10-14-Steven-Samples/2018-10-11-Full-Sample-Methylation-Screeplot-Cov1.jpeg", height = 1000, width = 1000) #Save file with designated name
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Methylation-Screeplot-Cov1.jpeg", height = 1000, width = 1000) #Save file with designated name
 PCASamples(methylationInformationCov1, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
 dev.off()
 ```
@@ -184,13 +184,13 @@ clusteringInformationCov3 <- clusterSamples(methylationInformationCov3, dist = "
 ```
 
 ```{r}
-jpeg(filename = "2018-10-14-Steven-Samples/2018-10-11-Full-Sample-Pearson-Correlation-Plot-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Pearson-Correlation-Plot-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
 getCorrelation(methylationInformationCov3, plot = TRUE) #Understand correlation between methylation patterns in different samples
 dev.off()
 ```
 
 ```{r}
-jpeg(filename = "2018-10-14-Steven-Samples/2018-10-11-Full-Sample-CpG-Methylation-Clustering-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-CpG-Methylation-Clustering-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
 clusterSamples(methylationInformationCov3, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
 dev.off()
 ```
@@ -202,7 +202,7 @@ dev.off() #Turn off plotting device
 ```
 
 ```{r}
-jpeg(filename = "2018-10-14-Steven-Samples/2018-10-11-Full-Sample-Methylation-Screeplot-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Methylation-Screeplot-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
 PCASamples(methylationInformationCov3, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
 dev.off()
 ```
@@ -215,25 +215,25 @@ clusteringInformationCov5 <- clusterSamples(methylationInformationCov1, dist = "
 ```
 
 ```{r}
-jpeg(filename = "2018-10-14-Steven-Samples/2018-10-11-Full-Sample-Pearson-Correlation-Plot-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Pearson-Correlation-Plot-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
 getCorrelation(methylationInformationCov5, plot = TRUE) #Understand correlation between methylation patterns in different samples
 dev.off()
 ```
 
 ```{r}
-jpeg(filename = "2018-10-14-Steven-Samples/2018-10-11-Full-Sample-CpG-Methylation-Clustering-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-CpG-Methylation-Clustering-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
 clusterSamples(methylationInformationCov5, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
 dev.off()
 ```
 
 ```{r}
-jpeg(filename = "2018-10-14-Steven-Samples/2018-10-11-Full-Sample-Methylation-PCA-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Methylation-PCA-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
 PCASamples(methylationInformationCov5) #Run a PCA analysis on percent methylation for all samples
 dev.off() #Turn off plotting device
 ```
 
 ```{r}
-jpeg(filename = "2018-10-14-Steven-Samples/2018-10-11-Full-Sample-Methylation-Screeplot-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Methylation-Screeplot-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
 PCASamples(methylationInformationCov5, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
 dev.off()
 ```
@@ -249,7 +249,7 @@ head(diffMethStats50Cov1) #Confirm creation
 ```
 
 ```{r}
-write.csv(diffMethStats50Cov1, "2018-10-14-Steven-Samples/2018-10-11-Steven-Samples-Differentially-Methylated-Loci-50-Cov1.csv") #Save table as .csv
+write.csv(diffMethStats50Cov1, "2018-10-18-Genefish-Samples/2018-10-18-Genefish-Samples-Differentially-Methylated-Loci-50-Cov1.csv") #Save table as .csv
 ```
 
 ### 3x Coverage
@@ -261,7 +261,7 @@ head(diffMethStats50Cov3) #Confirm creation
 ```
 
 ```{r}
-write.csv(diffMethStats50Cov3, "2018-10-14-Steven-Samples/2018-10-11-Steven-Samples-Differentially-Methylated-Loci-50-Cov3.csv") #Save table as .csv
+write.csv(diffMethStats50Cov3, "2018-10-18-Genefish-Samples/2018-10-18-Genefish-Samples-Differentially-Methylated-Loci-50-Cov3.csv") #Save table as .csv
 ```
 
 
@@ -274,5 +274,5 @@ head(diffMethStats50Cov5) #Confirm creation
 ```
 
 ```{r}
-write.csv(diffMethStats50Cov5, "2018-10-14-Steven-Samples/2018-10-11-Steven-Samples-Differentially-Methylated-Loci-50-Cov5.csv") #Save table as .csv
+write.csv(diffMethStats50Cov5, "2018-10-18-Genefish-Samples/2018-10-18-Steven-Samples-Differentially-Methylated-Loci-50-Cov5.csv") #Save table as .csv
 ```
