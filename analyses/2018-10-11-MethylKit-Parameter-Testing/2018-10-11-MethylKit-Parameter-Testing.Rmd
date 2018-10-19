@@ -276,3 +276,84 @@ head(diffMethStats50Cov5) #Confirm creation
 ```{r}
 write.csv(diffMethStats50Cov5, "2018-10-18-Genefish-Samples/2018-10-18-Genefish-Samples-Differentially-Methylated-Loci-50-Cov5.csv") #Save table as .csv
 ```
+
+# Tiling window analysis
+
+The code above allowed me to identify differentially methylated *loci* (DMLs). For an exploratory analysis, it is also useful to identify differentially methylated *regions* (DMRs). I will complete the tiling analysis using my `mincov = 3` object. I will use both 100 and 1000 bp sized windows and steps.
+
+## Try different window and step sizes
+
+```{r}
+tiles100 <- tileMethylCounts(processedFilesCov3, win.size = 100, step.size = 100) #Add up C and T counts from each covered cytosine and return total C and T count for each tile. Perform this analysis with 100 bp sized windows, and slide 100 bp for each new window
+head(tiles100[[10]]) #Confirm object creation. [[10]] only shows tile100 head for the 10th sample processed.
+```
+
+```{r}
+tiles1000 <- tileMethylCounts(processedFilesCov3, win.size = 1000, step.size = 1000) #Add up C and T counts from each covered cytosine and return total C and T count for each tile. Perform this analysis with 1000 bp sized windows, and slide 1000 bp for each new window
+head(tiles1000[[10]]) #Confirm object creation. [[10]] only shows tile100 head for the 10th sample processed.
+```
+
+## Obtain clustering information
+
+### 100 bp window and step Size
+
+```{r}
+methylationInformationTiles100 <- unite(tiles100) #Combine all processed files into a single table
+clusteringInformationTiles100 <- clusterSamples(methylationInformationTiles100, dist = "correlation", method = "ward", plot = FALSE) #Save clustering information as a new object
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Pearson-Correlation-Plot-Tiles100.jpeg", height = 1000, width = 1000) #Save file with designated name
+getCorrelation(methylationInformationTiles100, plot = TRUE) #Understand correlation between methylation patterns in different samples
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-CpG-Methylation-Clustering-Tiles100.jpeg", height = 1000, width = 1000) #Save file with designated name
+clusterSamples(methylationInformationTiles100, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Methylation-PCA-Tiles100.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationTiles100) #Run a PCA analysis on percent methylation for all samples
+dev.off() #Turn off plotting device
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Methylation-Screeplot-Tiles100.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationTiles100, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
+dev.off()
+```
+
+### 1000 bp window and step size
+
+```{r}
+methylationInformationTiles1000 <- unite(tiles1000) #Combine all processed files into a single table
+clusteringInformationTiles1000 <- clusterSamples(methylationInformationTiles1000, dist = "correlation", method = "ward", plot = FALSE) #Save clustering information as a new object
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Pearson-Correlation-Plot-Tiles1000.jpeg", height = 1000, width = 1000) #Save file with designated name
+getCorrelation(methylationInformationTiles1000, plot = TRUE) #Understand correlation between methylation patterns in different samples
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-CpG-Methylation-Clustering-Tiles1000.jpeg", height = 1000, width = 1000) #Save file with designated name
+clusterSamples(methylationInformationTiles1000, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Methylation-PCA-Tiles1000.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationTiles1000) #Run a PCA analysis on percent methylation for all samples
+dev.off() #Turn off plotting device
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Methylation-Screeplot-Tiles1000.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationTiles1000, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
+dev.off()
+```
+
