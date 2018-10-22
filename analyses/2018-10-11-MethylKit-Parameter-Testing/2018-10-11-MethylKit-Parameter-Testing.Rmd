@@ -430,3 +430,47 @@ head(diffMethStats50Tiles1000Step100) #Confirm creation
 ```{r}
 write.csv(diffMethStats50Tiles1000Step100, "2018-10-19-Tiling-Analysis/2018-10-19-Genefish-Samples-Differentially-Methylated-Loci-50-Cov3-Tiles1000-Step100.csv") #Save table as .csv
 ```
+
+# Save DMLs and DMRs as BEDfiles
+
+## Install packages
+
+**Do not** install these packages until analysis in `methylKit` is complete, as some of the installed packages will mask others important for analysis.
+
+```{r}
+library(readr) #Load package
+
+install.packages("tidyverse") #Install tidyverse
+library(tidyverse) #Load package
+```
+
+## DMLs
+
+```{r}
+DMLPlus10222018 <- filter(diffMethStats50Cov3, strand == "+") %>% mutate(start = start -1, end = end + 1) %>% select(chr, start, end, strand, meth.diff) #Save + strand of DMLs as a new object
+DMLMinus10222018 <- filter(diffMethStats50Cov3, strand == "-") %>% mutate(start = start -2) %>% select(chr, start, end, strand, meth.diff) #Save - strand of DMLs as a new object
+```
+
+```{r}
+DML10222018 <- bind_rows(DMLPlus10222018, DMLMinus10222018) %>% arrange(chr, start) %>% mutate_if(is.numeric, as.integer) #Join + and - strand information to be saved as a BED file, and avoid writing information in scientific notation
+```
+
+```{r}
+write_delim(DML10222018, "2018-10-22-DML-Locations.bed",  delim = '\t', col_names = FALSE) #Save data as a BED file
+```
+
+## DMRs
+
+```{r}
+DMRPlus10222018 <- filter(diffMethStats50Tiles100, strand == "+") %>% mutate(start = start -1, end = end + 1) %>% select(chr, start, end, strand, meth.diff) #Save + strand of DMLs as a new object
+DMRMinus10222018 <- filter(diffMethStats50Tiles100, strand == "-") %>% mutate(start = start -2) %>% select(chr, start, end, strand, meth.diff) #Save - strand of DMLs as a new object
+```
+
+```{r}
+DMR10222018 <- bind_rows(DMRPlus10222018, DMRMinus10222018) %>% arrange(chr, start) %>% mutate_if(is.numeric, as.integer) #Join + and - strand information to be saved as a BED file, and avoid writing information in scientific notation
+```
+
+```{r}
+write_delim(DMR10222018, "2018-10-22-DMR-Locations.bed",  delim = '\t', col_names = FALSE) #Save data as a BED file
+```
+
