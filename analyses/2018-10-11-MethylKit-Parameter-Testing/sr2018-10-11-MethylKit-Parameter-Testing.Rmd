@@ -1,0 +1,487 @@
+---
+title: "MethylKit Parameter Testing"
+author: "Yaamini Venkataraman"
+date: "10/11/2018"
+output: html_document
+---
+
+In this file, I'll try 1x, 3x, and 5x coverage with data from with [new `-score_min` parameter](https://yaaminiv.github.io/DML-Analysis-Part10/) to see how it affects clustering.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+sessionInfo()
+```
+
+# Install packages
+
+```{r}
+install.packages("devtools") #Install the devtools package
+library(devtools) #Load devtools
+
+source("https://bioconductor.org/biocLite.R") #Source package from bioconductor
+biocLite("methylKit") #Install methylkit
+install_github("al2na/methylKit", build_vignettes = FALSE, repos=BiocInstaller::biocinstallRepos(), dependencies = TRUE) #Install more methylKit options
+library(methylKit) #Load methylkit
+```
+
+# Process methylation data
+
+```{r}
+getwd()
+```
+
+```{r}
+analysisFiles <- list("/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_1_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_2_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_3_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_4_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_5_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_6_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_7_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_8_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_9_dedup.sorted.bam",
+                      "/Volumes/web-1/spartina/2018-10-10-project-virginica-oa-Large-Files/2018-10-04-Bismark-Full-Samples-Revised-Parameters/zr2096_10_dedup.sorted.bam") #Put all .bam files into a list for analysis. File paths are sourced from locally-mounted gannet server.
+```
+
+```{r}
+sample.IDs <- list("1", "2", "3", "4", "5", "6", "7", "8", "9", "10") #Create list of sample IDs
+treatmentSpecification <- c(rep(0, times = 5), rep(1, times = 5)) #Specify which treatment the samples were from. 1 is the treatment (high pCO2) and 0 is the control (ambient pCO2)
+```
+
+# Try different coverage metrics
+
+I will use `processBismarkAln` to set different coverage metrics in the `mincov` argument. I'll test 1x, 3x, and 5x, coverage.
+
+```{r}
+processedFilesCov1 <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 1, treatment = treatmentSpecification) #Process files for CpG methylation using 1x coverage. First 5 files were from ambient conditions, and the second from high pCO2 conditions.
+```
+
+```{r}
+processedFilesCov3 <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 3, treatment = treatmentSpecification) #Process files for CpG methylation using 3x coverage. First 5 files were from ambient conditions, and the second from high pCO2 conditions.
+```
+
+```{r}
+processedFilesCov5 <- processBismarkAln(location = analysisFiles, sample.id = sample.IDs, assembly = "v3", read.context = "CpG", mincov = 5, treatment = treatmentSpecification) #Process files for CpG methylation using 1x coverage. First 5 files were from ambient conditions, and the second from high pCO2 conditions.
+```
+
+# Analyze methylation data
+
+## Obtain methylation and coverage plots
+
+```{r}
+nFiles <- length(sample.IDs) #Count number of samples
+fileName <- data.frame("nameBase" = rep("2018-10-18-Genefish-Samples/2018-10-18-Percent-CpG-Methylation", times = nFiles),
+                       "nameBase2" = rep("2018-10-18-Genefish-Samples/2018-10-18-Percent-CpG-Coverage", times = nFiles),
+                       "sample.ID" = 1:10) #Create new dataframe for filenames
+head(fileName) #Confirm dataframe creation
+```
+
+```{r}
+fileName$actualFileName <- paste(fileName$nameBase, "-1xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 1x coverage + specific sample's percent CpG methylation plot
+fileName$actualFileName2 <- paste(fileName$nameBase2, "-1xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 1x coverage + specific sample's percent CpG coverage plot
+fileName$actualFileName3 <- paste(fileName$nameBase, "-3xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 3x coverage + specific sample's percent CpG methylation plot
+fileName$actualFileName4 <- paste(fileName$nameBase2, "-3xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 3x coverage + specific sample's percent CpG coverage plot
+fileName$actualFileName5 <- paste(fileName$nameBase, "-5xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 5x coverage + specific sample's percent CpG methylation plot
+fileName$actualFileName6 <- paste(fileName$nameBase2, "-5xCoverage", "-Sample", fileName$sample.ID, ".jpeg", sep = "") #Create a new column for the full filename for 5x coverage + specific sample's percent CpG coverage plot
+head(fileName) #Confirm column creation
+```
+
+### 1x Coverage
+
+```{r}
+for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName[i], height = 1000, width = 1000) #Save file with designated name
+  getMethylationStats(processedFilesCov1[[i]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
+  dev.off() #Turn off plotting device
+} #Plot and save %CpG methylation information
+```
+
+```{r}
+for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName2[i], height = 1000, width = 1000) #Save file with designated name
+  getCoverageStats(processedFilesCov1[[i]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
+  dev.off() #Turn off plotting device
+} #Plot and save CpG coverage information
+```
+
+### 3x Coverage
+
+```{r}
+for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName3[i], height = 1000, width = 1000) #Save file with designated name
+  getMethylationStats(processedFilesCov3[[i]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
+  dev.off() #Turn off plotting device
+} #Plot and save %CpG methylation information
+```
+
+```{r}
+for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName4[i], height = 1000, width = 1000) #Save file with designated name
+  getCoverageStats(processedFilesCov3[[i]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
+  dev.off() #Turn off plotting device
+} #Plot and save CpG coverage information
+```
+
+### 5x Coverage
+
+```{r}
+for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName5[i], height = 1000, width = 1000) #Save file with designated name
+  getMethylationStats(processedFilesCov5[[i]], plot = TRUE, both.strands = FALSE) #Get %CpG methylation information
+  dev.off() #Turn off plotting device
+} #Plot and save %CpG methylation information
+```
+
+```{r}
+for(i in 1:nFiles) { #For each data file
+  jpeg(filename = fileName$actualFileName6[i], height = 1000, width = 1000) #Save file with designated name
+  getCoverageStats(processedFilesCov5[[i]], plot = TRUE, both.strands = FALSE) #Get CpG coverage information
+  dev.off() #Turn off plotting device
+} #Plot and save CpG coverage information
+```
+
+## Obtain clustering information
+
+### 1x Coverage
+
+```{r}
+methylationInformationCov1 <- unite(processedFilesCov1) #Combine all processed files into a single table
+clusteringInformationCov1 <- clusterSamples(methylationInformationCov1, dist = "correlation", method = "ward", plot = FALSE) #Save cluster information as a new object
+```
+
+```{r}
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Pearson-Correlation-Plot-Cov1.jpeg", height = 1000, width = 1000) #Save file with designated name
+getCorrelation(methylationInformationCov1, plot = TRUE) #Understand correlation between methylation patterns in different samples
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-CpG-Methylation-Clustering-Cov1.jpeg", height = 1000, width = 1000) #Save file with designated name
+clusterSamples(methylationInformationCov1, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Methylation-PCA-Cov1.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationCov1) #Run a PCA analysis on percent methylation for all samples
+dev.off() #Turn off plotting device
+```
+
+```{r}
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Methylation-Screeplot-Cov1.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationCov1, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
+dev.off()
+```
+
+### 3x Coverage
+
+```{r}
+methylationInformationCov3 <- unite(processedFilesCov3) #Combine all processed files into a single table
+clusteringInformationCov3 <- clusterSamples(methylationInformationCov3, dist = "correlation", method = "ward", plot = FALSE) #Save cluster information as a new object
+```
+
+```{r}
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Pearson-Correlation-Plot-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+getCorrelation(methylationInformationCov3, plot = TRUE) #Understand correlation between methylation patterns in different samples
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-CpG-Methylation-Clustering-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+clusterSamples(methylationInformationCov3, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Methylation-PCA-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationCov3) #Run a PCA analysis on percent methylation for all samples
+dev.off() #Turn off plotting device
+```
+
+```{r}
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Methylation-Screeplot-Cov3.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationCov3, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
+dev.off()
+```
+
+### 5x Coverage
+
+```{r}
+methylationInformationCov5 <- unite(processedFilesCov5) #Combine all processed files into a single table
+clusteringInformationCov5 <- clusterSamples(methylationInformationCov1, dist = "correlation", method = "ward", plot = FALSE) #Save cluster information as a new object
+```
+
+```{r}
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Pearson-Correlation-Plot-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
+getCorrelation(methylationInformationCov5, plot = TRUE) #Understand correlation between methylation patterns in different samples
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-CpG-Methylation-Clustering-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
+clusterSamples(methylationInformationCov5, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Methylation-PCA-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationCov5) #Run a PCA analysis on percent methylation for all samples
+dev.off() #Turn off plotting device
+```
+
+```{r}
+jpeg(filename = "2018-10-18-Genefish-Samples/2018-10-18-Full-Sample-Methylation-Screeplot-Cov5.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationCov5, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
+dev.off()
+```
+
+## Obtain differentially methylated loci
+
+### 1x Coverage
+
+```{r}
+differentialMethylationStatsCov1 <- calculateDiffMeth(methylationInformationCov1) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
+diffMethStats50Cov1 <- getMethylDiff(differentialMethylationStatsCov1, difference = 50, qvalue = 0.01) #Identify loci that are at least 50% different
+head(diffMethStats50Cov1) #Confirm creation
+```
+
+```{r}
+write.csv(diffMethStats50Cov1, "2018-10-18-Genefish-Samples/2018-10-18-Genefish-Samples-Differentially-Methylated-Loci-50-Cov1.csv") #Save table as .csv
+```
+
+### 3x Coverage
+
+```{r}
+differentialMethylationStatsCov3 <- calculateDiffMeth(methylationInformationCov3) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
+diffMethStats50Cov3 <- getMethylDiff(differentialMethylationStatsCov3, difference = 50, qvalue = 0.01) #Identify loci that are at least 50% different
+head(diffMethStats50Cov3) #Confirm creation
+```
+
+```{r}
+write.csv(diffMethStats50Cov3, "2018-10-18-Genefish-Samples/2018-10-18-Genefish-Samples-Differentially-Methylated-Loci-50-Cov3.csv") #Save table as .csv
+```
+
+
+### 5x Coverage
+
+```{r}
+differentialMethylationStatsCov5 <- calculateDiffMeth(methylationInformationCov5) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
+diffMethStats50Cov5 <- getMethylDiff(differentialMethylationStatsCov5, difference = 50, qvalue = 0.01) #Identify loci that are at least 50% different
+head(diffMethStats50Cov5) #Confirm creation
+```
+
+```{r}
+write.csv(diffMethStats50Cov5, "2018-10-18-Genefish-Samples/2018-10-18-Genefish-Samples-Differentially-Methylated-Loci-50-Cov5.csv") #Save table as .csv
+```
+
+# Tiling window analysis
+
+The code above allowed me to identify differentially methylated *loci* (DMLs). For an exploratory analysis, it is also useful to identify differentially methylated *regions* (DMRs). I will complete the tiling analysis using my `mincov = 3` object. I will use both 100 and 1000 bp sized windows and steps.
+
+## Try different window and step sizes
+
+```{r}
+tiles100 <- tileMethylCounts(processedFilesCov3, win.size = 100, step.size = 100) #Add up C and T counts from each covered cytosine and return total C and T count for each tile. Perform this analysis with 100 bp sized windows, and slide 100 bp for each new window
+head(tiles100[[10]]) #Confirm object creation. [[10]] only shows tile100 head for the 10th sample processed.
+```
+
+```{r}
+tiles1000 <- tileMethylCounts(processedFilesCov3, win.size = 1000, step.size = 1000) #Add up C and T counts from each covered cytosine and return total C and T count for each tile. Perform this analysis with 1000 bp sized windows, and slide 1000 bp for each new window
+head(tiles1000[[10]]) #Confirm object creation. [[10]] only shows tile100 head for the 10th sample processed.
+```
+
+```{r}
+tiles1000step100 <- tileMethylCounts(processedFilesCov3, win.size = 1000, step.size = 1000) #Add up C and T counts from each covered cytosine and return total C and T count for each tile. Perform this analysis with 1000 bp sized windows, and slide 100 bp for each new window
+head(tiles1000step100[[10]]) #Confirm object creation. [[10]] only shows tile100 head for the 10th sample processed.
+```
+
+## Obtain clustering information
+
+### 100 bp window and step Size
+
+```{r}
+methylationInformationTiles100 <- unite(tiles100) #Combine all processed files into a single table
+clusteringInformationTiles100 <- clusterSamples(methylationInformationTiles100, dist = "correlation", method = "ward", plot = FALSE) #Save clustering information as a new object
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Pearson-Correlation-Plot-Tiles100.jpeg", height = 1000, width = 1000) #Save file with designated name
+getCorrelation(methylationInformationTiles100, plot = TRUE) #Understand correlation between methylation patterns in different samples
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-CpG-Methylation-Clustering-Tiles100.jpeg", height = 1000, width = 1000) #Save file with designated name
+clusterSamples(methylationInformationTiles100, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Methylation-PCA-Tiles100.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationTiles100) #Run a PCA analysis on percent methylation for all samples
+dev.off() #Turn off plotting device
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Methylation-Screeplot-Tiles100.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationTiles100, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
+dev.off()
+```
+
+### 1000 bp window and step size
+
+```{r}
+methylationInformationTiles1000 <- unite(tiles1000) #Combine all processed files into a single table
+clusteringInformationTiles1000 <- clusterSamples(methylationInformationTiles1000, dist = "correlation", method = "ward", plot = FALSE) #Save clustering information as a new object
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Pearson-Correlation-Plot-Tiles1000.jpeg", height = 1000, width = 1000) #Save file with designated name
+getCorrelation(methylationInformationTiles1000, plot = TRUE) #Understand correlation between methylation patterns in different samples
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-CpG-Methylation-Clustering-Tiles1000.jpeg", height = 1000, width = 1000) #Save file with designated name
+clusterSamples(methylationInformationTiles1000, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Methylation-PCA-Tiles1000.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationTiles1000) #Run a PCA analysis on percent methylation for all samples
+dev.off() #Turn off plotting device
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Methylation-Screeplot-Tiles1000.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationTiles1000, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
+dev.off()
+```
+
+### 1000 bp window and 100 bp step size
+
+```{r}
+methylationInformationTiles1000Step100 <- unite(tiles1000step100) #Combine all processed files into a single table
+clusteringInformationTiles1000Step100 <- clusterSamples(methylationInformationTiles1000Step100, dist = "correlation", method = "ward", plot = FALSE) #Save clustering information as a new object
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Pearson-Correlation-Plot-Tiles1000-Step100.jpeg", height = 1000, width = 1000) #Save file with designated name
+getCorrelation(methylationInformationTiles1000Step100, plot = TRUE) #Understand correlation between methylation patterns in different samples
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-CpG-Methylation-Clustering-Tiles1000-Step100.jpeg", height = 1000, width = 1000) #Save file with designated name
+clusterSamples(methylationInformationTiles1000Step100, dist = "correlation", method = "ward", plot = TRUE) #Cluster samples based on correlation coefficients
+dev.off()
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Methylation-PCA-Tiles1000-Step100.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationTiles1000Step100) #Run a PCA analysis on percent methylation for all samples
+dev.off() #Turn off plotting device
+```
+
+```{r}
+jpeg(filename = "2018-10-19-Tiling-Analysis/2018-10-19-Full-Sample-Methylation-Screeplot-Tiles1000-Step100.jpeg", height = 1000, width = 1000) #Save file with designated name
+PCASamples(methylationInformationTiles1000Step100, screeplot = TRUE) #Run the PCA analysis and plot variances against PC number in a screeplot
+dev.off()
+```
+
+## Obtain differentially methylated loci
+
+### 100 bp window and step size
+
+```{r}
+differentialMethylationStatsTiles100 <- calculateDiffMeth(methylationInformationTiles100) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
+diffMethStats50Tiles100 <- getMethylDiff(differentialMethylationStatsTiles100, difference = 50, qvalue = 0.01) #Identify loci that are at least 50% different
+head(diffMethStats50Tiles100) #Confirm creation
+```
+
+```{r}
+write.csv(diffMethStats50Tiles100, "2018-10-19-Tiling-Analysis/2018-10-19-Genefish-Samples-Differentially-Methylated-Loci-50-Cov3-Tiles100.csv") #Save table as .csv
+```
+
+### 1000 bp window and step size
+
+```{r}
+differentialMethylationStatsTiles1000 <- calculateDiffMeth(methylationInformationTiles1000) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
+diffMethStats50Tiles1000 <- getMethylDiff(differentialMethylationStatsTiles1000, difference = 50, qvalue = 0.01) #Identify loci that are at least 50% different
+head(diffMethStats50Tiles1000) #Confirm creation
+```
+
+```{r}
+write.csv(diffMethStats50Tiles1000, "2018-10-19-Tiling-Analysis/2018-10-19-Genefish-Samples-Differentially-Methylated-Loci-50-Cov3-Tiles1000.csv") #Save table as .csv
+```
+
+### 1000 bp window and 100 bp step size
+
+```{r}
+differentialMethylationStatsTiles1000Step100 <- calculateDiffMeth(methylationInformationTiles1000Step100) #Calculate differential methylation statistics based on treatment indication from processBismarkAln
+diffMethStats50Tiles1000Step100 <- getMethylDiff(differentialMethylationStatsTiles1000Step100, difference = 50, qvalue = 0.01) #Identify loci that are at least 50% different
+head(diffMethStats50Tiles1000Step100) #Confirm creation
+```
+
+```{r}
+write.csv(diffMethStats50Tiles1000Step100, "2018-10-19-Tiling-Analysis/2018-10-19-Genefish-Samples-Differentially-Methylated-Loci-50-Cov3-Tiles1000-Step100.csv") #Save table as .csv
+```
+
+# Save DMLs and DMRs as BEDfiles
+
+## Install packages
+
+**Do not** install these packages until analysis in `methylKit` is complete, as some of the installed packages will mask others important for analysis.
+
+```{r}
+library(readr) #Load package
+
+install.packages("tidyverse") #Install tidyverse
+library(tidyverse) #Load package
+```
+
+## DMLs
+
+```{r}
+DMLPlus10222018 <- filter(diffMethStats50Cov3, strand == "+") %>% mutate(start = start -1, end = end + 1) %>% select(chr, start, end, strand, meth.diff) #Save + strand of DMLs as a new object
+DMLMinus10222018 <- filter(diffMethStats50Cov3, strand == "-") %>% mutate(start = start -2) %>% select(chr, start, end, strand, meth.diff) #Save - strand of DMLs as a new object
+```
+
+```{r}
+DML10222018 <- bind_rows(DMLPlus10222018, DMLMinus10222018) %>% arrange(chr, start) %>% mutate_if(is.numeric, as.integer) #Join + and - strand information to be saved as a BED file, and avoid writing information in scientific notation
+```
+
+```{r}
+write_delim(DML10222018, "2018-10-22-DML-Locations.bed",  delim = '\t', col_names = FALSE) #Save data as a BED file
+```
+
+## DMRs
+
+```{r}
+DMRPlus10222018 <- filter(diffMethStats50Tiles100, strand == "+") %>% mutate(start = start -1, end = end + 1) %>% select(chr, start, end, strand, meth.diff) #Save + strand of DMLs as a new object
+DMRMinus10222018 <- filter(diffMethStats50Tiles100, strand == "-") %>% mutate(start = start -2) %>% select(chr, start, end, strand, meth.diff) #Save - strand of DMLs as a new object
+```
+
+```{r}
+DMR10222018 <- select(diffMethStats50Tiles100, chr, start, end, meth.diff) %>% mutate(start = start -1) %>% 
+
+  mutate_if(is.numeric, as.integer)  %>%
+
+  mutate(TYPE ="DMR")  %>%
+
+  select(chr, start, end, TYPE, meth.diff) 
+```
+
+
+```{r}
+DMR10222018 <- bind_rows(DMRPlus10222018, DMRMinus10222018) %>% arrange(chr, start) %>% mutate_if(is.numeric, as.integer) #Join + and - strand information to be saved as a BED file, and avoid writing information in scientific notation
+```
+
+```{r}
+write_delim(DMR10222018, "2018-10-22-DMR-Locations.bed",  delim = '\t', col_names = FALSE) #Save data as a BED file
+```
+
