@@ -1,0 +1,42 @@
+---
+title: "MethylKit Parameter Testing"
+author: "SR"
+date: "10/23/2018"
+output: html_document
+---
+
+
+
+
+# STEVEN STARTING HERE
+
+
+
+
+```{r}
+library(readr)
+
+library(tidyverse)
+
+```
+
+
+
+```{r}
+myDiff25p.tile <- read_csv("2018-10-19-Tiling-Analysis/2018-10-19-Genefish-Samples-Differentially-Methylated-Loci-50-Cov3-Tiles100.csv")
+```
+
+
+
+```{r}
+OAKL_tile <- select(myDiff25p.tile,chr, start, end, meth.diff) %>% 
+  mutate_if(is.numeric, as.integer)  %>%
+  mutate(TYPE ="DMR")  %>%
+  select(chr, start, end, TYPE) 
+```
+
+
+```{r}
+write_delim(OAKL_tile, "SR/2018-10-23-DML-Locations.bed",  delim = '\t', col_names = FALSE) #Save data as a BED file
+```
+
