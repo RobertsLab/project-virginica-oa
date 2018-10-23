@@ -482,6 +482,16 @@ DMR10222018 <- bind_rows(DMRPlus10222018, DMRMinus10222018) %>% arrange(chr, sta
 ```
 
 ```{r}
+myDiff50p.tile <- read_csv("2018-10-19-Tiling-Analysis/2018-10-19-Genefish-Samples-Differentially-Methylated-Loci-50-Cov3-Tiles100.csv")
+head(myDiff50p.tile)
+```
+
+```{r}
+DMR10222018 <- select(myDiff50p.tile, chr, start, end, meth.diff) %>% mutate(start = start -1) %>% mutate_if(is.numeric, as.integer)  %>% mutate(TYPE ="DMR")  %>% select(chr, start, end, TYPE, meth.diff) 
+```
+
+
+```{r}
 write_delim(DMR10222018, "2018-10-22-DMR-Locations.bed",  delim = '\t', col_names = FALSE) #Save data as a BED file
 ```
 
