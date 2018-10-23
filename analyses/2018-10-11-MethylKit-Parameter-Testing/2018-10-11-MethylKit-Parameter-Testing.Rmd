@@ -467,6 +467,17 @@ DMRMinus10222018 <- filter(diffMethStats50Tiles100, strand == "-") %>% mutate(st
 ```
 
 ```{r}
+DMR10222018 <- select(diffMethStats50Tiles100, chr, start, end, meth.diff) %>% mutate(start = start -1) %>% 
+
+  mutate_if(is.numeric, as.integer)  %>%
+
+  mutate(TYPE ="DMR")  %>%
+
+  select(chr, start, end, TYPE, meth.diff) 
+```
+
+
+```{r}
 DMR10222018 <- bind_rows(DMRPlus10222018, DMRMinus10222018) %>% arrange(chr, start) %>% mutate_if(is.numeric, as.integer) #Join + and - strand information to be saved as a BED file, and avoid writing information in scientific notation
 ```
 
